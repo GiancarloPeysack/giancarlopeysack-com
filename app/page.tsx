@@ -49,9 +49,9 @@ export default function Home() {
             </span>
           </p>
 
-          {/* Projects on one line, writing on its own line */}
+          {/* AI products: B2B + consumer, both inline */}
           <p className="mt-7 sm:mt-6">
-            I make B2B software and consumer apps{" "}
+            I make AI software for B2B and consumers{" "}
             <span className="tile-row align-middle ml-2">
               <BrandTile
                 href={LINKS.marketops}
