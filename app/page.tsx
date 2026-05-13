@@ -49,13 +49,9 @@ export default function Home() {
             </span>
           </p>
 
+          {/* Self-definition + live projects on the same line */}
           <p className="mt-7 sm:mt-6">
-            I make B2B software and consumer apps.
-          </p>
-
-          {/* Live projects */}
-          <p className="mt-7 sm:mt-6">
-            Right now I&apos;m building{" "}
+            I make B2B software and consumer apps{" "}
             <span className="tile-row align-middle ml-2">
               <BrandTile
                 href={LINKS.marketops}
@@ -72,13 +68,14 @@ export default function Home() {
                 bg="#161B2C"
                 fg="#B65BFF"
                 letter="z"
+                letterOffsetY={-2}
               />
             </span>
           </p>
 
-          {/* Launching soon */}
+          {/* Waitlist */}
           <p className="mt-7 sm:mt-6">
-            Launching soon{" "}
+            Join the waitlist{" "}
             <span className="tile-row align-middle ml-2">
               <BrandTile
                 href={LINKS.waitlistLinkedIn}

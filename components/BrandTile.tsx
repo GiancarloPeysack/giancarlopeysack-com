@@ -11,6 +11,8 @@ type BrandTileProps = {
   italic?: boolean;
   children?: ReactNode;
   borderColor?: string;
+  /** Vertical pixel nudge for the letter (e.g. -2 to lift a lowercase glyph). */
+  letterOffsetY?: number;
 };
 
 /**
@@ -27,6 +29,7 @@ export function BrandTile({
   italic,
   children,
   borderColor,
+  letterOffsetY = 0,
 }: BrandTileProps) {
   return (
     <Link
@@ -53,6 +56,9 @@ export function BrandTile({
             style={{
               color: fg,
               fontStyle: italic ? "italic" : "normal",
+              transform: letterOffsetY
+                ? `translateY(${letterOffsetY}px)`
+                : undefined,
             }}
           >
             {letter}
