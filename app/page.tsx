@@ -18,7 +18,7 @@ const LINKS = {
   linkedin: "https://linkedin.com/in/gcpeysack",
   tiktok: "#",
   instagram: "#",
-  substack: "#",
+  substack: "https://substack.com/@giancarlopeysack351293",
   sayHi: "mailto:gc.peysack@gmail.com?subject=Hi",
 };
 
@@ -31,7 +31,7 @@ export default function Home() {
           style={{
             fontSize: "clamp(20px, 5.6vw, 26px)",
             lineHeight: 1.5,
-            fontWeight: 450,
+            fontWeight: 400,
           }}
         >
           {/* Greeting + avatar */}
@@ -49,7 +49,7 @@ export default function Home() {
             </span>
           </p>
 
-          {/* Self-definition + live projects on the same line */}
+          {/* Projects on one line, writing on its own line */}
           <p className="mt-7 sm:mt-6">
             I make B2B software and consumer apps{" "}
             <span className="tile-row align-middle ml-2">
@@ -72,45 +72,9 @@ export default function Home() {
               />
             </span>
           </p>
-
-          {/* Waitlist */}
+          {/* Share about building (all the channels — socials + substack) */}
           <p className="mt-7 sm:mt-6">
-            Join the waitlist{" "}
-            <span className="tile-row align-middle ml-2">
-              <BrandTile
-                href={LINKS.waitlistLinkedIn}
-                label="LinkedIn weekly tool — join waitlist"
-                tooltip="LinkedIn weekly tool"
-                bg="#0A66C2"
-                fg="#FFFFFF"
-              >
-                <span
-                  className="text-white font-extrabold leading-none"
-                  style={{ fontSize: "18px", letterSpacing: "-0.04em" }}
-                >
-                  in
-                </span>
-              </BrandTile>
-              <BrandTile
-                href={LINKS.waitlistContent}
-                label="Content agent tool — join waitlist"
-                tooltip="Content agent tool"
-                bg="#111111"
-                fg="#FFFFFF"
-              >
-                <span
-                  className="text-white leading-none"
-                  style={{ fontSize: "22px" }}
-                >
-                  ✦
-                </span>
-              </BrandTile>
-            </span>
-          </p>
-
-          {/* Socials */}
-          <p className="mt-7 sm:mt-6">
-            I also post on{" "}
+            and share about building{" "}
             <span className="tile-row stack align-middle ml-2">
               <BrandTile
                 href={LINKS.linkedin}
@@ -139,10 +103,45 @@ export default function Home() {
               <BrandTile
                 href={LINKS.substack}
                 label="Substack"
-                tooltip="Substack (soon)"
+                tooltip="@giancarlopeysack"
                 bg="#FF6719"
               >
                 <SubstackIcon />
+              </BrandTile>
+            </span>
+          </p>
+
+          {/* Launching soon + waitlist (merged) */}
+          <p className="mt-7 sm:mt-6">
+            Launching soon, join the waitlist{" "}
+            <span className="tile-row align-middle ml-2">
+              <BrandTile
+                href={LINKS.waitlistLinkedIn}
+                label="LinkedIn weekly tool, join waitlist"
+                tooltip="LinkedIn weekly tool"
+                bg="#0A66C2"
+                fg="#FFFFFF"
+              >
+                <span
+                  className="text-white font-extrabold leading-none"
+                  style={{ fontSize: "18px", letterSpacing: "-0.04em" }}
+                >
+                  in
+                </span>
+              </BrandTile>
+              <BrandTile
+                href={LINKS.waitlistContent}
+                label="Content agent tool, join waitlist"
+                tooltip="Content agent tool"
+                bg="#111111"
+                fg="#FFFFFF"
+              >
+                <span
+                  className="text-white leading-none"
+                  style={{ fontSize: "22px" }}
+                >
+                  ✦
+                </span>
               </BrandTile>
             </span>
           </p>
