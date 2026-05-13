@@ -21,8 +21,8 @@ a:hover {
 }
 
 /* ---------------------------------------------------------------------------
-   Tile row: tiles are separated by default. Each tile lifts and shows a
-   tooltip on its own hover.
+   Tile row — default: tiles separated with a small gap.
+   .tile-row.stack — Chris-style overlapping deck that spreads on hover.
    --------------------------------------------------------------------------- */
 .tile-row {
   display: inline-flex;
@@ -32,12 +32,33 @@ a:hover {
 }
 .tile-row .tile {
   position: relative;
-  transition: transform 220ms ease-out;
+  transition: transform 220ms ease-out, margin 350ms cubic-bezier(0.2, 0.9, 0.3, 1);
 }
 .tile-row .tile:hover {
   transform: translateY(-3px) scale(1.04);
   z-index: 5;
 }
+
+/* Stack variant: overlap by default, spread on group hover */
+.tile-row.stack {
+  gap: 0;
+}
+.tile-row.stack .tile {
+  margin-left: -14px;
+}
+.tile-row.stack .tile:first-child {
+  margin-left: 0;
+}
+.tile-row.stack:hover .tile {
+  margin-left: 6px;
+}
+.tile-row.stack:hover .tile:first-child {
+  margin-left: 0;
+}
+.tile-row.stack .tile:nth-child(1) { z-index: 4; }
+.tile-row.stack .tile:nth-child(2) { z-index: 3; }
+.tile-row.stack .tile:nth-child(3) { z-index: 2; }
+.tile-row.stack .tile:nth-child(4) { z-index: 1; }
 
 /* Tooltip pill */
 .tile-tooltip {
@@ -64,82 +85,27 @@ a:hover {
 }
 
 /* ---------------------------------------------------------------------------
-   Phone-mockup tiles
+   Brand tile — flat rounded square (Chris-style app icon)
    --------------------------------------------------------------------------- */
-.phone-tile {
-  width: 52px;
-  height: 86px;
+.brand-tile {
+  width: 44px;
+  height: 44px;
   border-radius: 11px;
-  display: inline-block;
-  position: relative;
 }
-.phone-tile-notch {
-  top: 5px;
-  width: 14px;
-  height: 3px;
-  border-radius: 999px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.phone-tile-letter {
+.brand-tile-letter {
   font-weight: 800;
-  font-size: 40px;
+  font-size: 24px;
   line-height: 1;
   letter-spacing: -0.02em;
-  transform: translateY(2px);
 }
 @media (min-width: 640px) {
-  .phone-tile {
-    width: 36px;
-    height: 60px;
-    border-radius: 8px;
-  }
-  .phone-tile-notch {
-    top: 3px;
-    width: 11px;
-    height: 2px;
-  }
-  .phone-tile-letter {
-    font-size: 27px;
-    transform: translateY(1px);
-  }
-}
-
-/* ---------------------------------------------------------------------------
-   Social tiles
-   --------------------------------------------------------------------------- */
-.social-tile {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-@media (min-width: 640px) {
-  .social-tile {
+  .brand-tile {
     width: 40px;
     height: 40px;
     border-radius: 10px;
   }
-}
-
-/* ---------------------------------------------------------------------------
-   Coming-soon icon (no hover deck — these aren't a stack)
-   --------------------------------------------------------------------------- */
-.coming-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  font-size: 18px;
-}
-@media (min-width: 640px) {
-  .coming-icon {
-    width: 28px;
-    height: 28px;
-    border-radius: 7px;
-    font-size: 13px;
+  .brand-tile-letter {
+    font-size: 22px;
   }
 }
 

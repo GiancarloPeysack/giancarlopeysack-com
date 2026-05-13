@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PhoneTile } from "@/components/PhoneTile";
-import { SocialTile } from "@/components/SocialTile";
+import { BrandTile } from "@/components/BrandTile";
 import {
   LinkedInIcon,
   TikTokIcon,
@@ -12,15 +11,14 @@ import {
 const LINKS = {
   marketops: "https://marketopsiq.com",
   genzi: "https://genzi.app",
-  // TODO: swap to Tally/Typeform/Firebase later — mailto works as fallback
   waitlistLinkedIn:
     "mailto:gc.peysack@gmail.com?subject=Waitlist%3A%20LinkedIn%20weekly%20tool&body=Please%20add%20me%20to%20the%20waitlist.",
   waitlistContent:
     "mailto:gc.peysack@gmail.com?subject=Waitlist%3A%20Content%20agent%20tool&body=Please%20add%20me%20to%20the%20waitlist.",
   linkedin: "https://linkedin.com/in/gcpeysack",
-  tiktok: "#", // TODO: paste TikTok URL
-  instagram: "#", // TODO: paste Instagram URL
-  substack: "#", // TODO: paste Substack URL
+  tiktok: "#",
+  instagram: "#",
+  substack: "#",
   sayHi: "mailto:gc.peysack@gmail.com?subject=Hi",
 };
 
@@ -51,124 +49,100 @@ export default function Home() {
             </span>
           </p>
 
-          <p className="mt-7 sm:mt-6">I like to build stuff.</p>
-
           {/* Live projects */}
-          <div className="mt-7 sm:mt-6">
-            <p>
-              Live:{" "}
-              <span className="tile-row ml-2">
-                <PhoneTile
-                  href={LINKS.marketops}
-                  label="MarketOpsIQ"
-                  tooltip="MarketOpsIQ"
-                  bg="#0F1116"
-                  fg="#FFFFFF"
-                  letter="M"
-                />
-                <PhoneTile
-                  href={LINKS.genzi}
-                  label="Genzi"
-                  tooltip="Genzi"
-                  bg="#161B2C"
-                  fg="#B65BFF"
-                  letter="z"
-                />
-              </span>
-            </p>
-            <div className="mt-2 flex flex-wrap gap-x-6 gap-y-1 text-[14px] sm:text-[14px] italic text-gray-500">
-              <span>
-                <span className="font-semibold not-italic text-gray-700">
-                  MarketOpsIQ
-                </span>
-                {" · "}AI shelf intel for CPG brands
-              </span>
-              <span>
-                <span className="font-semibold not-italic text-gray-700">
-                  Genzi
-                </span>
-                {" · "}music social media app
-              </span>
-            </div>
-          </div>
+          <p className="mt-7 sm:mt-6">
+            Right now I&apos;m building{" "}
+            <span className="tile-row align-middle ml-2">
+              <BrandTile
+                href={LINKS.marketops}
+                label="MarketOpsIQ"
+                tooltip="MarketOpsIQ"
+                bg="#0F1116"
+                fg="#FFFFFF"
+                letter="M"
+              />
+              <BrandTile
+                href={LINKS.genzi}
+                label="Genzi"
+                tooltip="Genzi"
+                bg="#161B2C"
+                fg="#B65BFF"
+                letter="z"
+              />
+            </span>
+          </p>
 
-          {/* Coming soon */}
-          <p className="mt-7 sm:mt-6">Coming soon:</p>
-          <ul className="mt-4 sm:mt-3 space-y-4 sm:space-y-3 list-none pl-0">
-            <li className="flex items-center gap-3">
-              <span
-                aria-hidden
-                className="coming-icon inline-flex items-center justify-center"
-                style={{
-                  background: "#0A66C2",
-                  color: "white",
-                  fontWeight: 700,
-                  flexShrink: 0,
-                }}
+          {/* Launching soon */}
+          <p className="mt-7 sm:mt-6">
+            Launching soon{" "}
+            <span className="tile-row align-middle ml-2">
+              <BrandTile
+                href={LINKS.waitlistLinkedIn}
+                label="LinkedIn weekly tool — join waitlist"
+                tooltip="LinkedIn weekly tool"
+                bg="#0A66C2"
+                fg="#FFFFFF"
               >
-                in
-              </span>
-              <span>
-                LinkedIn weekly tool.{" "}
-                <Link href={LINKS.waitlistLinkedIn}>Join waitlist →</Link>
-              </span>
-            </li>
-            <li className="flex items-center gap-3">
-              <span
-                aria-hidden
-                className="coming-icon inline-flex items-center justify-center"
-                style={{
-                  background: "#111111",
-                  color: "white",
-                  fontWeight: 700,
-                  flexShrink: 0,
-                }}
+                <span
+                  className="text-white font-extrabold leading-none"
+                  style={{ fontSize: "18px", letterSpacing: "-0.04em" }}
+                >
+                  in
+                </span>
+              </BrandTile>
+              <BrandTile
+                href={LINKS.waitlistContent}
+                label="Content agent tool — join waitlist"
+                tooltip="Content agent tool"
+                bg="#111111"
+                fg="#FFFFFF"
               >
-                ✦
-              </span>
-              <span>
-                Content agent tool.{" "}
-                <Link href={LINKS.waitlistContent}>Join waitlist →</Link>
-              </span>
-            </li>
-          </ul>
+                <span
+                  className="text-white leading-none"
+                  style={{ fontSize: "22px" }}
+                >
+                  ✦
+                </span>
+              </BrandTile>
+            </span>
+          </p>
 
           {/* Socials */}
-          <p className="mt-8 sm:mt-7">
-            I also post about building on{" "}
-            <span className="tile-row ml-2">
-              <SocialTile
+          <p className="mt-7 sm:mt-6">
+            I also post on{" "}
+            <span className="tile-row stack align-middle ml-2">
+              <BrandTile
                 href={LINKS.linkedin}
                 label="LinkedIn"
                 tooltip="@gcpeysack"
                 bg="#0A66C2"
               >
                 <LinkedInIcon />
-              </SocialTile>
-              <SocialTile
+              </BrandTile>
+              <BrandTile
                 href={LINKS.tiktok}
                 label="TikTok"
-                tooltip="TikTok (coming soon)"
+                tooltip="TikTok (soon)"
                 bg="#000000"
               >
                 <TikTokIcon />
-              </SocialTile>
-              <SocialTile
+              </BrandTile>
+              <BrandTile
                 href={LINKS.instagram}
                 label="Instagram"
-                tooltip="Instagram (coming soon)"
+                tooltip="Instagram (soon)"
                 bg="linear-gradient(135deg, #FFD600 0%, #FF7A00 30%, #FF0069 60%, #D300C5 80%, #7638FA 100%)"
               >
                 <InstagramIcon />
-              </SocialTile>
-              <SocialTile
+              </BrandTile>
+              <BrandTile
                 href={LINKS.substack}
                 label="Substack"
-                tooltip="Substack (coming soon)"
+                tooltip="Substack (soon)"
                 bg="#FF6719"
               >
                 <SubstackIcon />
-              </SocialTile>
+              </BrandTile>
             </span>
           </p>
 
