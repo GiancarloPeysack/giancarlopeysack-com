@@ -12,9 +12,9 @@ const LINKS = {
   marketops: "https://marketopsiq.com",
   genzi: "https://genzi.app",
   waitlistLinkedIn:
-    "mailto:gc.peysack@gmail.com?subject=Waitlist%3A%20LinkedIn%20weekly%20tool&body=Please%20add%20me%20to%20the%20waitlist.",
+    "mailto:gc.peysack@gmail.com?subject=Waitlist%3A%20LinkedIn%20Weekly&body=Please%20add%20me%20to%20the%20LinkedIn%20Weekly%20waitlist.",
   waitlistContent:
-    "mailto:gc.peysack@gmail.com?subject=Waitlist%3A%20Content%20agent%20tool&body=Please%20add%20me%20to%20the%20waitlist.",
+    "mailto:gc.peysack@gmail.com?subject=Waitlist%3A%20Content%20Mate&body=Please%20add%20me%20to%20the%20Content%20Mate%20waitlist.",
   linkedin: "https://linkedin.com/in/gcpeysack",
   tiktok: "#",
   instagram: "#",
@@ -113,12 +113,12 @@ export default function Home() {
 
           {/* Launching soon + waitlist (merged) */}
           <p className="mt-7 sm:mt-6">
-            Join the waitlist, my content-assistant tools{" "}
+            Join the waitlist for LinkedIn Weekly and Content Mate{" "}
             <span className="tile-row align-middle ml-2">
               <BrandTile
                 href={LINKS.waitlistLinkedIn}
-                label="LinkedIn weekly tool, join waitlist"
-                tooltip="LinkedIn weekly tool"
+                label="LinkedIn Weekly, join waitlist"
+                tooltip="LinkedIn Weekly · multi-agent growth tool"
                 bg="#0A66C2"
                 fg="#FFFFFF"
               >
@@ -131,8 +131,8 @@ export default function Home() {
               </BrandTile>
               <BrandTile
                 href={LINKS.waitlistContent}
-                label="Content agent tool, join waitlist"
-                tooltip="Content agent tool"
+                label="Content Mate, join waitlist"
+                tooltip="Content Mate · AI video pipeline"
                 bg="#111111"
                 fg="#FFFFFF"
               >
