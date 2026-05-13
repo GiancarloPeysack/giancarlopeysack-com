@@ -34,10 +34,18 @@ a:hover {
 }
 .tile-row .tile {
   position: relative;
-  transition: transform 220ms ease-out, margin 350ms cubic-bezier(0.2, 0.9, 0.3, 1);
+  transition: transform 260ms cubic-bezier(0.2, 0.9, 0.3, 1),
+    margin 350ms cubic-bezier(0.2, 0.9, 0.3, 1);
 }
+/* Subtle scattered-deck rotations — gives the casual "tossed on the table"
+   feel Chris's icons have instead of a stiff row. */
+.tile-row .tile:nth-child(1) { transform: rotate(-2.5deg); }
+.tile-row .tile:nth-child(2) { transform: rotate(1.5deg); }
+.tile-row .tile:nth-child(3) { transform: rotate(-1.5deg); }
+.tile-row .tile:nth-child(4) { transform: rotate(2.5deg); }
+/* On hover the tile straightens, lifts, and zooms slightly */
 .tile-row .tile:hover {
-  transform: translateY(-3px) scale(1.04);
+  transform: rotate(0deg) translateY(-3px) scale(1.06);
   z-index: 5;
 }
 
