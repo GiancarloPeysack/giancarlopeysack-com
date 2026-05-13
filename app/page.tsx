@@ -51,12 +51,12 @@ export default function Home() {
 
           {/* AI products: B2B + consumer, both inline */}
           <p className="mt-7 sm:mt-6">
-            I make AI software for B2B and consumers{" "}
+            I make B2B and consumer apps{" "}
             <span className="tile-row align-middle ml-2">
               <BrandTile
                 href={LINKS.marketops}
                 label="MarketOpsIQ"
-                tooltip="MarketOpsIQ"
+                tooltip="MarketOpsIQ · AI shelf intel for CPG"
                 bg="#0F1116"
                 fg="#FFFFFF"
                 letter="M"
@@ -113,24 +113,46 @@ export default function Home() {
 
           {/* Launching soon + waitlist (merged) */}
           <p className="mt-7 sm:mt-6">
-            Join the waitlist for Riff and Atom{" "}
+            Join the waitlist for my content creation tools{" "}
             <span className="tile-row align-middle ml-2">
               <BrandTile
                 href={LINKS.waitlistLinkedIn}
-                label="Riff, join waitlist"
-                tooltip="Riff · multi-agent LinkedIn growth tool"
+                label="AI LinkedIn growth tool, join waitlist"
+                tooltip="AI LinkedIn growth tool"
                 bg="#15101A"
-                fg="#FF6B4A"
-                letter="R"
-              />
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden
+                  style={{ width: "60%", height: "60%" }}
+                >
+                  <path
+                    d="M7 17 L17 7 M10 7 L17 7 L17 14"
+                    stroke="#FF6B4A"
+                    strokeWidth="2.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </BrandTile>
               <BrandTile
                 href={LINKS.waitlistContent}
-                label="Atom, join waitlist"
-                tooltip="Atom · AI short-form video pipeline"
+                label="AI video creation tool, join waitlist"
+                tooltip="AI short-form video tool"
                 bg="#0F1A1F"
-                fg="#4ADE80"
-                letter="A"
-              />
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="#4ADE80"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden
+                  style={{ width: "58%", height: "58%", transform: "translateX(1px)" }}
+                >
+                  <path d="M7 5.5 L7 18.5 L19 12 Z" />
+                </svg>
+              </BrandTile>
             </span>
           </p>
 
