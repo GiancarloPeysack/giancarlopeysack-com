@@ -11,10 +11,8 @@ import {
 const LINKS = {
   marketops: "https://marketopsiq.com",
   genzi: "https://genzi.app",
-  waitlistLinkedIn:
-    "mailto:gc.peysack@gmail.com?subject=Waitlist%3A%20Riff&body=Please%20add%20me%20to%20the%20Riff%20waitlist.",
-  waitlistContent:
-    "mailto:gc.peysack@gmail.com?subject=Waitlist%3A%20Atom&body=Please%20add%20me%20to%20the%20Atom%20waitlist.",
+  waitlistLinkedIn: "/waitlist/linkedin",
+  waitlistContent: "/waitlist/video",
   linkedin: "https://linkedin.com/in/gcpeysack",
   tiktok: "#",
   instagram: "#",
