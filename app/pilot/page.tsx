@@ -85,6 +85,15 @@ export default function PilotPage() {
         createdAt: serverTimestamp(),
         source: "giancarlopeysack.com/pilot",
       });
+      // Fire-and-forget email notification to Giancarlo (best-effort)
+      fetch("/api/notify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "pilot",
+          data: { name, company, email, category, stores, currentProcess: process, timeline },
+        }),
+      }).catch(() => {});
       setStatus("ok");
     } catch (err) {
       console.error(err);

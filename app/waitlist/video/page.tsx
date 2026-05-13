@@ -50,6 +50,14 @@ export default function VideoWaitlist() {
         createdAt: serverTimestamp(),
         source: "giancarlopeysack.com/waitlist/video",
       });
+      fetch("/api/notify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "video",
+          data: { name, email, volume },
+        }),
+      }).catch(() => {});
       setStatus("ok");
     } catch (err) {
       console.error(err);

@@ -61,6 +61,14 @@ export default function SponsorPage() {
         createdAt: serverTimestamp(),
         source: "giancarlopeysack.com/sponsor",
       });
+      fetch("/api/notify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "sponsor",
+          data: { name, company, email, sponsorshipType, companyType },
+        }),
+      }).catch(() => {});
       setStatus("ok");
     } catch (err) {
       console.error(err);

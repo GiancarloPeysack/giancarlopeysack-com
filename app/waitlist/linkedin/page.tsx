@@ -51,6 +51,14 @@ export default function LinkedInWaitlist() {
         createdAt: serverTimestamp(),
         source: "giancarlopeysack.com/waitlist/linkedin",
       });
+      fetch("/api/notify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "linkedin",
+          data: { name, email, frequency },
+        }),
+      }).catch(() => {});
       setStatus("ok");
     } catch (err) {
       console.error(err);
