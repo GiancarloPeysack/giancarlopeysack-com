@@ -141,20 +141,24 @@ export default function Home() {
           {/* Divider */}
           <hr className="my-10 sm:my-12 border-0 border-t border-gray-200" />
 
-          {/* Contact CTAs — explicit fontSize to guarantee match with paragraphs above */}
+          {/* Contact CTAs — explicitly smaller (~70% of main paragraphs), like Chris's */}
           <div
-            className="space-y-4 sm:space-y-3"
-            style={{ fontSize: "1em", lineHeight: 1.55 }}
+            className="space-y-3 sm:space-y-2"
+            style={{
+              fontSize: "clamp(14px, 3.4vw, 16px)",
+              lineHeight: 1.55,
+              fontWeight: 400,
+            }}
           >
-            <p style={{ fontSize: "inherit" }}>
+            <p>
               Looking to pilot MarketOpsIQ for your company?{" "}
               <Link href="/pilot">Click here.</Link>
             </p>
-            <p style={{ fontSize: "inherit" }}>
+            <p>
               Interested in sponsoring a video?{" "}
               <Link href="/sponsor">Click here.</Link>
             </p>
-            <p style={{ fontSize: "inherit" }}>
+            <p>
               Want to say hi? <Link href={LINKS.sayHi}>Click here.</Link>
             </p>
           </div>
