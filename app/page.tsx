@@ -49,6 +49,10 @@ export default function Home() {
             </span>
           </p>
 
+          <p className="mt-7 sm:mt-6">
+            I make B2B software and consumer apps.
+          </p>
+
           {/* Live projects */}
           <p className="mt-7 sm:mt-6">
             Right now I&apos;m building{" "}
@@ -147,16 +151,16 @@ export default function Home() {
           </p>
 
           {/* Divider */}
-          <hr className="my-12 border-0 border-t border-gray-200" />
+          <hr className="my-8 border-0 border-t border-gray-200" />
 
           {/* Contact CTAs */}
           <div className="space-y-3.5 sm:space-y-2.5">
             <p>
-              Want to pilot MarketOpsIQ for your company?{" "}
+              Looking to pilot MarketOpsIQ for your company?{" "}
               <Link href="/pilot">Click here.</Link>
             </p>
             <p>
-              Want to sponsor one of my videos?{" "}
+              Interested in sponsoring a video?{" "}
               <Link href="/sponsor">Click here.</Link>
             </p>
             <p>
