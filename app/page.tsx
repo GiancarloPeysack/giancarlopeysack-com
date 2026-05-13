@@ -12,9 +12,9 @@ const LINKS = {
   marketops: "https://marketopsiq.com",
   genzi: "https://genzi.app",
   waitlistLinkedIn:
-    "mailto:gc.peysack@gmail.com?subject=Waitlist%3A%20LinkedIn%20Weekly&body=Please%20add%20me%20to%20the%20LinkedIn%20Weekly%20waitlist.",
+    "mailto:gc.peysack@gmail.com?subject=Waitlist%3A%20Riff&body=Please%20add%20me%20to%20the%20Riff%20waitlist.",
   waitlistContent:
-    "mailto:gc.peysack@gmail.com?subject=Waitlist%3A%20Content%20Mate&body=Please%20add%20me%20to%20the%20Content%20Mate%20waitlist.",
+    "mailto:gc.peysack@gmail.com?subject=Waitlist%3A%20Atom&body=Please%20add%20me%20to%20the%20Atom%20waitlist.",
   linkedin: "https://linkedin.com/in/gcpeysack",
   tiktok: "#",
   instagram: "#",
@@ -113,36 +113,24 @@ export default function Home() {
 
           {/* Launching soon + waitlist (merged) */}
           <p className="mt-7 sm:mt-6">
-            Join the waitlist for LinkedIn Weekly and Content Mate{" "}
+            Join the waitlist for Riff and Atom{" "}
             <span className="tile-row align-middle ml-2">
               <BrandTile
                 href={LINKS.waitlistLinkedIn}
-                label="LinkedIn Weekly, join waitlist"
-                tooltip="LinkedIn Weekly · multi-agent growth tool"
-                bg="#0A66C2"
-                fg="#FFFFFF"
-              >
-                <span
-                  className="text-white font-extrabold leading-none"
-                  style={{ fontSize: "18px", letterSpacing: "-0.04em" }}
-                >
-                  in
-                </span>
-              </BrandTile>
+                label="Riff, join waitlist"
+                tooltip="Riff · multi-agent LinkedIn growth tool"
+                bg="#15101A"
+                fg="#FF6B4A"
+                letter="R"
+              />
               <BrandTile
                 href={LINKS.waitlistContent}
-                label="Content Mate, join waitlist"
-                tooltip="Content Mate · AI video pipeline"
-                bg="#111111"
-                fg="#FFFFFF"
-              >
-                <span
-                  className="text-white leading-none"
-                  style={{ fontSize: "22px" }}
-                >
-                  ✦
-                </span>
-              </BrandTile>
+                label="Atom, join waitlist"
+                tooltip="Atom · AI short-form video pipeline"
+                bg="#0F1A1F"
+                fg="#4ADE80"
+                letter="A"
+              />
             </span>
           </p>
 
