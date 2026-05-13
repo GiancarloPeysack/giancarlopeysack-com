@@ -113,45 +113,35 @@ export default function Home() {
 
           {/* Launching soon + waitlist (merged) */}
           <p className="mt-7 sm:mt-6">
-            Join the waitlist for my content creation tools{" "}
+            Join the waitlist for my AI tools{" "}
             <span className="tile-row align-middle ml-2">
               <BrandTile
                 href={LINKS.waitlistLinkedIn}
                 label="AI LinkedIn growth tool, join waitlist"
                 tooltip="AI LinkedIn growth tool"
-                bg="#15101A"
+                bg="#0A66C2"
+                fg="#FFFFFF"
               >
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden
-                  style={{ width: "60%", height: "60%" }}
+                <span
+                  className="text-white font-extrabold leading-none"
+                  style={{ fontSize: "18px", letterSpacing: "-0.04em" }}
                 >
-                  <path
-                    d="M7 17 L17 7 M10 7 L17 7 L17 14"
-                    stroke="#FF6B4A"
-                    strokeWidth="2.6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                  in
+                </span>
               </BrandTile>
               <BrandTile
                 href={LINKS.waitlistContent}
-                label="AI video creation tool, join waitlist"
+                label="AI short-form video tool, join waitlist"
                 tooltip="AI short-form video tool"
-                bg="#0F1A1F"
+                bg="#111111"
+                fg="#FFFFFF"
               >
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="#4ADE80"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden
-                  style={{ width: "58%", height: "58%", transform: "translateX(1px)" }}
+                <span
+                  className="text-white leading-none"
+                  style={{ fontSize: "22px" }}
                 >
-                  <path d="M7 5.5 L7 18.5 L19 12 Z" />
-                </svg>
+                  ✦
+                </span>
               </BrandTile>
             </span>
           </p>
