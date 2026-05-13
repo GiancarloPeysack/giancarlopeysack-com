@@ -68,25 +68,16 @@ export default function VideoWaitlist() {
 
   if (status === "ok") {
     return (
-      <main className="min-h-screen w-full bg-white text-black">
-        <div className="mx-auto w-full max-w-[640px] px-6 pt-16 pb-24 sm:pt-20">
-          <h1 className="text-[40px] sm:text-[48px] font-extrabold leading-[1.05] tracking-tight">
-            You&apos;re in.
+      <main className="min-h-screen w-full bg-white text-black flex items-center justify-center px-6">
+        <div className="w-full max-w-[460px] text-center">
+          <h1 className="text-[32px] sm:text-[36px] font-extrabold leading-[1.05] tracking-tight">
+            You&apos;re on the list.
           </h1>
-          <p className="mt-6 text-[18px] sm:text-[19px] leading-[1.6] text-gray-700">
-            I&apos;ll email you the moment the AI video tool opens. Until
-            then, follow along on{" "}
-            <Link
-              href="https://linkedin.com/in/gcpeysack"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </Link>
-            .
+          <p className="mt-4 text-[15px] text-gray-600">
+            I&apos;ll email you the moment the first cohort opens.
           </p>
           <p className="mt-8">
-            <Link href="/" className="text-gray-800 underline">
+            <Link href="/" className="text-gray-800 underline text-[14px]">
               ← Back home
             </Link>
           </p>
@@ -96,43 +87,30 @@ export default function VideoWaitlist() {
   }
 
   return (
-    <main className="min-h-screen w-full bg-white text-black">
-      <div className="mx-auto w-full max-w-[640px] px-6 pt-16 pb-24 sm:pt-20">
-        <div className="mb-8">
+    <main className="min-h-screen w-full bg-white text-black flex items-center justify-center px-6 py-10">
+      <div className="w-full max-w-[460px]">
+        <div className="flex flex-col items-center text-center">
           <Image
             src="/giancarlo.jpg"
             alt="Giancarlo Peysack"
-            width={72}
-            height={72}
+            width={64}
+            height={64}
             priority
             className="rounded-full object-cover"
-            style={{ width: 72, height: 72 }}
+            style={{ width: 64, height: 64 }}
           />
+          <h1 className="mt-5 text-[28px] sm:text-[32px] font-extrabold leading-[1.1] tracking-tight">
+            AI short-form video tool
+          </h1>
+          <p className="mt-3 text-[14px] sm:text-[15px] leading-[1.5] text-gray-600 max-w-[380px]">
+            Topic, script, or clip in. Voice-cloned video out. Captions, 9:16
+            crop, music, auto-published to 9 platforms in one click.
+          </p>
         </div>
 
-        <h1 className="text-[40px] sm:text-[52px] font-extrabold leading-[1.05] tracking-tight">
-          AI short-form video tool
-        </h1>
-
-        <p className="mt-8 text-[17px] sm:text-[18px] leading-[1.65] text-gray-700">
-          A pipeline that turns a topic, script, or long-form video into a
-          finished short-form video. Voice-cloned narration in your voice,
-          lipsync, burned-in captions, music, 9:16 format, all rendered and
-          published to up to nine social platforms in one click.
-        </p>
-
-        <p className="mt-4 text-[17px] sm:text-[18px] leading-[1.65] text-gray-700">
-          Built for founders and creators who want to ship daily short-form
-          content without the daily production overhead.
-        </p>
-
-        <h2 className="mt-10 text-[22px] sm:text-[24px] font-bold tracking-tight">
-          Join the waitlist
-        </h2>
-
-        <form onSubmit={onSubmit} className="mt-6 space-y-8">
+        <form onSubmit={onSubmit} className="mt-7 space-y-4">
           <div>
-            <FieldLabel required>What is your name?</FieldLabel>
+            <FieldLabel required>Name</FieldLabel>
             <TextInput
               name="name"
               placeholder="John Smith"
@@ -143,7 +121,7 @@ export default function VideoWaitlist() {
           </div>
 
           <div>
-            <FieldLabel required>What is your email address?</FieldLabel>
+            <FieldLabel required>Email</FieldLabel>
             <TextInput
               name="email"
               type="email"
@@ -155,13 +133,13 @@ export default function VideoWaitlist() {
           </div>
 
           <div>
-            <FieldLabel>How many videos do you want to publish?</FieldLabel>
+            <FieldLabel>How many videos a week?</FieldLabel>
             <Select
               name="volume"
               value={volume}
               onChange={setVolume}
               options={VOLUMES}
-              placeholder="Select an option..."
+              placeholder="Select..."
             />
           </div>
 
@@ -173,8 +151,8 @@ export default function VideoWaitlist() {
           />
         </form>
 
-        <p className="mt-12">
-          <Link href="/" className="text-gray-800 underline">
+        <p className="mt-6 text-center">
+          <Link href="/" className="text-gray-600 underline text-[13px]">
             ← Back home
           </Link>
         </p>

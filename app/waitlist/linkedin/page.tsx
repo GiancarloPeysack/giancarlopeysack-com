@@ -34,8 +34,6 @@ export default function LinkedInWaitlist() {
     setErrorMsg("");
     const db = getFirebaseDb();
     if (!db) {
-      // Firebase isn't configured yet — fall back to mailto so the visitor
-      // can still reach Giancarlo while infrastructure is being set up.
       const subject = encodeURIComponent("Waitlist: LinkedIn AI tool");
       const body = encodeURIComponent(
         `Name: ${name}\nEmail: ${email}\nFrequency: ${frequency}`
@@ -69,25 +67,16 @@ export default function LinkedInWaitlist() {
 
   if (status === "ok") {
     return (
-      <main className="min-h-screen w-full bg-white text-black">
-        <div className="mx-auto w-full max-w-[640px] px-6 pt-16 pb-24 sm:pt-20">
-          <h1 className="text-[40px] sm:text-[48px] font-extrabold leading-[1.05] tracking-tight">
-            You&apos;re in.
+      <main className="min-h-screen w-full bg-white text-black flex items-center justify-center px-6">
+        <div className="w-full max-w-[460px] text-center">
+          <h1 className="text-[32px] sm:text-[36px] font-extrabold leading-[1.05] tracking-tight">
+            You&apos;re on the list.
           </h1>
-          <p className="mt-6 text-[18px] sm:text-[19px] leading-[1.6] text-gray-700">
-            I&apos;ll email you the moment the LinkedIn AI tool opens its first
-            cohort. Until then, you can follow what I&apos;m building on{" "}
-            <Link
-              href="https://linkedin.com/in/gcpeysack"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </Link>
-            .
+          <p className="mt-4 text-[15px] text-gray-600">
+            I&apos;ll email you the moment the first cohort opens.
           </p>
           <p className="mt-8">
-            <Link href="/" className="text-gray-800 underline">
+            <Link href="/" className="text-gray-800 underline text-[14px]">
               ← Back home
             </Link>
           </p>
@@ -97,45 +86,31 @@ export default function LinkedInWaitlist() {
   }
 
   return (
-    <main className="min-h-screen w-full bg-white text-black">
-      <div className="mx-auto w-full max-w-[640px] px-6 pt-16 pb-24 sm:pt-20">
-        <div className="mb-8">
+    <main className="min-h-screen w-full bg-white text-black flex items-center justify-center px-6 py-10">
+      <div className="w-full max-w-[460px]">
+        <div className="flex flex-col items-center text-center">
           <Image
             src="/giancarlo.jpg"
             alt="Giancarlo Peysack"
-            width={72}
-            height={72}
+            width={64}
+            height={64}
             priority
             className="rounded-full object-cover"
-            style={{ width: 72, height: 72 }}
+            style={{ width: 64, height: 64 }}
           />
+          <h1 className="mt-5 text-[28px] sm:text-[32px] font-extrabold leading-[1.1] tracking-tight">
+            AI LinkedIn growth tool
+          </h1>
+          <p className="mt-3 text-[14px] sm:text-[15px] leading-[1.5] text-gray-600 max-w-[380px]">
+            Multi-agent system that learns your voice from past posts, scores
+            every LinkedIn post for engagement-worthiness, and drafts comments
+            and posts in your tone.
+          </p>
         </div>
 
-        <h1 className="text-[40px] sm:text-[52px] font-extrabold leading-[1.05] tracking-tight">
-          LinkedIn AI growth tool
-        </h1>
-
-        <p className="mt-8 text-[17px] sm:text-[18px] leading-[1.65] text-gray-700">
-          A multi-agent system that learns your voice from your past posts,
-          drafts comments and full posts in that voice, and scores every
-          LinkedIn post you see for how worth engaging with it is. Everything
-          is guided by a strategy you design once (your posture, pillars, hook
-          patterns, voice rules, north-star metric).
-        </p>
-
-        <p className="mt-4 text-[17px] sm:text-[18px] leading-[1.65] text-gray-700">
-          Built for builders and operators who want to grow on LinkedIn
-          methodically, in their own voice, without spending hours a day
-          inside the app.
-        </p>
-
-        <h2 className="mt-10 text-[22px] sm:text-[24px] font-bold tracking-tight">
-          Join the waitlist
-        </h2>
-
-        <form onSubmit={onSubmit} className="mt-6 space-y-8">
+        <form onSubmit={onSubmit} className="mt-7 space-y-4">
           <div>
-            <FieldLabel required>What is your name?</FieldLabel>
+            <FieldLabel required>Name</FieldLabel>
             <TextInput
               name="name"
               placeholder="John Smith"
@@ -146,7 +121,7 @@ export default function LinkedInWaitlist() {
           </div>
 
           <div>
-            <FieldLabel required>What is your email address?</FieldLabel>
+            <FieldLabel required>Email</FieldLabel>
             <TextInput
               name="email"
               type="email"
@@ -158,13 +133,13 @@ export default function LinkedInWaitlist() {
           </div>
 
           <div>
-            <FieldLabel>How often do you want to post on LinkedIn?</FieldLabel>
+            <FieldLabel>How often do you want to post?</FieldLabel>
             <Select
               name="frequency"
               value={frequency}
               onChange={setFrequency}
               options={FREQUENCY_OPTIONS}
-              placeholder="Select an option..."
+              placeholder="Select..."
             />
           </div>
 
@@ -176,8 +151,8 @@ export default function LinkedInWaitlist() {
           />
         </form>
 
-        <p className="mt-12">
-          <Link href="/" className="text-gray-800 underline">
+        <p className="mt-6 text-center">
+          <Link href="/" className="text-gray-600 underline text-[13px]">
             ← Back home
           </Link>
         </p>
