@@ -43,11 +43,11 @@ export function BrandTile({
         className="brand-tile inline-flex items-center justify-center"
         style={{
           background: bg,
-          // 1.5px white ring separates adjacent tiles (especially dark ones),
+          // 2.5px white ring separates adjacent tiles (especially dark ones),
           // disappears visually against the white page background when isolated.
           boxShadow: borderColor
             ? `0 0 0 1px ${borderColor}, 0 1px 3px rgba(0,0,0,0.10)`
-            : "0 0 0 1.5px #ffffff, 0 1px 3px rgba(0,0,0,0.12)",
+            : "0 0 0 2.5px #ffffff, 0 0 0 3px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.12)",
         }}
       >
         {children ? (

@@ -51,7 +51,7 @@ export default function Home() {
 
           {/* AI products: B2B + consumer, both inline */}
           <p className="mt-7 sm:mt-6">
-            I make AI software for B2B and consumers{" "}
+            Founder making AI software for B2B and consumers{" "}
             <span className="tile-row align-middle ml-2">
               <BrandTile
                 href={LINKS.marketops}
@@ -113,7 +113,7 @@ export default function Home() {
 
           {/* Launching soon + waitlist (merged) */}
           <p className="mt-7 sm:mt-6">
-            Launching soon, join the waitlist{" "}
+            A LinkedIn agent and a content agent, join the waitlist{" "}
             <span className="tile-row align-middle ml-2">
               <BrandTile
                 href={LINKS.waitlistLinkedIn}
