@@ -31,6 +31,12 @@ a:hover {
   align-items: center;
   vertical-align: middle;
   gap: 8px;
+  position: relative;
+}
+/* When any tile in a row is being hovered, lift the whole row above other
+   rows so the tooltip (which renders upward) clears the row above it. */
+.tile-row:hover {
+  z-index: 100;
 }
 .tile-row .tile {
   position: relative;
@@ -72,7 +78,7 @@ a:hover {
   .tile-row .tile:nth-child(4) { z-index: 1; }
 }
 
-/* Tooltip pill */
+/* Tooltip pill — high z-index so it stacks above sibling tiles + adjacent rows */
 .tile-tooltip {
   position: absolute;
   bottom: 100%;
@@ -90,6 +96,7 @@ a:hover {
   pointer-events: none;
   transition: opacity 160ms ease, transform 160ms ease;
   margin-bottom: 8px;
+  z-index: 1000;
 }
 .tile:hover .tile-tooltip {
   opacity: 1;
