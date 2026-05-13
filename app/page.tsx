@@ -2,6 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { PhoneTile } from "@/components/PhoneTile";
 import { SocialTile } from "@/components/SocialTile";
+import {
+  LinkedInIcon,
+  TikTokIcon,
+  InstagramIcon,
+  SubstackIcon,
+} from "@/components/SocialIcons";
 
 const LINKS = {
   marketops: "https://marketopsiq.com",
@@ -15,9 +21,6 @@ const LINKS = {
   tiktok: "#", // TODO: paste TikTok URL
   instagram: "#", // TODO: paste Instagram URL
   substack: "#", // TODO: paste Substack URL
-  pilot: "https://calendly.com/gc-peysack/new-meeting",
-  sponsor:
-    "mailto:gc.peysack@gmail.com?subject=Sponsor%20a%20video&body=Hi%20Giancarlo%2C%20I%27d%20like%20to%20sponsor%20a%20video.",
   sayHi: "mailto:gc.peysack@gmail.com?subject=Hi",
 };
 
@@ -27,7 +30,11 @@ export default function Home() {
       <div className="mx-auto w-full max-w-[640px] px-6 pt-16 pb-24 sm:pt-24">
         <article
           className="text-black"
-          style={{ fontSize: "clamp(20px, 5.6vw, 26px)", lineHeight: 1.5 }}
+          style={{
+            fontSize: "clamp(20px, 5.6vw, 26px)",
+            lineHeight: 1.5,
+            fontWeight: 450,
+          }}
         >
           {/* Greeting + avatar */}
           <p>
@@ -47,27 +54,43 @@ export default function Home() {
           <p className="mt-7 sm:mt-6">I like to build stuff.</p>
 
           {/* Live projects */}
-          <p className="mt-7 sm:mt-6">
-            Live:{" "}
-            <span className="tile-row ml-2">
-              <PhoneTile
-                href={LINKS.marketops}
-                label="MarketOpsIQ"
-                tooltip="MarketOpsIQ — AI shelf price intel"
-                bg="#0F1116"
-                fg="#FFFFFF"
-                letter="M"
-              />
-              <PhoneTile
-                href={LINKS.genzi}
-                label="Genzi"
-                tooltip="Genzi"
-                bg="#161B2C"
-                fg="#B65BFF"
-                letter="z"
-              />
-            </span>
-          </p>
+          <div className="mt-7 sm:mt-6">
+            <p>
+              Live:{" "}
+              <span className="tile-row ml-2">
+                <PhoneTile
+                  href={LINKS.marketops}
+                  label="MarketOpsIQ"
+                  tooltip="MarketOpsIQ"
+                  bg="#0F1116"
+                  fg="#FFFFFF"
+                  letter="M"
+                />
+                <PhoneTile
+                  href={LINKS.genzi}
+                  label="Genzi"
+                  tooltip="Genzi"
+                  bg="#161B2C"
+                  fg="#B65BFF"
+                  letter="z"
+                />
+              </span>
+            </p>
+            <div className="mt-2 flex flex-wrap gap-x-6 gap-y-1 text-[14px] sm:text-[14px] italic text-gray-500">
+              <span>
+                <span className="font-semibold not-italic text-gray-700">
+                  MarketOpsIQ
+                </span>
+                {" · "}field ops platform for CPG brands
+              </span>
+              <span>
+                <span className="font-semibold not-italic text-gray-700">
+                  Genzi
+                </span>
+                {" · "}music social media app
+              </span>
+            </div>
+          </div>
 
           {/* Coming soon */}
           <p className="mt-7 sm:mt-6">Coming soon:</p>
@@ -86,7 +109,7 @@ export default function Home() {
                 in
               </span>
               <span>
-                LinkedIn weekly tool —{" "}
+                LinkedIn weekly tool.{" "}
                 <Link href={LINKS.waitlistLinkedIn}>Join waitlist →</Link>
               </span>
             </li>
@@ -104,7 +127,7 @@ export default function Home() {
                 ✦
               </span>
               <span>
-                Content agent tool —{" "}
+                Content agent tool.{" "}
                 <Link href={LINKS.waitlistContent}>Join waitlist →</Link>
               </span>
             </li>
@@ -120,9 +143,7 @@ export default function Home() {
                 tooltip="@gcpeysack"
                 bg="#0A66C2"
               >
-                <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style={{ width: "65%", height: "65%" }}>
-                  <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95v5.66H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/>
-                </svg>
+                <LinkedInIcon />
               </SocialTile>
               <SocialTile
                 href={LINKS.tiktok}
@@ -130,9 +151,7 @@ export default function Home() {
                 tooltip="TikTok (coming soon)"
                 bg="#000000"
               >
-                <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style={{ width: "65%", height: "65%" }}>
-                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.07A6.33 6.33 0 0 0 5.8 20.6a6.34 6.34 0 0 0 10.86-4.43V9.62a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-1.05z"/>
-                </svg>
+                <TikTokIcon />
               </SocialTile>
               <SocialTile
                 href={LINKS.instagram}
@@ -140,11 +159,7 @@ export default function Home() {
                 tooltip="Instagram (coming soon)"
                 bg="linear-gradient(135deg, #FFD600 0%, #FF7A00 30%, #FF0069 60%, #D300C5 80%, #7638FA 100%)"
               >
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style={{ width: "65%", height: "65%" }}>
-                  <rect x="3" y="3" width="18" height="18" rx="5" stroke="white" strokeWidth="1.8"/>
-                  <circle cx="12" cy="12" r="4" stroke="white" strokeWidth="1.8"/>
-                  <circle cx="17.3" cy="6.7" r="1.1" fill="white"/>
-                </svg>
+                <InstagramIcon />
               </SocialTile>
               <SocialTile
                 href={LINKS.substack}
@@ -152,9 +167,7 @@ export default function Home() {
                 tooltip="Substack (coming soon)"
                 bg="#FF6719"
               >
-                <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style={{ width: "65%", height: "65%" }}>
-                  <path d="M4 4h16v2.5H4V4zm0 4.5h16V11H4V8.5zM4 13h16v8l-8-4.5L4 21v-8z"/>
-                </svg>
+                <SubstackIcon />
               </SocialTile>
             </span>
           </p>
@@ -166,13 +179,11 @@ export default function Home() {
           <div className="space-y-3.5 sm:space-y-2.5">
             <p>
               Want to pilot MarketOpsIQ for your company?{" "}
-              <Link href={LINKS.pilot} target="_blank" rel="noopener noreferrer">
-                Click here.
-              </Link>
+              <Link href="/pilot">Click here.</Link>
             </p>
             <p>
               Want to sponsor one of my videos?{" "}
-              <Link href={LINKS.sponsor}>Click here.</Link>
+              <Link href="/sponsor">Click here.</Link>
             </p>
             <p>
               Want to say hi? <Link href={LINKS.sayHi}>Click here.</Link>
