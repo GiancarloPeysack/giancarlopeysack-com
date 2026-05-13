@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background: #ffffff;
+  color: #000000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: #1f2937;
+  text-decoration: underline;
+  text-decoration-color: rgba(31, 41, 55, 0.35);
+  text-underline-offset: 3px;
+}
+a:hover {
+  text-decoration-color: rgba(31, 41, 55, 0.9);
+}
+
+/* ---------------------------------------------------------------------------
+   Tile row: overlapping deck by default, spreads on group hover.
+   Each tile lifts slightly on its own hover and shows a tooltip.
+   --------------------------------------------------------------------------- */
+.tile-row {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+.tile-row .tile {
+  margin-left: -14px;
+  transition: margin 350ms cubic-bezier(0.2, 0.9, 0.3, 1),
+    transform 220ms ease-out;
+  position: relative;
+}
+.tile-row .tile:first-child {
+  margin-left: 0;
+}
+.tile-row:hover .tile {
+  margin-left: 6px;
+}
+.tile-row:hover .tile:first-child {
+  margin-left: 0;
+}
+.tile-row .tile:hover {
+  transform: translateY(-3px) scale(1.04);
+  z-index: 5;
+}
+
+/* Stack order: earlier tiles render above later ones (deck look) */
+.tile-row .tile:nth-child(1) { z-index: 4; }
+.tile-row .tile:nth-child(2) { z-index: 3; }
+.tile-row .tile:nth-child(3) { z-index: 2; }
+.tile-row .tile:nth-child(4) { z-index: 1; }
+
+/* Tooltip pill */
+.tile-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-2px);
+  background: #2a2a2a;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 7px 11px;
+  border-radius: 999px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease;
+  margin-bottom: 8px;
+}
+.tile:hover .tile-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-6px);
+}
+
+/* ---------------------------------------------------------------------------
+   Phone-mockup tiles
+   --------------------------------------------------------------------------- */
+.phone-tile {
+  width: 52px;
+  height: 86px;
+  border-radius: 11px;
+  display: inline-block;
+  position: relative;
+}
+.phone-tile-notch {
+  top: 5px;
+  width: 14px;
+  height: 3px;
+  border-radius: 999px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.phone-tile-letter {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  transform: translateY(2px);
+}
+@media (min-width: 640px) {
+  .phone-tile {
+    width: 36px;
+    height: 60px;
+    border-radius: 8px;
+  }
+  .phone-tile-notch {
+    top: 3px;
+    width: 11px;
+    height: 2px;
+  }
+  .phone-tile-letter {
+    font-size: 27px;
+    transform: translateY(1px);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Social tiles
+   --------------------------------------------------------------------------- */
+.social-tile {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 640px) {
+  .social-tile {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Coming-soon icon (no hover deck — these aren't a stack)
+   --------------------------------------------------------------------------- */
+.coming-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+@media (min-width: 640px) {
+  .coming-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    font-size: 13px;
+  }
+}
+
+/* Avatar */
+.avatar {
+  width: 56px;
+  height: 56px;
+}
+@media (min-width: 640px) {
+  .avatar {
+    width: 40px;
+    height: 40px;
+  }
+}
