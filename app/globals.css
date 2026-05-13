@@ -21,8 +21,10 @@ a:hover {
 }
 
 /* ---------------------------------------------------------------------------
-   Tile row — default: tiles separated with a small gap.
-   .tile-row.stack — Chris-style overlapping deck that spreads on hover.
+   Tile row.
+   - Mobile / touch devices: tiles separated with a small gap (no overlap,
+     since there's no hover to "spread" the deck back open).
+   - Desktop with a mouse: tiles overlap slightly by default, spread on hover.
    --------------------------------------------------------------------------- */
 .tile-row {
   display: inline-flex;
@@ -39,26 +41,28 @@ a:hover {
   z-index: 5;
 }
 
-/* Stack variant: overlap by default, spread on group hover */
-.tile-row.stack {
-  gap: 0;
+@media (min-width: 640px) and (hover: hover) {
+  /* Desktop with mouse: gentle deck overlap that spreads on hover */
+  .tile-row {
+    gap: 0;
+  }
+  .tile-row .tile {
+    margin-left: -8px;
+  }
+  .tile-row .tile:first-child {
+    margin-left: 0;
+  }
+  .tile-row:hover .tile {
+    margin-left: 8px;
+  }
+  .tile-row:hover .tile:first-child {
+    margin-left: 0;
+  }
+  .tile-row .tile:nth-child(1) { z-index: 4; }
+  .tile-row .tile:nth-child(2) { z-index: 3; }
+  .tile-row .tile:nth-child(3) { z-index: 2; }
+  .tile-row .tile:nth-child(4) { z-index: 1; }
 }
-.tile-row.stack .tile {
-  margin-left: -14px;
-}
-.tile-row.stack .tile:first-child {
-  margin-left: 0;
-}
-.tile-row.stack:hover .tile {
-  margin-left: 6px;
-}
-.tile-row.stack:hover .tile:first-child {
-  margin-left: 0;
-}
-.tile-row.stack .tile:nth-child(1) { z-index: 4; }
-.tile-row.stack .tile:nth-child(2) { z-index: 3; }
-.tile-row.stack .tile:nth-child(3) { z-index: 2; }
-.tile-row.stack .tile:nth-child(4) { z-index: 1; }
 
 /* Tooltip pill */
 .tile-tooltip {

@@ -75,7 +75,7 @@ export default function Home() {
           {/* Share about building (all the channels — socials + substack) */}
           <p className="mt-7 sm:mt-6">
             and share about building{" "}
-            <span className="tile-row stack align-middle ml-2">
+            <span className="tile-row align-middle ml-2">
               <BrandTile
                 href={LINKS.linkedin}
                 label="LinkedIn"
