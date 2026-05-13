@@ -27,10 +27,10 @@ export default function Home() {
         <article
           className="text-black"
           style={{
-            fontSize: "clamp(24px, 6.5vw, 34px)",
-            lineHeight: 1.5,
-            fontWeight: 500,
-            letterSpacing: "-0.01em",
+            fontSize: "clamp(18px, 4.5vw, 22px)",
+            lineHeight: 1.55,
+            fontWeight: 400,
+            letterSpacing: "-0.005em",
           }}
         >
           {/* Greeting + click-to-zoom avatar */}
