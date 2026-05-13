@@ -81,7 +81,7 @@ export default function Home() {
                 <span className="font-semibold not-italic text-gray-700">
                   MarketOpsIQ
                 </span>
-                {" · "}field ops platform for CPG brands
+                {" · "}AI shelf intel for CPG brands
               </span>
               <span>
                 <span className="font-semibold not-italic text-gray-700">
