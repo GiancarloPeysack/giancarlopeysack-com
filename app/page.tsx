@@ -27,7 +27,7 @@ export default function Home() {
         <article
           className="text-black"
           style={{
-            fontSize: "clamp(22px, 6vw, 28px)",
+            fontSize: "clamp(24px, 6.5vw, 34px)",
             lineHeight: 1.55,
             fontWeight: 400,
             letterSpacing: "-0.005em",
@@ -139,19 +139,22 @@ export default function Home() {
           </p>
 
           {/* Divider */}
-          <hr className="my-8 border-0 border-t border-gray-200" />
+          <hr className="my-10 sm:my-12 border-0 border-t border-gray-200" />
 
-          {/* Contact CTAs */}
-          <div className="space-y-3.5 sm:space-y-2.5">
-            <p>
+          {/* Contact CTAs — explicit fontSize to guarantee match with paragraphs above */}
+          <div
+            className="space-y-4 sm:space-y-3"
+            style={{ fontSize: "1em", lineHeight: 1.55 }}
+          >
+            <p style={{ fontSize: "inherit" }}>
               Looking to pilot MarketOpsIQ for your company?{" "}
               <Link href="/pilot">Click here.</Link>
             </p>
-            <p>
+            <p style={{ fontSize: "inherit" }}>
               Interested in sponsoring a video?{" "}
               <Link href="/sponsor">Click here.</Link>
             </p>
-            <p>
+            <p style={{ fontSize: "inherit" }}>
               Want to say hi? <Link href={LINKS.sayHi}>Click here.</Link>
             </p>
           </div>
