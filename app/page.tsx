@@ -28,9 +28,9 @@ export default function Home() {
           className="text-black"
           style={{
             fontSize: "clamp(24px, 6.5vw, 34px)",
-            lineHeight: 1.55,
-            fontWeight: 400,
-            letterSpacing: "-0.005em",
+            lineHeight: 1.5,
+            fontWeight: 500,
+            letterSpacing: "-0.01em",
           }}
         >
           {/* Greeting + click-to-zoom avatar */}
