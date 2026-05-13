@@ -25,10 +25,10 @@ export default function Home() {
     <main className="min-h-screen w-full bg-white text-black">
       <div className="mx-auto w-full max-w-[640px] px-6 pt-16 pb-24 sm:pt-24">
         <article
-          className="text-black"
+          // Mobile-first sizing: bigger text on phones (matches Chris's
+          // narrow-column-needs-bigger-type design), tighter on desktop.
+          className="text-black text-[26px] sm:text-[22px] leading-[1.45] sm:leading-[1.55]"
           style={{
-            fontSize: "clamp(18px, 4.5vw, 22px)",
-            lineHeight: 1.55,
             fontWeight: 400,
             letterSpacing: "-0.005em",
           }}
