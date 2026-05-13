@@ -43,13 +43,14 @@ a:hover {
   transition: transform 260ms cubic-bezier(0.2, 0.9, 0.3, 1),
     margin 350ms cubic-bezier(0.2, 0.9, 0.3, 1);
 }
-/* Scattered-deck rotations — gives the casual "tossed on the table"
-   feel Chris's icons have instead of a stiff row. */
+/* Scattered-deck rotations at rest — casual "tossed on the table" feel */
 .tile-row .tile:nth-child(1) { transform: rotate(-5deg); }
 .tile-row .tile:nth-child(2) { transform: rotate(3deg); }
 .tile-row .tile:nth-child(3) { transform: rotate(-4deg); }
 .tile-row .tile:nth-child(4) { transform: rotate(5deg); }
-/* On hover the tile straightens, lifts, and zooms slightly */
+/* When the row is hovered, ALL tiles straighten ("open up").
+   Only the specifically hovered tile additionally lifts and zooms. */
+.tile-row:hover .tile { transform: rotate(0deg); }
 .tile-row .tile:hover {
   transform: rotate(0deg) translateY(-3px) scale(1.06);
   z-index: 5;

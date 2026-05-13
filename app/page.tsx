@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { Avatar } from "@/components/Avatar";
 import { BrandTile } from "@/components/BrandTile";
 import {
   LinkedInIcon,
@@ -27,28 +27,22 @@ export default function Home() {
         <article
           className="text-black"
           style={{
-            fontSize: "clamp(20px, 5.6vw, 26px)",
-            lineHeight: 1.5,
+            fontSize: "clamp(22px, 6vw, 28px)",
+            lineHeight: 1.55,
             fontWeight: 400,
+            letterSpacing: "-0.005em",
           }}
         >
-          {/* Greeting + avatar */}
+          {/* Greeting + click-to-zoom avatar */}
           <p>
             Hi, my name is Giancarlo Peysack{" "}
             <span className="inline-block align-middle ml-1">
-              <Image
-                src="/giancarlo.jpg"
-                alt="Giancarlo Peysack"
-                width={56}
-                height={56}
-                priority
-                className="avatar inline-block rounded-full object-cover align-middle"
-              />
+              <Avatar src="/giancarlo.jpg" />
             </span>
           </p>
 
           {/* AI products: B2B + consumer, both inline */}
-          <p className="mt-7 sm:mt-6">
+          <p className="mt-10 sm:mt-8">
             I make B2B and consumer apps{" "}
             <span className="tile-row align-middle ml-2">
               <BrandTile
@@ -71,7 +65,7 @@ export default function Home() {
             </span>
           </p>
           {/* Share about building (all the channels — socials + substack) */}
-          <p className="mt-7 sm:mt-6">
+          <p className="mt-10 sm:mt-8">
             and share about building{" "}
             <span className="tile-row align-middle ml-2">
               <BrandTile
@@ -110,7 +104,7 @@ export default function Home() {
           </p>
 
           {/* Launching soon + waitlist (merged) */}
-          <p className="mt-7 sm:mt-6">
+          <p className="mt-10 sm:mt-8">
             Join the waitlist for my AI tools{" "}
             <span className="tile-row align-middle ml-2">
               <BrandTile
