@@ -22,9 +22,7 @@ const FREQUENCY_OPTIONS = [
 export default function LinkedInWaitlist() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [linkedin, setLinkedin] = useState("");
   const [frequency, setFrequency] = useState("");
-  const [useCase, setUseCase] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "err">(
     "idle"
   );
@@ -40,7 +38,7 @@ export default function LinkedInWaitlist() {
       // can still reach Giancarlo while infrastructure is being set up.
       const subject = encodeURIComponent("Waitlist: LinkedIn AI tool");
       const body = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\nLinkedIn: ${linkedin}\nFrequency: ${frequency}\nUse case: ${useCase}`
+        `Name: ${name}\nEmail: ${email}\nFrequency: ${frequency}`
       );
       window.location.href = `mailto:gc.peysack@gmail.com?subject=${subject}&body=${body}`;
       return;
@@ -49,9 +47,7 @@ export default function LinkedInWaitlist() {
       await addDoc(collection(db, "linkedin_tool_waitlist"), {
         name,
         email,
-        linkedin,
         frequency,
-        useCase,
         createdAt: serverTimestamp(),
         source: "giancarlopeysack.com/waitlist/linkedin",
       });
@@ -154,16 +150,6 @@ export default function LinkedInWaitlist() {
           </div>
 
           <div>
-            <FieldLabel>LinkedIn profile URL (optional)</FieldLabel>
-            <TextInput
-              name="linkedin"
-              placeholder="linkedin.com/in/yourhandle"
-              value={linkedin}
-              onChange={setLinkedin}
-            />
-          </div>
-
-          <div>
             <FieldLabel>How often do you want to post on LinkedIn?</FieldLabel>
             <Select
               name="frequency"
@@ -171,18 +157,6 @@ export default function LinkedInWaitlist() {
               onChange={setFrequency}
               options={FREQUENCY_OPTIONS}
               placeholder="Select an option..."
-            />
-          </div>
-
-          <div>
-            <FieldLabel>What would you use this for?</FieldLabel>
-            <textarea
-              name="useCase"
-              placeholder="e.g. Growing my founder brand, building a personal newsletter audience, sourcing customers..."
-              value={useCase}
-              onChange={(e) => setUseCase(e.target.value)}
-              rows={4}
-              className="w-full px-4 py-3 text-[16px] text-black bg-white border border-gray-300 rounded-md placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-400 transition resize-y"
             />
           </div>
 

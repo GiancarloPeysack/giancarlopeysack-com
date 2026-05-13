@@ -12,15 +12,6 @@ import {
   SubmitButton,
 } from "@/components/FormFields";
 
-const PLATFORMS = [
-  "TikTok",
-  "Instagram Reels",
-  "YouTube Shorts",
-  "LinkedIn video",
-  "Multiple platforms",
-  "Not posting yet",
-];
-
 const VOLUMES = [
   "1 to 3 a week",
   "4 to 7 a week",
@@ -32,9 +23,7 @@ const VOLUMES = [
 export default function VideoWaitlist() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [platform, setPlatform] = useState("");
   const [volume, setVolume] = useState("");
-  const [useCase, setUseCase] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "err">(
     "idle"
   );
@@ -48,7 +37,7 @@ export default function VideoWaitlist() {
     if (!db) {
       const subject = encodeURIComponent("Waitlist: AI video tool");
       const body = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\nPlatform: ${platform}\nVolume: ${volume}\nUse case: ${useCase}`
+        `Name: ${name}\nEmail: ${email}\nVolume: ${volume}`
       );
       window.location.href = `mailto:gc.peysack@gmail.com?subject=${subject}&body=${body}`;
       return;
@@ -57,9 +46,7 @@ export default function VideoWaitlist() {
       await addDoc(collection(db, "video_tool_waitlist"), {
         name,
         email,
-        platform,
         volume,
-        useCase,
         createdAt: serverTimestamp(),
         source: "giancarlopeysack.com/waitlist/video",
       });
@@ -160,17 +147,6 @@ export default function VideoWaitlist() {
           </div>
 
           <div>
-            <FieldLabel>Where do you post most?</FieldLabel>
-            <Select
-              name="platform"
-              value={platform}
-              onChange={setPlatform}
-              options={PLATFORMS}
-              placeholder="Select an option..."
-            />
-          </div>
-
-          <div>
             <FieldLabel>How many videos do you want to publish?</FieldLabel>
             <Select
               name="volume"
@@ -178,18 +154,6 @@ export default function VideoWaitlist() {
               onChange={setVolume}
               options={VOLUMES}
               placeholder="Select an option..."
-            />
-          </div>
-
-          <div>
-            <FieldLabel>What would you use this for?</FieldLabel>
-            <textarea
-              name="useCase"
-              placeholder="e.g. Personal brand, agency client deliverables, course content, founder-led marketing..."
-              value={useCase}
-              onChange={(e) => setUseCase(e.target.value)}
-              rows={4}
-              className="w-full px-4 py-3 text-[16px] text-black bg-white border border-gray-300 rounded-md placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-400 transition resize-y"
             />
           </div>
 
