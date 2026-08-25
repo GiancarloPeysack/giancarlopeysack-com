@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Avatar } from "@/components/Avatar";
 import { BrandTile } from "@/components/BrandTile";
@@ -68,9 +69,15 @@ export default function Home() {
                 label="Lexfall"
                 tooltip="Lexfall · advanced English vocabulary"
                 bg="#100E0B"
-                fg="#C6A85C"
-                letter="L"
-              />
+              >
+                <Image
+                  src="/lexfall-icon.png"
+                  alt=""
+                  width={44}
+                  height={44}
+                  className="h-full w-full rounded-[11px] sm:rounded-[10px]"
+                />
+              </BrandTile>
             </span>
           </p>
           {/* Share about building (all the channels — socials + substack) */}
