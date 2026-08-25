@@ -48,14 +48,6 @@ export default function Home() {
             I make B2B and consumer apps{" "}
             <span className="tile-row align-middle ml-2">
               <BrandTile
-                href={LINKS.marketops}
-                label="MarketOpsIQ"
-                tooltip="MarketOpsIQ · AI shelf intel for CPG"
-                bg="#0F1116"
-                fg="#FFFFFF"
-                letter="M"
-              />
-              <BrandTile
                 href={LINKS.genzi}
                 label="Genzi"
                 tooltip="Genzi · social app for live music & nightlife"
@@ -78,6 +70,14 @@ export default function Home() {
                   className="h-full w-full rounded-[11px] sm:rounded-[10px]"
                 />
               </BrandTile>
+              <BrandTile
+                href={LINKS.marketops}
+                label="MarketOpsIQ"
+                tooltip="MarketOpsIQ · AI shelf intel for CPG"
+                bg="#0F1116"
+                fg="#FFFFFF"
+                letter="M"
+              />
             </span>
           </p>
           {/* Share about building (all the channels — socials + substack) */}
