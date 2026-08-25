@@ -51,11 +51,16 @@ export default function Home() {
                 href={LINKS.genzi}
                 label="Genzi"
                 tooltip="Genzi · social app for live music & nightlife"
-                bg="#161B2C"
-                fg="#B65BFF"
-                letter="z"
-                letterOffsetY={-2}
-              />
+                bg="#191E31"
+              >
+                <Image
+                  src="/genzi-icon.png"
+                  alt=""
+                  width={44}
+                  height={44}
+                  className="h-full w-full rounded-[11px] sm:rounded-[10px]"
+                />
+              </BrandTile>
               <BrandTile
                 href={LINKS.lexfall}
                 label="Lexfall"
