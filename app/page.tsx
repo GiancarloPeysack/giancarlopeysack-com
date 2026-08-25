@@ -11,6 +11,7 @@ import {
 const LINKS = {
   marketops: "https://marketopsiq.com",
   genzi: "https://genzi.app",
+  lexfall: "https://luxfall.online",
   waitlistLinkedIn: "/waitlist/linkedin",
   waitlistContent: "/waitlist/video",
   linkedin: "https://linkedin.com/in/gcpeysack",
@@ -61,6 +62,14 @@ export default function Home() {
                 fg="#B65BFF"
                 letter="z"
                 letterOffsetY={-2}
+              />
+              <BrandTile
+                href={LINKS.lexfall}
+                label="Lexfall"
+                tooltip="Lexfall · advanced English vocabulary"
+                bg="#100E0B"
+                fg="#C6A85C"
+                letter="L"
               />
             </span>
           </p>
