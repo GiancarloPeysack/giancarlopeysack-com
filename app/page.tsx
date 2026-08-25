@@ -58,7 +58,7 @@ export default function Home() {
               <BrandTile
                 href={LINKS.genzi}
                 label="Genzi"
-                tooltip="Genzi"
+                tooltip="Genzi · social app for live music & nightlife"
                 bg="#161B2C"
                 fg="#B65BFF"
                 letter="z"
