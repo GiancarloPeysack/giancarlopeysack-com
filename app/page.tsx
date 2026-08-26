@@ -13,8 +13,7 @@ const LINKS = {
   marketops: "https://marketopsiq.com",
   genzi: "https://genzi.app",
   lexfall: "https://luxfall.online",
-  waitlistLinkedIn: "/waitlist/linkedin",
-  waitlistContent: "/waitlist/video",
+  zharo: "https://zharo.club",
   linkedin: "https://linkedin.com/in/gcpeysack",
   tiktok: "#",
   instagram: "#",
@@ -83,6 +82,31 @@ export default function Home() {
                 fg="#FFFFFF"
                 letter="M"
               />
+              <BrandTile
+                href={LINKS.zharo}
+                label="Zharo"
+                tooltip="Zharo · Chrome extension for LinkedIn, in your voice"
+                bg="#0a0a0a"
+              >
+                <svg viewBox="0 0 120 120" fill="none" style={{ width: "62%", height: "62%", color: "#fff" }}>
+                  <defs>
+                    <linearGradient id="zharoSparkTile" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stopColor="#6366F1" />
+                      <stop offset="1" stopColor="#8B5CF6" />
+                    </linearGradient>
+                  </defs>
+                  <g transform="translate(52,60)">
+                    <path
+                      d="M 36.85 17.97 A 41 41 0 1 1 36.85 -17.97"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="12"
+                      strokeLinecap="round"
+                    />
+                    <circle cx="49" cy="0" r="8.5" fill="url(#zharoSparkTile)" />
+                  </g>
+                </svg>
+              </BrandTile>
             </span>
           </p>
           {/* Share about building (all the channels — socials + substack) */}
@@ -120,41 +144,6 @@ export default function Home() {
                 bg="#FF6719"
               >
                 <SubstackIcon />
-              </BrandTile>
-            </span>
-          </p>
-
-          {/* Launching soon + waitlist (merged) */}
-          <p className="mt-10 sm:mt-8">
-            Join the waitlist for my AI tools{" "}
-            <span className="tile-row align-middle ml-2">
-              <BrandTile
-                href={LINKS.waitlistLinkedIn}
-                label="AI LinkedIn growth tool, join waitlist"
-                tooltip="AI LinkedIn growth tool"
-                bg="#0A66C2"
-                fg="#FFFFFF"
-              >
-                <span
-                  className="text-white font-extrabold leading-none"
-                  style={{ fontSize: "18px", letterSpacing: "-0.04em" }}
-                >
-                  in
-                </span>
-              </BrandTile>
-              <BrandTile
-                href={LINKS.waitlistContent}
-                label="AI short-form video tool, join waitlist"
-                tooltip="AI short-form video tool"
-                bg="#111111"
-                fg="#FFFFFF"
-              >
-                <span
-                  className="text-white leading-none"
-                  style={{ fontSize: "22px" }}
-                >
-                  ✦
-                </span>
               </BrandTile>
             </span>
           </p>
