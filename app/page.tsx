@@ -17,7 +17,7 @@ const LINKS = {
   linkedin: "https://linkedin.com/in/gcpeysack",
   tiktok: "#",
   instagram: "#",
-  substack: "https://substack.com/@giancarlopeysack351293",
+  substack: "https://giancarlopeysack.substack.com",
   sayHi: "mailto:gc.peysack@gmail.com?subject=Hi",
 };
 
@@ -36,15 +36,45 @@ export default function Home() {
         >
           {/* Greeting + click-to-zoom avatar */}
           <p>
-            Hi, my name is Giancarlo Peysack{" "}
+            Hi, I&apos;m Giancarlo Peysack{" "}
             <span className="inline-block align-middle ml-1">
               <Avatar src="/giancarlo.jpg" />
             </span>
           </p>
 
-          {/* AI products: B2B + consumer, both inline */}
+          {/* Writing: substack tile + the real embed widget right under it */}
           <p className="mt-10 sm:mt-8">
-            I make B2B and consumer apps{" "}
+            I like writing here{" "}
+            <span className="tile-row align-middle ml-2">
+              <BrandTile
+                href={LINKS.substack}
+                label="Substack"
+                tooltip="@giancarlopeysack"
+                bg="#FF6719"
+              >
+                <SubstackIcon />
+              </BrandTile>
+            </span>
+          </p>
+          <div className="mt-5 sm:mt-4 flex justify-center">
+            <iframe
+              src="https://giancarlopeysack.substack.com/embed"
+              width="480"
+              height="320"
+              style={{
+                border: "1px solid #EEE",
+                background: "white",
+                maxWidth: "100%",
+              }}
+              frameBorder={0}
+              scrolling="no"
+              title="Subscribe to Giancarlo Peysack's Substack"
+            />
+          </div>
+
+          {/* Apps shipped */}
+          <p className="mt-10 sm:mt-8">
+            I&apos;ve shipped some apps{" "}
             <span className="tile-row align-middle ml-2">
               <BrandTile
                 href={LINKS.genzi}
@@ -109,9 +139,10 @@ export default function Home() {
               </BrandTile>
             </span>
           </p>
-          {/* Share about building (all the channels — socials + substack) */}
+
+          {/* Social */}
           <p className="mt-10 sm:mt-8">
-            and share about building{" "}
+            I post here{" "}
             <span className="tile-row align-middle ml-2">
               <BrandTile
                 href={LINKS.linkedin}
@@ -136,14 +167,6 @@ export default function Home() {
                 bg="linear-gradient(135deg, #FFD600 0%, #FF7A00 30%, #FF0069 60%, #D300C5 80%, #7638FA 100%)"
               >
                 <InstagramIcon />
-              </BrandTile>
-              <BrandTile
-                href={LINKS.substack}
-                label="Substack"
-                tooltip="@giancarlopeysack"
-                bg="#FF6719"
-              >
-                <SubstackIcon />
               </BrandTile>
             </span>
           </p>
