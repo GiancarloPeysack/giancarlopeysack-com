@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { Avatar } from "@/components/Avatar";
 import { BrandTile } from "@/components/BrandTile";
-import { SubstackEmbed } from "@/components/SubstackEmbed";
 import {
   LinkedInIcon,
   TikTokIcon,
   InstagramIcon,
+  SubstackIcon,
 } from "@/components/SocialIcons";
 
 const LINKS = {
@@ -42,23 +42,21 @@ export default function Home() {
             </span>
           </p>
 
-          {/* Writing: no separate icon tile (the embed below already carries the
-              Substack branding); a lightweight skeleton covers the iframe's
-              load time instead of leaving blank space. */}
+          {/* Writing: a clickable Substack icon tile, same pattern as the
+              app/social tiles below, instead of the embedded subscribe widget. */}
           <p className="mt-10 sm:mt-8">
             I like writing here{" "}
-            <Link
-              href={LINKS.substack}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline decoration-1 underline-offset-2"
-            >
-              on Substack
-            </Link>
+            <span className="tile-row align-middle ml-2">
+              <BrandTile
+                href={LINKS.substack}
+                label="Substack"
+                tooltip="@giancarlopeysack"
+                bg="#FF6719"
+              >
+                <SubstackIcon />
+              </BrandTile>
+            </span>
           </p>
-          <div className="mt-5 sm:mt-4 flex justify-center">
-            <SubstackEmbed src="https://giancarlopeysack.substack.com/embed" />
-          </div>
 
           {/* Apps shipped */}
           <p className="mt-10 sm:mt-8">
