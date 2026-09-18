@@ -1,0 +1,217 @@
+/* Template components "services" (framer-nU8aw) and "service card"
+   (framer-TIxEM), variants Desktop / Expanded / Mobile / Mobile- Expanded. */
+
+.list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0;
+  width: 100%;
+  height: min-content;
+  padding: 0 0 32px;
+  position: relative;
+  overflow: visible;
+  border-radius: 21px;
+}
+
+/* card container; its height follows the card's animated height
+   ("Layout Jump Preventer") */
+.row {
+  flex: none;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 22px;
+  width: 100%;
+  height: min-content;
+  padding: 40px 15px;
+  position: relative;
+  overflow: visible;
+  outline: none;
+}
+.card::after {
+  content: "";
+  border-width: 0 0 1px 0;
+  border-color: rgb(10, 10, 10);
+  border-style: solid;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.expanded {
+  align-content: flex-end;
+  align-items: flex-end;
+  gap: 36px;
+  overflow: hidden;
+}
+.mobile {
+  padding: 32px 15px;
+  overflow: hidden;
+}
+.mobileExpanded {
+  gap: 32px;
+}
+
+.head {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex: none;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.titleRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex: 1 0 0px;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 1px;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.rt {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  outline: none;
+}
+
+.number {
+  white-space: pre;
+  flex: none;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.title {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  flex: 1 0 0px;
+  width: 1px;
+  height: auto;
+  position: relative;
+}
+.mobile .title {
+  text-wrap: balance;
+}
+
+.plus {
+  aspect-ratio: 1 / 1;
+  flex: none;
+  height: 16px;
+  width: 16px;
+  position: relative;
+  overflow: visible;
+}
+
+.line {
+  flex: none;
+  width: 2px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 1px);
+  background-color: #fff;
+  border-radius: 40px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex: none;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 66px;
+  width: 100%;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.description {
+  text-wrap: balance;
+  flex: none;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.description .descriptionText {
+  color: #fff;
+  text-align: left;
+}
+
+/* ---- hover cursor (template component "Cursor images", framer-Koobf) ---- */
+.cursor {
+  height: 204px;
+  width: 189px;
+  overflow: hidden;
+  border-radius: 4px;
+  will-change: transform;
+}
+
+.cursorStack {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: min-content;
+  height: min-content;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  overflow: clip;
+}
+
+.cursorImage {
+  flex: none;
+  height: 204px;
+  width: 189px;
+  overflow: hidden;
+  position: relative;
+  will-change: transform;
+}
+.cursorImage img {
+  object-fit: cover;
+}

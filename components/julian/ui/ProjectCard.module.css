@@ -1,0 +1,105 @@
+/* Template component "project card" (framer-GXDQB). The card fills its
+   parent's width; pages size and place the parent. */
+.card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+  width: 100%;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  gap: 10px;
+  aspect-ratio: 1.0399274047186933 / 1;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+  border-radius: 13px;
+}
+
+.image {
+  flex: 1 0 0px;
+  width: 100%;
+  height: 1px;
+  position: relative;
+  overflow: hidden;
+  will-change: filter;
+}
+.image img {
+  object-fit: cover;
+  object-position: center;
+}
+.hidden {
+  visibility: hidden;
+}
+
+.stats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  flex: none;
+  width: 100%;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+  border-radius: 7.94px;
+}
+
+.textBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: none;
+  outline: none;
+  white-space: pre;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.name {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-switzer), sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.3em;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.year {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-chivo-mono), monospace;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.2em;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #fff;
+}

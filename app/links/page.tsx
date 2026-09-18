@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Avatar } from "@/components/Avatar";
@@ -8,6 +9,23 @@ import {
   InstagramIcon,
   SubstackIcon,
 } from "@/components/SocialIcons";
+
+export const metadata: Metadata = {
+  title: "Giancarlo Peysack · Links",
+  description: "I like to build stuff. Writing, apps, and social links.",
+  openGraph: {
+    title: "Giancarlo Peysack",
+    description: "I like to build stuff.",
+    url: "https://giancarlopeysack.com/links",
+    siteName: "Giancarlo Peysack",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Giancarlo Peysack",
+    description: "I like to build stuff.",
+  },
+};
 
 const LINKS = {
   marketops: "https://marketopsiq.com",
@@ -21,7 +39,7 @@ const LINKS = {
   sayHi: "mailto:gc.peysack@gmail.com?subject=Hi",
 };
 
-export default function Home() {
+export default function LinksPage() {
   return (
     <main className="min-h-screen w-full bg-white text-black">
       <div className="mx-auto w-full max-w-[640px] px-6 pt-16 pb-24 sm:pt-24">
@@ -179,6 +197,10 @@ export default function Home() {
             </p>
             <p>
               Want to say hi? <Link href={LINKS.sayHi}>Click here.</Link>
+            </p>
+            <p>
+              Evaluating me for a Product Manager role?{" "}
+              <Link href="/">Click here.</Link>
             </p>
           </div>
         </article>

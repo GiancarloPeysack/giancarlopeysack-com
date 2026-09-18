@@ -1,0 +1,29 @@
+/* The template's "Template layout" wrapper (framer-KMCPC framer-16lz82l). */
+.page {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  width: 100%;
+  min-height: 100vh;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: clip;
+  background-color: #000;
+  color: #fff;
+  font-family: var(--font-switzer), sans-serif;
+}
+
+/* framer-19z85ep: grows to push the footer to the bottom of short pages */
+.spacer {
+  background: transparent;
+  flex-grow: 1;
+  height: 0;
+  margin: 0;
+  position: relative;
+  width: 0;
+}

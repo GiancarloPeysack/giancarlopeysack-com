@@ -1,0 +1,278 @@
+/* Template "nav bar" (framer-RaNPI) inside the layout template's fixed
+   container (framer-1285yjy-container). Framer renders the "Desktop" variant
+   on desktop + tablet and the "mobile" variant on phone. */
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 76px;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 382px;
+  width: 100%;
+  height: 100%;
+  padding: 0 18px;
+  position: relative;
+  overflow: clip;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 0 0px;
+  width: 1px;
+  max-width: 1400px;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.logoBox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  gap: 22px;
+  width: min-content;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  gap: 16px;
+  width: min-content;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.item {
+  flex: none;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.toggle {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  gap: 10px;
+  width: min-content;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+/* ---- "mobile" / "mobile - Expanded" variants ---- */
+.mobile {
+  flex-direction: column;
+  gap: 25px;
+  padding: 17px 20px;
+  background-color: #000;
+}
+.mobile .row {
+  flex: none;
+  width: 100%;
+}
+.expanded {
+  justify-content: flex-start;
+  padding: 22px 20px 199px;
+}
+
+.panel {
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: center;
+  flex: none;
+  gap: 46px;
+  width: 100%;
+  height: min-content;
+  padding: 38px 0 0;
+  position: relative;
+  overflow: visible;
+}
+
+.menuBlock {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: none;
+  gap: 30px;
+  width: 100%;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.menus {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  gap: 30px;
+  width: 100%;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.mainMenu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: none;
+  gap: 21px;
+  width: 100%;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  flex: none;
+  gap: 32px;
+  width: 100%;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: center;
+  flex: none;
+  gap: 25px;
+  width: 100%;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.textItem {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  outline: none;
+  flex-grow: 0;
+  flex-basis: auto;
+  white-space: pre;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.menuText {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-switzer), sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.1em;
+  letter-spacing: -0.03em;
+  text-align: left;
+  color: #fff;
+}
+.menuText a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.socialText {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.03em;
+}
+.social .socialText a {
+  color: #828487;
+  text-decoration: none;
+  transition: color 0.4s cubic-bezier(0.44, 0, 0.56, 1);
+}
+
+/* ---- breakpoints ---- */
+.phoneOnly {
+  display: none;
+}
+@media (max-width: 809.98px) {
+  .container {
+    height: auto;
+  }
+  .desktopOnly {
+    display: none;
+  }
+  .phoneOnly {
+    display: flex;
+  }
+  .menuText {
+    font-size: 19px;
+  }
+}

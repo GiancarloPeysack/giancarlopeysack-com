@@ -1,0 +1,70 @@
+/* Template component "Menu Link" (framer-zNUwm). */
+.link {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2px;
+  width: min-content;
+  height: min-content;
+  padding: 0;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* "No hover" variant */
+.noHover {
+  cursor: unset;
+}
+
+.textBox {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  outline: none;
+  flex-grow: 0;
+  flex-basis: auto;
+  white-space: pre;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.text {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-switzer), sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1.3em;
+  color: #fff;
+}
+
+/* "M" and "No hover" variants use the 22px text */
+.text22 {
+  font-size: 22px;
+}
+
+.underline {
+  height: 1px;
+  overflow: clip;
+  z-index: 1;
+  flex: none;
+  width: 1px;
+  position: absolute;
+  bottom: 0;
+  left: -1px;
+  background-color: #fff;
+}
+
+.underlineHover {
+  width: unset;
+  left: 0;
+  right: 0;
+}

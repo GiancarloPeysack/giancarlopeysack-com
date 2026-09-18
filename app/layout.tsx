@@ -1,21 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import { chivoMono, inter, interDisplay, interSite, neutralSansVariable, schibsted, switzer } from "./fonts";
 
-// Variable font — supports any weight 100-900 and renders slightly
-// thicker / smoother than static-weight Inter. Closer to Chris's rendering.
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
+const fontVariables = [inter, switzer, neutralSansVariable, interDisplay, schibsted, chivoMono]
+  .map((f) => f.variable)
+  .join(" ");
 
 export const metadata: Metadata = {
   title: "Giancarlo Peysack",
-  description:
-    "I like to build stuff. Founder of MarketOpsIQ and Genzi. Currently shipping a LinkedIn weekly tool and a content agent tool.",
+  description: "Product Manager. Case studies on Genzi, Lexfall, MarketOpsIQ, and Zharo.",
   openGraph: {
     title: "Giancarlo Peysack",
-    description: "I like to build stuff.",
+    description: "Product Manager. I build and ship products end to end.",
     url: "https://giancarlopeysack.com",
     siteName: "Giancarlo Peysack",
     type: "website",
@@ -23,7 +19,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "Giancarlo Peysack",
-    description: "I like to build stuff.",
+    description: "Product Manager. I build and ship products end to end.",
   },
 };
 
@@ -33,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={`${interSite.className} ${fontVariables}`}>
       <body>{children}</body>
     </html>
   );

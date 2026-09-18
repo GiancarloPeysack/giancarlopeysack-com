@@ -1,0 +1,664 @@
+/* Home page (framer-4yB5F): Hero, Intro, Selected cases, Services.
+   Breakpoints: tablet 810–1199.98px, phone 0–809.98px. */
+
+/* Framer rich-text containers are flex columns */
+.rt {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  outline: none;
+}
+
+/* Per-breakpoint copies of an element (Framer ssr-variants + hidden-* classes):
+   hide-only rules, so a visible element keeps its own display. */
+@media (min-width: 1200px) {
+  .tabletOnly,
+  .phoneOnly,
+  .notDesktop {
+    display: none !important;
+  }
+}
+@media (min-width: 810px) and (max-width: 1199.98px) {
+  .desktopOnly,
+  .phoneOnly {
+    display: none !important;
+  }
+}
+@media (max-width: 809.98px) {
+  .desktopOnly,
+  .tabletOnly,
+  .notPhone {
+    display: none !important;
+  }
+}
+
+/* ================================ Hero ================================ */
+
+.hero {
+  z-index: 4;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex: none;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.heroWrapper {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex: 1 0 0px;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  height: 1px;
+  padding: 15px 32px 32px;
+  position: relative;
+  overflow: visible;
+}
+
+.heroTop {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex: 1 0 0px;
+  align-content: center;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  height: 1px;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.heroImage {
+  height: 575px;
+  overflow: clip;
+  will-change: transform;
+  z-index: 0;
+  border-radius: 195px;
+  flex: none;
+  width: 390px;
+  position: absolute;
+  top: calc(47.0588% - 287.5px);
+  left: calc(50% - 195px);
+  -webkit-mask: linear-gradient(#000 42%, #0000 100%);
+  mask: linear-gradient(#000 42%, #0000 100%);
+}
+.heroImage img {
+  border-radius: inherit;
+  object-fit: cover;
+  object-position: center;
+}
+
+.heroName {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex: none;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  height: min-content;
+  /* room for descenders (the "y" in Peysack) under the tight 0.7em lines */
+  padding: 0 0 24px;
+  position: relative;
+  overflow: visible;
+}
+
+/* Parallax wrapper of a name line; it carries the blend mode so the text
+   blends with the portrait behind it. */
+.nameLine {
+  mix-blend-mode: difference;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  z-index: 1;
+  flex: none;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.nameLast {
+  z-index: 2;
+}
+
+.nameInner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  will-change: transform;
+}
+svg.nameInner {
+  display: block;
+  overflow: visible;
+}
+
+.nameText {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-neutral-sans), sans-serif;
+  font-size: 165px;
+  font-weight: 1000;
+  font-variation-settings: "wght" 1000, "opsz" 28;
+  letter-spacing: -0.06em;
+  line-height: 0.7em;
+  text-align: center;
+  color: #fff;
+}
+.fitText .nameText {
+  white-space: nowrap;
+  line-height: 80%;
+}
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex: none;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.overviewLine {
+  flex: none;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+.overviewInner {
+  will-change: transform;
+}
+.overviewInner .overviewText {
+  text-align: center;
+  color: #fff;
+}
+
+.bottom {
+  will-change: transform;
+  z-index: 3;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex: none;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.labelBox {
+  flex: none;
+  width: auto;
+  height: 22px;
+  position: relative;
+}
+
+/* ============================ Intro / Selected cases ============================ */
+
+.section {
+  z-index: 8;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex: none;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 100px;
+  width: 100%;
+  height: min-content;
+  padding: 150px 32px;
+  position: relative;
+  overflow: visible;
+}
+
+.introWrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex: none;
+  align-content: flex-start;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 18px;
+  width: 100%;
+  max-width: 1400px;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.reveal {
+  mix-blend-mode: difference;
+  flex: none;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  position: relative;
+}
+
+.revealText {
+  font-family: var(--font-switzer), sans-serif;
+  font-size: 53px;
+  font-weight: 700;
+  color: #666666;
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 57px;
+  letter-spacing: -2.1px;
+  justify-content: flex-start;
+  margin: 0;
+}
+
+/* Logos ticker (framer-9ci70h) */
+.ticker {
+  height: min-content;
+  will-change: transform;
+  flex: none;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
+  width: 518px;
+  padding: 22.85px 0;
+  -webkit-mask: linear-gradient(90deg, #0000 0%, #000 7% 86.4505%, #0000 100%);
+  mask: linear-gradient(90deg, #0000 0%, #000 7% 86.4505%, #0000 100%);
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex: none;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 13.23px;
+  width: 101px;
+  height: 54px;
+  padding: 12.9px 14.37px;
+  position: relative;
+  overflow: hidden;
+}
+
+.logoImage {
+  height: 56px;
+  overflow: clip;
+  will-change: filter;
+  flex: none;
+  width: 54px;
+  position: relative;
+}
+.logoImage img {
+  border-radius: inherit;
+  object-position: center;
+}
+
+.autoBox {
+  flex: none;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.casesWrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex: none;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 64px;
+  width: 100%;
+  max-width: 1400px;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.casesHeader {
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex: none;
+  align-content: flex-end;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.heading {
+  white-space: pre;
+  flex: none;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.casesList {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex: none;
+  align-content: flex-end;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 49px 20px;
+  width: 100%;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.caseRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex: none;
+  align-content: flex-start;
+  align-items: flex-start;
+  gap: 20px 8px;
+  width: 100%;
+  padding: 0;
+  position: relative;
+}
+.row1 {
+  z-index: 1;
+  justify-content: flex-start;
+  height: 464px;
+}
+.row2 {
+  z-index: 5;
+  justify-content: flex-end;
+  height: 463px;
+}
+.row3 {
+  z-index: 2;
+  justify-content: center;
+  height: 465px;
+}
+.row4 {
+  z-index: 5;
+  justify-content: flex-start;
+  height: 388px;
+}
+.row5 {
+  z-index: 3;
+  justify-content: flex-end;
+  height: 402px;
+}
+.row6 {
+  z-index: 5;
+  justify-content: center;
+  height: 463px;
+  padding: 0 150px 32px 0;
+}
+
+.caseBox {
+  z-index: 1;
+  flex: none;
+  height: 100%;
+  position: relative;
+}
+.row1 .caseBox {
+  width: 390px;
+}
+.row2 .caseBox {
+  width: 397px;
+}
+.row3 .caseBox {
+  width: 394px;
+}
+.row4 .caseBox {
+  width: 373px;
+}
+.row5 .caseBox {
+  width: 357px;
+}
+.row6 .caseBox {
+  width: 365px;
+}
+
+/* the card link fills its box (instance style height/width 100%) */
+.caseCard {
+  height: 100%;
+}
+
+/* ================================ Services ================================ */
+
+.services {
+  z-index: 5;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex: none;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 38px;
+  width: 100%;
+  height: min-content;
+  padding: 150px 32px;
+  position: relative;
+  overflow: visible;
+}
+
+.servicesWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex: none;
+  align-content: flex-start;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  max-width: 1400px;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.servicesHeader {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex: 0.6 0 0px;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 18px;
+  width: 1px;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.servicesListBox {
+  flex: 1 0 0px;
+  width: 1px;
+  height: auto;
+  position: relative;
+}
+
+/* ================================ Tablet ================================ */
+@media (min-width: 810px) and (max-width: 1199.98px) {
+  .heroTop {
+    padding: 0 0 98px;
+  }
+  .heroImage {
+    top: calc(51.9288% - 287.5px);
+  }
+  .heroName {
+    width: 456px;
+    padding-bottom: 10px;
+  }
+  .nameLine {
+    white-space: pre;
+  }
+
+  .section,
+  .services {
+    padding: 100px 32px;
+  }
+
+  .revealText {
+    font-size: 45px;
+    line-height: 52px;
+    letter-spacing: -1.1px;
+  }
+
+  .caseBox.caseBox {
+    aspect-ratio: 0.765823 / 1;
+    height: auto;
+    width: 363px;
+  }
+
+  .servicesWrapper {
+    flex-direction: column;
+    gap: 64px;
+  }
+  .servicesHeader {
+    flex: none;
+    width: 60%;
+  }
+  .servicesListBox {
+    flex: none;
+    width: 100%;
+  }
+}
+
+/* ================================ Phone ================================ */
+@media (max-width: 809.98px) {
+  .heroWrapper {
+    flex: none;
+    max-width: 400px;
+    height: 100vh;
+    padding: 15px 20px 32px;
+  }
+  .heroTop {
+    padding: 0 0 89px;
+  }
+  .heroImage {
+    aspect-ratio: 0.617089 / 1;
+    height: auto;
+    width: 280px;
+    top: 45%;
+    left: 50%;
+  }
+  .heroName {
+    width: 80%;
+    padding-bottom: 0;
+  }
+  .nameLine {
+    white-space: pre;
+  }
+  .nameLast {
+    z-index: 1;
+  }
+
+  .section {
+    gap: 97px;
+    padding: 100px 20px;
+  }
+  .introWrapper {
+    gap: 32px;
+  }
+  .revealText {
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -0.1px;
+  }
+  .ticker {
+    width: 100%;
+  }
+
+  .casesHeader {
+    align-content: center;
+    align-items: center;
+  }
+  .row1,
+  .row2,
+  .row3,
+  .row4,
+  .row5,
+  .row6 {
+    height: min-content;
+  }
+  .row6 {
+    padding: 0;
+  }
+  .caseBox.caseBox {
+    flex: 0.8 0 0px;
+    width: 1px;
+    height: auto;
+  }
+  .row2 .caseBox,
+  .row3 .caseBox,
+  .row4 .caseBox,
+  .row5 .caseBox,
+  .row6 .caseBox {
+    align-self: stretch;
+  }
+  .row1 .caseCard {
+    height: min-content;
+  }
+
+  .services {
+    padding: 100px 20px;
+  }
+  .servicesWrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .servicesHeader,
+  .servicesListBox {
+    flex: none;
+    width: 100%;
+  }
+}

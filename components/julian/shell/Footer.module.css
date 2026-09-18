@@ -1,0 +1,160 @@
+/* Template "footer" (framer-bpizu) inside the layout template's footer
+   container (framer-xm7l80-container: full width, z-index 1). Variants:
+   Desktop, Tablet (same layout) and Phone. */
+
+.container {
+  flex: none;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: min-content;
+  padding: 20px 32px;
+  position: relative;
+  overflow: visible;
+  background-color: #000;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: none;
+  gap: 3px;
+  width: 100%;
+  max-width: 1400px;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: clip;
+  z-index: 0;
+  background-color: #000;
+}
+
+.top,
+.bottom {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  flex: none;
+  width: 100%;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  gap: 16px;
+  width: min-content;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  gap: 32px;
+  width: min-content;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.item {
+  flex: none;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.copyrightBox {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  outline: none;
+  flex-grow: 0;
+  flex-basis: auto;
+  white-space: pre;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.copyright {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-switzer), sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21.51px;
+  letter-spacing: 0;
+  color: #8f8f8f;
+}
+
+@media (max-width: 809.98px) {
+  .inner {
+    gap: unset;
+    height: 277px;
+    justify-content: space-between;
+  }
+  .top {
+    flex-direction: column;
+    gap: 28px;
+    justify-content: flex-start;
+  }
+  .links {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .bottom {
+    flex-direction: column;
+    gap: 36px;
+    justify-content: flex-start;
+  }
+  .copyrightBox {
+    text-wrap: balance;
+    white-space: pre-wrap;
+    order: 1;
+    width: 100%;
+  }
+  .copyright {
+    text-align: center;
+  }
+  .socials {
+    order: 0;
+  }
+}

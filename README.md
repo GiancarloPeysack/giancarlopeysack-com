@@ -12,7 +12,8 @@ npm run dev
 
 ## Updating content
 
-All copy and URLs live in `app/page.tsx`. The `LINKS` object at the top is the single place to change destinations for project tiles, waitlist buttons, social icons, and the contact CTAs.
+- **Portfolio pages (`/`, `/about`, `/projects`, `/projects/[slug]`, `/contact`, 404)**: all text, links and image URLs live in `content/*.ts` (`site.ts` for nav, footer and the "let's work together" CTA). Layout and animation code is under `components/julian/`. See `PROJECT.md` for the current rebuild status before changing anything.
+- **Personal links page (`/links`)**: edit `app/links/page.tsx`. Same pattern as the old homepage: a `LINKS` object at the top is the single place to change destinations for project tiles, social icons, and the contact CTAs.
 
 To replace the avatar, drop a new square JPG at `public/giancarlo.jpg`.
 
