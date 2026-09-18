@@ -1,0 +1,54 @@
+/* Template component "CTA Cursor" (framer-DJZlW). */
+.root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 13;
+  pointer-events: none;
+}
+
+.pill {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 6.55px;
+  width: min-content;
+  height: min-content;
+  padding: 12px 19px;
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  background-color: #fff;
+  border-radius: 655.23px;
+}
+
+.textBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: none;
+  outline: none;
+  white-space: pre;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.text {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-inter), sans-serif;
+  font-feature-settings: "blwf" on, "cv09" on, "cv03" on, "cv04" on, "cv11" on;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.4em;
+  text-align: left;
+  text-transform: uppercase;
+  color: #000;
+}

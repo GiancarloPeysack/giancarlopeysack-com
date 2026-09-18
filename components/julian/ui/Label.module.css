@@ -1,0 +1,41 @@
+/* Template component "Label" (framer-uoisq). */
+.label {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: min-content;
+  height: 22px;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.textBox {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  outline: none;
+  flex-grow: 0;
+  flex-basis: auto;
+  white-space: pre;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.text {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-chivo-mono), monospace;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.2em;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #f0f0f0;
+}

@@ -1,0 +1,66 @@
+/* Template component "Buttons" (framer-PcCy1). */
+.button {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: min-content;
+  height: min-content;
+  padding: 6px 0;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* "No-hover" variant */
+.noHover {
+  cursor: unset;
+}
+
+.textBox {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  outline: none;
+  flex-grow: 0;
+  flex-basis: auto;
+  white-space: pre;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.text {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.4em;
+  text-align: left;
+  color: #fff;
+}
+
+.underline {
+  height: 1px;
+  overflow: clip;
+  z-index: 1;
+  flex: none;
+  width: 1px;
+  position: absolute;
+  bottom: 0;
+  left: -4px;
+  background-color: #fff;
+}
+
+.underlineHover {
+  width: unset;
+  left: 0;
+  right: 0;
+}

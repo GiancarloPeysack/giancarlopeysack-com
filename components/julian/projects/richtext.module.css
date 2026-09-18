@@ -1,0 +1,150 @@
+/* Case study rich text (framer-1wdb77o) with Framer's rich-text rules and the
+   template's presets: h3 = gy2qav, h4 = 8ncpym, p/li = jc8qkg,
+   blockquote = i0n3dg. Framer gives every non-first block a top margin equal
+   to that block's own paragraph spacing; lists inherit the container's 12px
+   and the quote uses its preset's 20px. */
+
+.body {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.body h3,
+.body h4,
+.body p,
+.body ul,
+.body ol,
+.body blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+.body h3 {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.4em;
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+
+.body h4 {
+  font-family: var(--font-schibsted), sans-serif;
+  font-feature-settings: "blwf" on, "cv09" on, "cv03" on, "cv04" on, "cv11" on;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+
+.body p,
+.body li {
+  font-family: var(--font-switzer), sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21.51px;
+  letter-spacing: 0;
+  color: #e5e5e5;
+}
+
+.body strong {
+  font-weight: 700;
+}
+/* gy2qav's bold weight */
+.body h3 strong {
+  font-weight: 900;
+}
+
+/* Lists */
+.body ul,
+.body ol {
+  padding-inline-start: 0;
+  position: relative;
+  list-style: none;
+}
+.body li {
+  counter-increment: list-item;
+  padding-inline-start: 2ch;
+  list-style: none;
+}
+.body ul > li::before {
+  content: "•";
+  position: absolute;
+  inset-inline-start: 0;
+}
+.body ol > li::before {
+  content: counter(list-item, decimal) ".";
+  font-variant-numeric: tabular-nums;
+  position: absolute;
+  inset-inline-start: 0;
+}
+.body ol > li:nth-last-child(n + 10),
+.body ol > li:nth-last-child(n + 10) ~ li {
+  padding-inline-start: 3ch;
+}
+
+/* Quote */
+.body blockquote {
+  padding: 0 0 0 22px;
+  position: relative;
+}
+.body blockquote::before {
+  content: " ";
+  background-color: #ddd;
+  border-radius: 1px;
+  width: 2px;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.body blockquote p {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.8em;
+  letter-spacing: 0;
+  color: #999;
+}
+
+/* Paragraph spacing */
+.body h3:not(:first-child),
+.body h4:not(:first-child) {
+  margin-top: 40px;
+}
+.body p:not(:first-child) {
+  margin-top: 18px;
+}
+.body ul:not(:first-child),
+.body ol:not(:first-child) {
+  margin-top: 12px;
+}
+.body li > ul:nth-child(2),
+.body li > ol:nth-child(2) {
+  margin-top: 0;
+}
+.body blockquote:not(:first-child) {
+  margin-top: 20px;
+}
+
+@media (max-width: 1199px) and (min-width: 810px) {
+  .body h4 {
+    font-size: 21px;
+  }
+}
+@media (max-width: 809px) {
+  .body h4 {
+    font-size: 20px;
+  }
+}
+
+/* links in case study text (the template's rich text had none) */
+.body a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}

@@ -12,7 +12,7 @@
  *      RESEND_API_KEY for Production + Preview
  *   4. Redeploy
  *
- * Body shape: { type: 'pilot'|'sponsor'|'linkedin'|'video', data: object }
+ * Body shape: { type: 'pilot'|'sponsor'|'linkedin'|'video'|'contact', data: object }
  */
 export const dynamic = "force-dynamic";
 export const runtime = "edge";
@@ -22,6 +22,7 @@ const SUBJECTS: Record<string, string> = {
   sponsor: "Video sponsorship request",
   linkedin: "Waitlist signup: AI LinkedIn tool",
   video: "Waitlist signup: AI video tool",
+  contact: "Portfolio contact form",
 };
 
 const FROM = "Giancarlo Site <onboarding@resend.dev>";

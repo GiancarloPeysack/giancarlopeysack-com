@@ -1,0 +1,211 @@
+/* Framer text styles of the Julian template (framer-styles-preset-* and the
+   inline text styles of shared components). Breakpoints follow the presets:
+   tablet = 810–1199px, phone = 0–809px. Framer's rich text resets margin and
+   padding and defaults line-height to 1.2em. */
+
+.t {
+  margin: 0;
+  padding: 0;
+  line-height: 1.2em;
+}
+
+/* 11amz3l: body copy */
+.body18 {
+  font-family: var(--font-switzer), sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.3em;
+  letter-spacing: -0.03em;
+  color: #8f8f8f;
+}
+
+/* g4c1c: mono labels */
+.mono {
+  font-family: var(--font-chivo-mono), monospace;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.2em;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #a3a3a3;
+}
+
+/* 18sur8h: mobile menu links */
+.menuBig {
+  font-family: var(--font-switzer), sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.1em;
+  letter-spacing: -0.03em;
+  text-align: left;
+  color: #f0f0f0;
+}
+@media (max-width: 809px) {
+  .menuBig {
+    font-size: 19px;
+  }
+}
+
+/* jc8qkg: footer copyright */
+.copyright {
+  font-family: var(--font-switzer), sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21.51px;
+  letter-spacing: 0;
+  color: #e5e5e5;
+}
+
+/* 1t6oofe: section headings */
+.h1 {
+  font-family: var(--font-schibsted), sans-serif;
+  font-feature-settings: "blwf" on, "cv09" on, "cv03" on, "cv04" on, "cv11" on;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.2em;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #fff;
+}
+@media (max-width: 1417px) and (min-width: 810px) {
+  .h1 {
+    font-size: 36px;
+  }
+}
+@media (max-width: 809px) {
+  .h1 {
+    font-size: 26px;
+  }
+}
+
+/* 1u5omdd: big display titles (Projects., case study titles, 404) */
+.display {
+  font-family: var(--font-inter-display), sans-serif;
+  font-size: 74px;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #fff;
+}
+@media (max-width: 1199px) and (min-width: 810px) {
+  .display {
+    font-size: 59px;
+  }
+}
+@media (max-width: 809px) {
+  .display {
+    font-size: 47px;
+  }
+}
+
+/* 1w89x6l: sub headings */
+.h2 {
+  font-family: var(--font-schibsted), sans-serif;
+  font-feature-settings: "blwf" on, "cv09" on, "cv03" on, "cv04" on, "cv11" on;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2em;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #fff;
+}
+@media (max-width: 1199px) and (min-width: 810px) {
+  .h2 {
+    font-size: 27px;
+  }
+}
+@media (max-width: 809px) {
+  .h2 {
+    font-size: 22px;
+  }
+}
+
+/* 8ncpym: card titles */
+.h4 {
+  font-family: var(--font-schibsted), sans-serif;
+  font-feature-settings: "blwf" on, "cv09" on, "cv03" on, "cv04" on, "cv11" on;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+@media (max-width: 1199px) and (min-width: 810px) {
+  .h4 {
+    font-size: 21px;
+  }
+}
+@media (max-width: 809px) {
+  .h4 {
+    font-size: 20px;
+  }
+}
+
+/* 1lkbfzg: small meta text */
+.meta14 {
+  font-family: var(--font-inter-display), sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: -0.1px;
+  color: #a3a3a3;
+}
+
+/* gy2qav: case study section headings */
+.inter26 {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.4em;
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+
+/* 1nkfakk / 18aq8m1: Inter buttons */
+.inter18 {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4em;
+  letter-spacing: -0.02em;
+  color: #000;
+}
+.inter16 {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4em;
+  letter-spacing: -0.02em;
+  color: #000;
+}
+
+/* pd9o0r: stat labels */
+.stat {
+  font-family: var(--font-switzer), sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2em;
+  letter-spacing: -0.01em;
+  color: #0a0a0a;
+}
+
+/* q2jpgg: large bio copy */
+.bio {
+  font-family: var(--font-switzer), sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.1em;
+  letter-spacing: -0.03em;
+  color: #f0f0f0;
+}
+@media (max-width: 1199px) and (min-width: 810px) {
+  .bio {
+    font-size: 28px;
+  }
+}
+@media (max-width: 809px) {
+  .bio {
+    font-size: 24px;
+  }
+}

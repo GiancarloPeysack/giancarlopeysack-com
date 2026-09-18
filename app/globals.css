@@ -21,6 +21,44 @@ a:hover {
 }
 
 /* ---------------------------------------------------------------------------
+   Portfolio (Julian template) pages. :has() keeps the page background black
+   from first paint, including overscroll areas, without touching the light
+   pages (/links, /pilot, /sponsor).
+   --------------------------------------------------------------------------- */
+html:has(.portfolio-root),
+body:has(.portfolio-root) {
+  background: #000000;
+  color: #ffffff;
+}
+.portfolio-root a,
+.portfolio-root a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+/* Framer's framer-cursor-none: set on <body> while a custom cursor shows */
+.cursor-none,
+.cursor-none * {
+  cursor: none !important;
+}
+
+/* Lenis, as injected by the template's Smooth Scroll component */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------------------------
    Tile row.
    - Mobile / touch devices: tiles separated with a small gap (no overlap,
      since there's no hover to "spread" the deck back open).
