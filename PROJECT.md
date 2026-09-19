@@ -206,16 +206,17 @@ RESEND_API_KEY    ← sign up at resend.com, copy from API Keys, add to Vercel, 
 - [x] Firebase project + Firestore + security rules
 - [x] Mobile-specific font size + tile rotation tuning
 - [x] Click-to-zoom avatar, hover deck animation, tooltip stacking fix
-- [x] /api/notify route wired into all 4 forms (awaiting RESEND_API_KEY)
+- [x] /api/notify route wired into all 4 forms and the portfolio contact form (awaiting RESEND_API_KEY)
+- [x] robots.txt and sitemap.xml (`app/robots.ts`, `app/sitemap.ts`)
 
 ## TODO / OPEN DECISIONS
 
-- [x] **Portfolio stage 1: exact copy** of the Julian template, verified against the original at every breakpoint (2026-09-18). Not committed or deployed yet.
-- [x] **Portfolio stage 2: personalize** (2026-09-18). Not committed or deployed yet; review locally first.
+- [x] **Portfolio stage 1: exact copy** of the Julian template, verified against the original at every breakpoint (2026-09-18).
+- [x] **Portfolio stage 2: personalize** (2026-09-18). Launched on giancarlopeysack.com the same day (PR #2).
 - [ ] **Sixth project**: Giancarlo will send one more (a website he built). Add it to `content/projects.ts` (order + card + case study) and build its images with `tools/build_images.py`.
 - [ ] **Refresh early numbers** as they grow: Lexfall's first-month App Store Connect figures (2.17K impressions, 33 first downloads, 4 subscription starts, ~11% download-to-paid by day 14) and Genzi's TikTok stats (~1.5K followers, 36K likes, top video 100K views from April 2022).
 - [ ] **Optional**: a handwritten signature image for the About hero (`aboutContent.hero.signature`), TikTok/Instagram links once live.
-- [ ] **Social bio links:** once the portfolio is live, decide whether LinkedIn/TikTok/Instagram bios should point to `/` (portfolio) or `/links` (link-in-bio).
+- [x] **Social bio links:** Instagram and TikTok bios point to `/links` (quick taps, sponsor and pilot CTAs, a link to the portfolio); LinkedIn and the CV point to `/` (the portfolio).
 - [ ] **Add RESEND_API_KEY** in Vercel so form submissions email you (currently they only land in Firestore).
 - [ ] **Name the two AI tools.** "Riff" and "Atom" were rejected (riff.ai + getriff.co + atom.com/Squadhelp conflicts). Pick names with a free .com and clean trademark in software classes 9 & 42. Tooltips + mailto subjects + the homepage "AI tools" line update when chosen.
 - [ ] **Social URLs:** TikTok and Instagram links in `LINKS` (app/links/page.tsx) are still `#`. LinkedIn + Substack are real.

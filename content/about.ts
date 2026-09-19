@@ -32,13 +32,13 @@ export const aboutContent = {
   meta: {
     title: "About · Giancarlo Peysack",
     description:
-      "Product builder in Madrid, finishing a BA in International Business. Founder of MarketOpsIQ, co-founder of Genzi, maker of Lexfall, Zharo and CampusMart.",
+      "Product builder in Madrid with a BA in International Business. Founder of MarketOpsIQ, co-founder of Genzi, maker of Lexfall, Zharo and CampusMart.",
   },
 
   hero: {
     label: "About me",
     paragraphs: [
-      "I'm a product builder based in Madrid, finishing a BA in International Business at Constructor University. Before that I studied international relations in Nicaragua and Costa Rica, and I work in English, Spanish and German.",
+      "I'm a product builder based in Madrid, with a BA in International Business from Constructor University. Before that I studied international relations in Nicaragua and Costa Rica, and I work in English, Spanish and German.",
       "Since 2022 I've built products from zero: a music social app, a field-ops platform for CPG brands with paying pilots, a vocabulary app, a LinkedIn extension and a campus marketplace. Now I'm looking for a product manager role where I can keep shipping what customers need.",
     ],
     portrait: { src: "/portfolio/me/about.jpg", alt: "Portrait of Giancarlo Peysack" },
