@@ -180,7 +180,9 @@
 }
 
 .input::placeholder {
-  color: #0a0a0a;
+  /* Was #0a0a0a: near-black text on this section's black background, so
+     placeholders were effectively invisible. */
+  color: #8f8f8f;
 }
 
 /* ---- Framer form runtime: textarea -------------------------------------- */
@@ -226,7 +228,8 @@
 }
 
 .textarea::placeholder {
-  color: #0a0a0a;
+  /* Was #0a0a0a: same near-invisible-on-black issue as .input::placeholder. */
+  color: #8f8f8f;
 }
 
 .textarea::-webkit-resizer {

@@ -90,6 +90,13 @@ function MobileNav() {
               className={styles.toggle}
               onClick={() => setOpen((o) => !o)}
               role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setOpen((o) => !o);
+                }
+              }}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
             >

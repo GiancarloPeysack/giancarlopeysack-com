@@ -1,6 +1,8 @@
 "use client";
 
 import { FormEvent, Fragment, useState } from "react";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { getFirebaseDb } from "@/lib/firebase";
 import { contactContent, type ContactField } from "@/content/contact";
 import { Appear } from "@/components/julian/fx/effects";
 import { MenuLink } from "@/components/julian/ui/MenuLink";
@@ -19,20 +21,35 @@ const spring = (delay: number) => ({
 });
 
 /**
- * The template posts to Framer's form service; this site sends the fields to
- * its own /api/notify route instead, which emails them to the owner. That
- * email is the only copy (nothing is stored), so the route answers
- * 200 { ok: false } when it couldn't send (e.g. RESEND_API_KEY unset) and
- * the form shows its error state instead of a false "Thank you".
+ * Firestore is the durable copy (matches /pilot, /sponsor, /waitlist/*), so a
+ * submission survives even if the /api/notify email step fails (e.g.
+ * RESEND_API_KEY unset). The email is best-effort on top of that.
  */
 async function submitContactForm(data: Record<string, string>) {
-  const res = await fetch("/api/notify", {
+  const db = getFirebaseDb();
+  if (!db) throw new Error("firestore unavailable");
+  await addDoc(collection(db, "contact_messages"), {
+    ...data,
+    createdAt: serverTimestamp(),
+    source: "giancarlopeysack.com/contact",
+  });
+  // Fire-and-forget email notification (best-effort, matches the other forms).
+  fetchWithTimeout("/api/notify", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ type: "contact", data }),
-  });
-  const body = (await res.json().catch(() => null)) as { ok?: boolean } | null;
-  if (!res.ok || !body?.ok) throw new Error(`notify failed: ${res.status}`);
+  }).catch(() => {});
+}
+
+/** fetch with an 8s timeout so a hung request never leaves the button stuck. */
+async function fetchWithTimeout(input: string, init: RequestInit, ms = 8000) {
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), ms);
+  try {
+    return await fetch(input, { ...init, signal: ctrl.signal });
+  } finally {
+    clearTimeout(t);
+  }
 }
 
 export function ContactHero() {
@@ -43,7 +60,15 @@ export function ContactHero() {
     e.preventDefault();
     if (state === "loading") return;
     const fd = new FormData(e.currentTarget);
-    if (fd.get("website")) return; // honeypot: bots fill every field
+    if (fd.get("website")) {
+      // Honeypot tripped: show the normal success state without sending
+      // anything, so a bot can't tell it was caught, and a real visitor
+      // whose password manager filled the hidden field never sees a stuck
+      // button (a known autofill gotcha with hidden honeypot inputs).
+      setState("loading");
+      setTimeout(() => setState("success"), 400);
+      return;
+    }
     const data: Record<string, string> = {};
     for (const field of form.fields) data[field.key] = String(fd.get(field.key) ?? "");
     setState("loading");
@@ -84,6 +109,15 @@ export function ContactHero() {
             </Appear>
             <Appear className={styles.linkContainer} {...spring(1)}>
               <MenuLink title={details.email.title} href={details.email.link} variant="M" newTab />
+            </Appear>
+          </div>
+
+          <div className={styles.detailGroup}>
+            <Appear className={styles.caption} {...spring(0.9)}>
+              <p className={styles.captionText}>{details.resume.caption}</p>
+            </Appear>
+            <Appear className={styles.linkContainer} {...spring(1)}>
+              <MenuLink title={details.resume.title} href={details.resume.link} variant="M" newTab />
             </Appear>
           </div>
 

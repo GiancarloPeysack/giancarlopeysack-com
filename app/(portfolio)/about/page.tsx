@@ -10,6 +10,19 @@ import { aboutContent } from "@/content/about";
 export const metadata: Metadata = {
   title: aboutContent.meta.title,
   description: aboutContent.meta.description,
+  alternates: { canonical: "https://giancarlopeysack.com/about" },
+  openGraph: {
+    title: aboutContent.meta.title,
+    description: aboutContent.meta.description,
+    url: "https://giancarlopeysack.com/about",
+    siteName: "Giancarlo Peysack",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: aboutContent.meta.title,
+    description: aboutContent.meta.description,
+  },
 };
 
 // Route /about — exact rebuild of the template's About page (spec id "about").

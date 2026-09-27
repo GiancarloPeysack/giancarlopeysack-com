@@ -48,6 +48,7 @@ export function ProjectsIndex() {
             <Appear key={study.slug} className={styles.gridItem} {...spring(1.1)}>
               <ProjectCard
                 project={study.card.name}
+                subtitle={study.subtitle}
                 year={study.card.year}
                 image={study.card.image}
                 image2={study.card.image2}

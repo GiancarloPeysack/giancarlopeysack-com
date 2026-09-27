@@ -11,7 +11,24 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const study = getCaseStudy(params.slug);
   if (!study) return {};
-  return { title: study.meta.title, description: study.meta.description };
+  const url = `https://giancarlopeysack.com/projects/${study.slug}`;
+  return {
+    title: study.meta.title,
+    description: study.meta.description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: study.meta.title,
+      description: study.meta.description,
+      url,
+      siteName: "Giancarlo Peysack",
+      type: "article",
+    },
+    twitter: {
+      card: "summary",
+      title: study.meta.title,
+      description: study.meta.description,
+    },
+  };
 }
 
 export default function CaseStudyPage({ params }: { params: { slug: string } }) {

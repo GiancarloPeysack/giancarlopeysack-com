@@ -99,12 +99,12 @@ export const caseStudies: CaseStudy[] = [
       "<li><p><strong>The daily habit</strong><br>A swipeable feed of one word at a time with pronunciation, definitions and examples, spaced repetition so words stick, and a test that finds your real level.</p></li>" +
       "<li><p><strong>Learning without opening the app</strong><br>A Home and Lock Screen widget and daily notifications that teach a new word every few hours.</p></li>" +
       "</ul>" +
-      "<h3>Early results</h3><p>Less than 30 days after launch, from App Store Connect:</p><ul>" +
+      "<h3>Early results</h3><p>Less than 30 days after its August 2026 launch, from App Store Connect (figures as of September 2026):</p><ul>" +
       "<li><p>2.17K App Store impressions and 131 product page views</p></li>" +
       "<li><p>33 first downloads, a 2.6% conversion rate</p></li>" +
       "<li><p>4 subscription starts, with about 11% of downloads converting to a paid subscription by day 14</p></li>" +
       "<li><p>Built end to end by me: product, design, code and go-to-market</p></li>" +
-      "</ul>",
+      "</ul><p>Live at <a href=\"https://lexfall.app\" target=\"_blank\" rel=\"noopener noreferrer\">lexfall.app</a>.</p>",
     gallery: [
       img("lexfall", "wide", "Lexfall: exactly what's in the app"),
       img("lexfall", "left", "Lexfall on iPhone"),
@@ -144,7 +144,7 @@ export const caseStudies: CaseStudy[] = [
       "<li><p><strong>Voice learning</strong><br>It learns from how you write, so comments and posts read like you, not like a template.</p></li>" +
       "<li><p><strong>Post scoring</strong><br>Every post in the feed gets a score for how worth engaging it is, so time goes where it matters.</p></li>" +
       "</ul>" +
-      "<h3>Status</h3><p>In private beta ahead of the Chrome Web Store launch.</p>",
+      "<h3>Status</h3><p>In private beta ahead of the Chrome Web Store launch. Follow along at <a href=\"https://zharo.club\" target=\"_blank\" rel=\"noopener noreferrer\">zharo.club</a>.</p>",
     gallery: [
       img("zharo", "wide", "Zharo scoring and drafting inside the LinkedIn feed"),
       img("zharo", "left", "The Zharo mark"),
@@ -194,7 +194,7 @@ export const caseStudies: CaseStudy[] = [
       "<li><p>Web dashboard with KPI reports</p></li>" +
       "<li><p>AI shelf photo price extraction</p></li>" +
       "<li><p>Competitor web price monitoring and alerts</p></li>" +
-      "</ul>",
+      "</ul><p>Live at <a href=\"https://marketopsiq.com\" target=\"_blank\" rel=\"noopener noreferrer\">marketopsiq.com</a>.</p>",
     gallery: [
       img("marketopsiq", "wide", "MarketOpsIQ: how it works, from setup to insights"),
       img("marketopsiq", "left", "MarketOpsIQ app: structured store reports"),

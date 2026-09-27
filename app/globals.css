@@ -20,6 +20,33 @@ a:hover {
   text-decoration-color: rgba(31, 41, 55, 0.9);
 }
 
+/* Several template components ship `outline: none` on focus with no
+   replacement, which drops the focus ring for keyboard users. Restore a
+   visible ring everywhere, at !important so it wins regardless of which
+   stylesheet (global vs. CSS module) loads last in the bundle. Only shows
+   for keyboard/programmatic focus (:focus-visible), not mouse clicks. */
+:focus-visible {
+  outline: 2px solid #4d9fff !important;
+  outline-offset: 2px !important;
+}
+html:has(.portfolio-root) :focus-visible {
+  outline-color: #ffffff !important;
+}
+
+/* Respect the OS-level "reduce motion" setting for anyone who has it on. The
+   appear/parallax runtime only checks viewport width breakpoints, not this,
+   so this is a blanket safety net on top. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* ---------------------------------------------------------------------------
    Portfolio (Julian template) pages. :has() keeps the page background black
    from first paint, including overscroll areas, without touching the light

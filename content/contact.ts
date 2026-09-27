@@ -34,8 +34,8 @@ export const contactMeta = {
 export const contactContent = {
   form: {
     fields: [
-      { kind: "text", key: "name", name: "Name", label: "Name", placeholder: "Jane Smith" },
-      { kind: "email", key: "email", name: "Email", label: "Email", placeholder: "jane@company.com" },
+      { kind: "text", key: "name", name: "Name", label: "Name", placeholder: "Jane Smith", required: true },
+      { kind: "email", key: "email", name: "Email", label: "Email", placeholder: "jane@company.com", required: true },
       {
         kind: "select",
         key: "projectType",
@@ -63,6 +63,7 @@ export const contactContent = {
   },
   details: {
     email: { caption: "email", title: "gc.peysack@gmail.com", link: "mailto:gc.peysack@gmail.com" },
+    resume: { caption: "resume", title: "Download CV (PDF)", link: "/Giancarlo-Peysack-CV.pdf" },
     // The template's phone slot, used for LinkedIn
     phone: { caption: "LinkedIn", title: "in/gcpeysack", link: "https://linkedin.com/in/gcpeysack" },
     socials: {

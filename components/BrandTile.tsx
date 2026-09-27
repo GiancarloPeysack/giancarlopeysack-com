@@ -13,6 +13,8 @@ type BrandTileProps = {
   borderColor?: string;
   /** Vertical pixel nudge for the letter (e.g. -2 to lift a lowercase glyph). */
   letterOffsetY?: number;
+  /** Renders a non-navigating, visually muted tile (e.g. a "coming soon" link). */
+  disabled?: boolean;
 };
 
 /**
@@ -30,14 +32,27 @@ export function BrandTile({
   children,
   borderColor,
   letterOffsetY = 0,
+  disabled = false,
 }: BrandTileProps) {
+  const Wrapper: any = disabled ? "span" : Link;
+  const wrapperProps = disabled
+    ? {
+        "aria-disabled": true as const,
+        "aria-label": `${label} (soon)`,
+        tabIndex: 0,
+      }
+    : {
+        href,
+        target: href.startsWith("http") ? ("_blank" as const) : undefined,
+        rel: href.startsWith("http") ? "noopener noreferrer" : undefined,
+        "aria-label": label,
+      };
   return (
-    <Link
-      href={href}
-      target={href.startsWith("http") ? "_blank" : undefined}
-      rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-      aria-label={label}
-      className="tile inline-flex shrink-0 align-middle no-underline"
+    <Wrapper
+      {...wrapperProps}
+      className={`tile inline-flex shrink-0 align-middle no-underline${
+        disabled ? " opacity-40 cursor-default" : ""
+      }`}
     >
       <span
         className="brand-tile inline-flex items-center justify-center"
@@ -68,6 +83,6 @@ export function BrandTile({
         )}
       </span>
       <span className="tile-tooltip">{tooltip ?? label}</span>
-    </Link>
+    </Wrapper>
   );
 }

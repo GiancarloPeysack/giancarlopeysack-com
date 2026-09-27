@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const LINKS = {
   marketops: "https://marketopsiq.com",
   genzi: "https://genzi.app",
-  lexfall: "https://luxfall.online",
+  lexfall: "https://lexfall.app",
   zharo: "https://zharo.club",
   linkedin: "https://linkedin.com/in/gcpeysack",
   tiktok: "#",
@@ -161,6 +161,7 @@ export default function LinksPage() {
                 label="TikTok"
                 tooltip="TikTok (soon)"
                 bg="#000000"
+                disabled
               >
                 <TikTokIcon />
               </BrandTile>
@@ -169,6 +170,7 @@ export default function LinksPage() {
                 label="Instagram"
                 tooltip="Instagram (soon)"
                 bg="linear-gradient(135deg, #FFD600 0%, #FF7A00 30%, #FF0069 60%, #D300C5 80%, #7638FA 100%)"
+                disabled
               >
                 <InstagramIcon />
               </BrandTile>
@@ -189,18 +191,26 @@ export default function LinksPage() {
           >
             <p>
               Looking to pilot MarketOpsIQ for your company?{" "}
-              <Link href="/pilot">Click here.</Link>
+              <Link href="/pilot">See the pilot program.</Link>
             </p>
             <p>
               Interested in sponsoring a video?{" "}
-              <Link href="/sponsor">Click here.</Link>
+              <Link href="/sponsor">Get sponsorship details.</Link>
             </p>
             <p>
-              Want to say hi? <Link href={LINKS.sayHi}>Click here.</Link>
+              Want early access to my AI tool for LinkedIn?{" "}
+              <Link href="/waitlist/linkedin">Join the waitlist.</Link>
+            </p>
+            <p>
+              Want early access to my AI video tool?{" "}
+              <Link href="/waitlist/video">Join the waitlist.</Link>
+            </p>
+            <p>
+              Want to say hi? <Link href={LINKS.sayHi}>Send me an email.</Link>
             </p>
             <p>
               Evaluating me for a Product Manager role?{" "}
-              <Link href="/">Click here.</Link>
+              <Link href="/Giancarlo-Peysack-CV.pdf">Download my resume.</Link>
             </p>
           </div>
         </article>
