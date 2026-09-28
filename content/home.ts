@@ -48,11 +48,11 @@ export const homeContent = {
     label: "[Intro]",
     reveal: {
       desktop:
-        "I design and build products end to end: B2B software that answers to company rules and audit trails, consumer apps on the App Store, and AI that does real work inside a business.",
+        "I design and build products end to end, from consumer apps on the App Store to B2B software that answers to company rules. I also help companies find where AI creates real value, then build it.",
       tablet:
-        "I design and build products end to end: B2B software that answers to company rules and audit trails, consumer apps on the App Store, and AI that does real work inside a business.",
+        "I design and build products end to end, from consumer apps on the App Store to B2B software that answers to company rules. I also help companies find where AI creates real value, then build it.",
       phone:
-        "I design and build products end to end: B2B software that answers to company rules and audit trails, consumer apps on the App Store, and AI that does real work inside a business.",
+        "I design and build products end to end, from consumer apps on the App Store to B2B software that answers to company rules. I also help companies find where AI creates real value, then build it.",
     },
     /** Marks of the products Gianni built, in the logo ticker; `fit` is the image's object-fit */
     logos: [
