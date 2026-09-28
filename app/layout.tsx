@@ -7,18 +7,18 @@ const fontVariables = [inter, switzer, neutralSansVariable, interDisplay, schibs
   .join(" ");
 
 export const metadata: Metadata = {
-  title: "Giancarlo Peysack",
+  title: "Gianni Peysack",
   description: "Product Manager. Case studies on Genzi, Lexfall, MarketOpsIQ, and Zharo.",
   openGraph: {
-    title: "Giancarlo Peysack",
+    title: "Gianni Peysack",
     description: "Product Manager. I build and ship products end to end.",
     url: "https://giancarlopeysack.com",
-    siteName: "Giancarlo Peysack",
+    siteName: "Gianni Peysack",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "Giancarlo Peysack",
+    title: "Gianni Peysack",
     description: "Product Manager. I build and ship products end to end.",
   },
 };

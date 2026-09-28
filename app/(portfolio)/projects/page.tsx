@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: projectsIndex.meta.title,
     description: projectsIndex.meta.description,
     url: "https://giancarlopeysack.com/projects",
-    siteName: "Giancarlo Peysack",
+    siteName: "Gianni Peysack",
     type: "website",
   },
   twitter: {

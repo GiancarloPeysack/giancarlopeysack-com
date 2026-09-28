@@ -1,11 +1,11 @@
 # giancarlopeysack.com — Project Handoff
 
-Personal site for Giancarlo Peysack. Next.js on Vercel, with pilot/sponsor
+Personal site for Gianni Peysack. Next.js on Vercel, with pilot/sponsor
 contact forms and two product waitlists backed by Firebase Firestore and email
 notifications via Resend.
 
 **Portfolio rebuild: stages 1 and 2 done (2026-09-18), ready for review.** The public-facing
-pages are being rebuilt as a portfolio for people evaluating Giancarlo as a Product
+pages are being rebuilt as a portfolio for people evaluating Gianni as a Product
 Manager, using the free Framer marketplace template "Juliand" (live demo:
 https://juliandavid.framer.website, marketplace:
 https://www.framer.com/marketplace/templates/juliand/) as the design.
@@ -20,7 +20,7 @@ Two stages:
    cursor animations were timed against the original. Deliberately excluded:
    Framer's "Use for Free" pill and "Made in Framer" badge (their marketing, not
    the design).
-2. **Personalize (done, open items below).** All copy and images are Giancarlo's
+2. **Personalize (done, open items below).** All copy and images are Gianni's
    own: PM positioning, five case studies (Lexfall, Zharo, MarketOpsIQ,
    CampusMart, Genzi, most recent first), about, contact. Facts come from the CV,
    the products' live sites and the project folders; client names stay anonymous.
@@ -45,7 +45,7 @@ The older minimal "chrisraroque.com" homepage still exists, moved to `/links`.
 
 | Thing | Location |
 |---|---|
-| Source repo | github.com/GiancarloPeysack/giancarlopeysack-com (public) |
+| Source repo | github.com/GianniPeysack/giancarlopeysack-com (public) |
 | Local project | ~/Documents/giancarlopeysack.com/site (the repo) |
 | Vercel project | vercel.com/giancarls-projects/giancarlopeysack-com |
 | Firebase project | console.firebase.google.com/project/giancarlopeysack-f7171 |
@@ -152,7 +152,7 @@ cd ~/Documents/giancarlopeysack.com/site && rm -f .git/index.lock .git/HEAD.lock
 - `PhoneTile.tsx` / `SocialTile.tsx` — deprecated, kept as no-ops
 
 `/links` copy (moved from the old homepage):
-- "Hi, I'm Giancarlo Peysack [avatar]"
+- "Hi, I'm Gianni Peysack [avatar]"
 - "I like writing here [Substack]"
 - "I've shipped some apps [Genzi][Lexfall][MarketOpsIQ][Zharo]"
 - "I post here [LinkedIn][TikTok][Instagram]"
@@ -213,7 +213,7 @@ RESEND_API_KEY    ← sign up at resend.com, copy from API Keys, add to Vercel, 
 
 - [x] **Portfolio stage 1: exact copy** of the Julian template, verified against the original at every breakpoint (2026-09-18).
 - [x] **Portfolio stage 2: personalize** (2026-09-18). Launched on giancarlopeysack.com the same day (PR #2).
-- [ ] **Sixth project**: Giancarlo will send one more (a website he built). Add it to `content/projects.ts` (order + card + case study) and build its images with `tools/build_images.py`.
+- [ ] **Sixth project**: Gianni will send one more (a website he built). Add it to `content/projects.ts` (order + card + case study) and build its images with `tools/build_images.py`.
 - [ ] **Refresh early numbers** as they grow: Lexfall's first-month App Store Connect figures (2.17K impressions, 33 first downloads, 4 subscription starts, ~11% download-to-paid by day 14) and Genzi's TikTok stats (~1.5K followers, 36K likes, top video 100K views from April 2022).
 - [ ] **Optional**: a handwritten signature image for the About hero (`aboutContent.hero.signature`), TikTok/Instagram links once live.
 - [x] **Social bio links:** Instagram and TikTok bios point to `/links` (quick taps, sponsor and pilot CTAs, a link to the portfolio); LinkedIn and the CV point to `/` (the portfolio).

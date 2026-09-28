@@ -10,7 +10,7 @@ const SUBSTACK = "https://giancarlopeysack.substack.com";
 
 export const site = {
   // No ® (the template's): the name isn't a registered trademark.
-  logo: "Giancarlo.p",
+  logo: "Gianni.p",
 
   nav: {
     links: [
@@ -45,7 +45,7 @@ export const site = {
       { title: "SUBSTACK", href: SUBSTACK },
       { title: "LINKS", href: "/links" },
     ] satisfies NavLink[],
-    copyright: "© 2026 Giancarlo Peysack. All rights reserved. Madrid, Spain.",
+    copyright: "© 2026 Gianni Peysack. All rights reserved. Madrid, Spain.",
   },
 
   cta: {

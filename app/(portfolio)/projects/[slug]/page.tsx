@@ -20,7 +20,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
       title: study.meta.title,
       description: study.meta.description,
       url,
-      siteName: "Giancarlo Peysack",
+      siteName: "Gianni Peysack",
       type: "article",
     },
     twitter: {

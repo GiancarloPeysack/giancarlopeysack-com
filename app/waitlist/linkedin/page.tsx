@@ -90,8 +90,8 @@ export default function LinkedInWaitlist() {
       <div className="w-full max-w-[460px]">
         <div className="flex flex-col items-center text-center">
           <Image
-            src="/giancarlo.jpg"
-            alt="Giancarlo Peysack"
+            src="/gianni.jpg"
+            alt="Gianni Peysack"
             width={64}
             height={64}
             priority

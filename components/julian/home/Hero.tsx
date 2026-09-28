@@ -18,10 +18,10 @@ const ZOOM: { initial: FxState; animate: FxState } = {
 };
 
 // Fit-text boxes for the name on tablet and phone. Both lines share the width
-// of the longer word ("Giancarlo" renders 749px wide at 165px in Neutral
-// Sans), so the two lines scale together and keep the same size. Re-measure if
-// the name changes.
-const FIT = { viewBox: "0 0 750 132", fontSize: 165 };
+// of the longer word ("Peysack" renders 686.72px wide at 165px in Neutral
+// Sans; "Gianni" is 484.75px), so the two lines scale together and keep the
+// same size. Re-measure in the browser if the name changes.
+const FIT = { viewBox: "0 0 687 132", fontSize: 165 };
 const NAME_FIT = {
   first: { tablet: FIT, phone: FIT },
   last: { tablet: FIT, phone: FIT },

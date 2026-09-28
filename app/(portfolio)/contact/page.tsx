@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: contactMeta.title,
     description: contactMeta.description,
     url: "https://giancarlopeysack.com/contact",
-    siteName: "Giancarlo Peysack",
+    siteName: "Gianni Peysack",
     type: "website",
   },
   twitter: {

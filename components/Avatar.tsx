@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
  */
 export function Avatar({
   src,
-  alt = "Giancarlo Peysack",
+  alt = "Gianni Peysack",
   size = 56,
 }: {
   src: string;

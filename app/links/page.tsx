@@ -11,18 +11,18 @@ import {
 } from "@/components/SocialIcons";
 
 export const metadata: Metadata = {
-  title: "Giancarlo Peysack · Links",
+  title: "Gianni Peysack · Links",
   description: "I like to build stuff. Writing, apps, and social links.",
   openGraph: {
-    title: "Giancarlo Peysack",
+    title: "Gianni Peysack",
     description: "I like to build stuff.",
     url: "https://giancarlopeysack.com/links",
-    siteName: "Giancarlo Peysack",
+    siteName: "Gianni Peysack",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "Giancarlo Peysack",
+    title: "Gianni Peysack",
     description: "I like to build stuff.",
   },
 };
@@ -54,9 +54,9 @@ export default function LinksPage() {
         >
           {/* Greeting + click-to-zoom avatar */}
           <p>
-            Hi, I&apos;m Giancarlo Peysack{" "}
+            Hi, I&apos;m Gianni Peysack{" "}
             <span className="inline-block align-middle ml-1">
-              <Avatar src="/giancarlo.jpg" />
+              <Avatar src="/gianni.jpg" />
             </span>
           </p>
 
@@ -210,7 +210,7 @@ export default function LinksPage() {
             </p>
             <p>
               Evaluating me for a Product Manager role?{" "}
-              <Link href="/Giancarlo-Peysack-CV.pdf">Download my resume.</Link>
+              <Link href="/Gianni-Peysack-CV.pdf">Download my resume.</Link>
             </p>
           </div>
         </article>

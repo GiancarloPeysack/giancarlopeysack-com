@@ -26,7 +26,7 @@ export type ContactSelectField = {
 export type ContactField = ContactTextField | ContactSelectField;
 
 export const contactMeta = {
-  title: "Contact · Giancarlo Peysack",
+  title: "Contact · Gianni Peysack",
   description:
     "Tell me about the project: an app, a website, B2B software or an AI workflow. Also MarketOpsIQ pilots and video sponsorships.",
 };
@@ -65,7 +65,7 @@ export const contactContent = {
   },
   details: {
     email: { caption: "email", title: "gc.peysack@gmail.com", link: "mailto:gc.peysack@gmail.com" },
-    resume: { caption: "resume", title: "Download CV (PDF)", link: "/Giancarlo-Peysack-CV.pdf" },
+    resume: { caption: "resume", title: "Download CV (PDF)", link: "/Gianni-Peysack-CV.pdf" },
     // The template's phone slot, used for LinkedIn
     phone: { caption: "LinkedIn", title: "in/gcpeysack", link: "https://linkedin.com/in/gcpeysack" },
     socials: {

@@ -1,7 +1,7 @@
 /**
  * POST /api/notify
  *
- * Forwards a form submission to Giancarlo's inbox via Resend. The original
+ * Forwards a form submission to Gianni's inbox via Resend. The original
  * data is also stored in Firestore (handled separately by the form pages),
  * so this endpoint is best-effort — if it fails, the form still succeeded.
  *
@@ -25,7 +25,7 @@ const SUBJECTS: Record<string, string> = {
   contact: "Portfolio contact form",
 };
 
-const FROM = "Giancarlo Site <onboarding@resend.dev>";
+const FROM = "Gianni Site <onboarding@resend.dev>";
 const TO = "gc.peysack@gmail.com";
 
 export async function POST(req: Request) {

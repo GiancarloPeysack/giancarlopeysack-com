@@ -1,4 +1,4 @@
-// Projects index + case studies. Facts come from Giancarlo's CV, the
+// Projects index + case studies. Facts come from Gianni's CV, the
 // products' own sites and the project folders; client names stay anonymous.
 // Rich text bodies are plain semantic HTML (h3/h4/p/ul/ol/li/blockquote/
 // strong/br) rendered with the template's rich-text styles; they are static
@@ -38,9 +38,9 @@ const img = (slug: string, name: string, alt: string): ProjectImage => ({
 
 export const projectsIndex = {
   meta: {
-    title: "Projects · Giancarlo Peysack",
+    title: "Projects · Gianni Peysack",
     description:
-      "Products Giancarlo Peysack has built: MarketOpsIQ, Genzi, Lexfall, Zharo and CampusMart. B2B SaaS, consumer apps and browser tools.",
+      "Products Gianni Peysack has built: MarketOpsIQ, Genzi, Lexfall, Zharo and CampusMart. B2B SaaS, consumer apps and browser tools.",
   },
   title: "Projects.",
   intro: {
@@ -70,7 +70,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "lexfall",
     meta: {
-      title: "Lexfall · Giancarlo Peysack",
+      title: "Lexfall · Gianni Peysack",
       description:
         "Case study: designing, building and launching Lexfall solo, an advanced vocabulary app with a Home Screen widget and paying subscribers in its first month.",
     },
@@ -115,7 +115,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "zharo",
     meta: {
-      title: "Zharo · Giancarlo Peysack",
+      title: "Zharo · Gianni Peysack",
       description:
         "Case study: Zharo, a Chrome extension that drafts LinkedIn comments and posts in your own voice, right inside LinkedIn.",
     },
@@ -155,7 +155,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "marketopsiq",
     meta: {
-      title: "MarketOpsIQ · Giancarlo Peysack",
+      title: "MarketOpsIQ · Gianni Peysack",
       description:
         "Case study: taking a field operations and shelf price intelligence platform for CPG brands from zero to two paid pilots.",
     },
@@ -205,7 +205,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "campusmart",
     meta: {
-      title: "CampusMart · Giancarlo Peysack",
+      title: "CampusMart · Gianni Peysack",
       description:
         "Case study: CampusMart, a student super-app for Constructor University with a marketplace, food ordering and a community feed.",
     },
@@ -249,7 +249,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "genzi",
     meta: {
-      title: "Genzi · Giancarlo Peysack",
+      title: "Genzi · Gianni Peysack",
       description:
         "Case study: Genzi, a social app for music fans: from concept to a live iOS app, #5 on Product Hunt and the TikTok marketing I ran myself.",
     },
@@ -287,7 +287,7 @@ export const caseStudies: CaseStudy[] = [
       "<li><p>Live on the App Store, with an Android waitlist</p></li>" +
       "</ul>",
     gallery: [
-      img("genzi", "wide", "Genzi's TikTok: street interviews and POV music videos fronted by Giancarlo"),
+      img("genzi", "wide", "Genzi's TikTok: street interviews and POV music videos fronted by Gianni"),
       img("genzi", "left", "Genzi on Product Hunt: #5 Day Rank with 201 upvotes"),
       img("genzi", "right", "Friends laughing at a concert"),
     ],

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 // The page itself is "use client" (form state), so metadata lives here.
-const TITLE = "AI video tool waitlist · Giancarlo Peysack";
+const TITLE = "AI video tool waitlist · Gianni Peysack";
 const DESCRIPTION =
   "Join the waitlist for an AI video tool built for creators who publish frequently.";
 
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     url: "https://giancarlopeysack.com/waitlist/video",
-    siteName: "Giancarlo Peysack",
+    siteName: "Gianni Peysack",
     type: "website",
   },
   twitter: {

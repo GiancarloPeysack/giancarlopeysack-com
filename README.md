@@ -1,6 +1,6 @@
 # giancarlopeysack.com
 
-Personal site for Giancarlo Peysack. Next.js 14 (App Router) + TypeScript + Tailwind, deployed to Vercel. Sponsor and pilot forms write to Firebase Firestore.
+Personal site for Gianni Peysack. Next.js 14 (App Router) + TypeScript + Tailwind, deployed to Vercel. Sponsor and pilot forms write to Firebase Firestore.
 
 ## Local dev
 
@@ -15,7 +15,7 @@ npm run dev
 - **Portfolio pages (`/`, `/about`, `/projects`, `/projects/[slug]`, `/contact`, 404)**: all text, links and image URLs live in `content/*.ts` (`site.ts` for nav, footer and the "let's work together" CTA). Layout and animation code is under `components/julian/`. See `PROJECT.md` for the current rebuild status before changing anything.
 - **Personal links page (`/links`)**: edit `app/links/page.tsx`. Same pattern as the old homepage: a `LINKS` object at the top is the single place to change destinations for project tiles, social icons, and the contact CTAs.
 
-To replace the avatar, drop a new square JPG at `public/giancarlo.jpg`.
+To replace the avatar, drop a new square JPG at `public/gianni.jpg`.
 
 ## Firebase setup (one-time)
 

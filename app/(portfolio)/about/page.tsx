@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: aboutContent.meta.title,
     description: aboutContent.meta.description,
     url: "https://giancarlopeysack.com/about",
-    siteName: "Giancarlo Peysack",
+    siteName: "Gianni Peysack",
     type: "website",
   },
   twitter: {

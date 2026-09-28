@@ -105,6 +105,18 @@
   object-position: center;
 }
 
+/* A flat scrim over the footage so the white name reads against it and the
+   clip sits back in the page instead of competing with the type. */
+.heroImage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-color: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  z-index: 1;
+}
+
 /* The looping clip sits on top of the poster image, same box, same mask. */
 .heroVideo {
   position: absolute;

@@ -1,8 +1,8 @@
 // Content of the 404 page.
 
 export const notFoundMeta = {
-  title: "Page not found · Giancarlo Peysack",
-  description: "This page doesn't exist. Head back to the home page for Giancarlo Peysack's projects.",
+  title: "Page not found · Gianni Peysack",
+  description: "This page doesn't exist. Head back to the home page for Gianni Peysack's projects.",
 };
 
 export const notFoundContent = {

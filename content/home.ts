@@ -1,5 +1,5 @@
 // Content of the Home page (route /). Every string, link and image the page
-// shows lives here. Facts come from Giancarlo's own products, the project
+// shows lives here. Facts come from Gianni's own products, the project
 // folders and their code; nothing is invented.
 //
 // Positioning (2026-09-28): the site sells work, it does not ask for a job.
@@ -7,7 +7,7 @@
 
 export const homeContent = {
   meta: {
-    title: "Giancarlo Peysack · Product builder, design to development",
+    title: "Gianni Peysack · Product builder, design to development",
     description:
       "I design and build products: apps, websites, B2B software and AI workflows. Case studies on MarketOpsIQ, Lexfall, Zharo, CampusMart and Genzi. Based in Madrid, working with companies anywhere.",
   },
@@ -15,14 +15,14 @@ export const homeContent = {
   hero: {
     // Poster frame of the loop, so the arch is never empty and reduced-motion
     // visitors still see something.
-    portrait: { src: "/portfolio/me/hero-loop.jpg", alt: "Giancarlo Peysack working on a laptop" },
+    portrait: { src: "/portfolio/me/hero-loop.jpg", alt: "Gianni Peysack working on a laptop" },
     /** Muted loop inside the hero arch. Built by tools/build_hero_video.sh. */
     video: {
       mp4: "/portfolio/me/hero-loop.mp4",
       webm: "/portfolio/me/hero-loop.webm",
       poster: "/portfolio/me/hero-loop.jpg",
     },
-    firstName: "Giancarlo",
+    firstName: "Gianni",
     lastName: "Peysack",
     tagline: ["Product builder in Madrid.", "From design to development."],
     labels: ["MADRID, ES", "TAKING PROJECTS"],
@@ -38,7 +38,7 @@ export const homeContent = {
       phone:
         "I design and build products end to end: B2B software that answers to company rules and audit trails, consumer apps on the App Store, and AI that does real work inside a business.",
     },
-    /** Marks of the products Giancarlo built, in the logo ticker; `fit` is the image's object-fit */
+    /** Marks of the products Gianni built, in the logo ticker; `fit` is the image's object-fit */
     logos: [
       { src: "/portfolio/logos/marketopsiq.png", fit: "contain", width: 101 },
       { src: "/portfolio/logos/genzi.png", fit: "contain", width: 101 },

@@ -102,8 +102,8 @@ export default function SponsorPage() {
       <div className="mx-auto w-full max-w-[640px] px-6 pt-16 pb-24 sm:pt-20">
         <div className="mb-8">
           <Image
-            src="/giancarlo.jpg"
-            alt="Giancarlo Peysack"
+            src="/gianni.jpg"
+            alt="Gianni Peysack"
             width={72}
             height={72}
             priority
