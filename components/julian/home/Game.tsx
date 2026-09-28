@@ -82,7 +82,13 @@ export function Game() {
     const py = g.h - 26;
     ctx.fillStyle = accent;
     ctx.beginPath();
-    ctx.roundRect(px, py, paddleW, paddleH, 999);
+    // roundRect is missing on Safari before 16, and a throw here would kill
+    // every frame; a plain rect is a fine paddle.
+    if (typeof ctx.roundRect === "function") {
+      ctx.roundRect(px, py, paddleW, paddleH, 999);
+    } else {
+      ctx.rect(px, py, paddleW, paddleH);
+    }
     ctx.fill();
 
     const bx = g.ball.x * g.w;
