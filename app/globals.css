@@ -77,7 +77,9 @@ html:has(.portfolio-root) :focus-visible {
    pages (/links, /pilot, /sponsor).
    --------------------------------------------------------------------------- */
 html:has(.portfolio-root),
-body:has(.portfolio-root) {
+body:has(.portfolio-root),
+html:has(.links-root),
+body:has(.links-root) {
   background: var(--bg);
   color: var(--fg);
 }
