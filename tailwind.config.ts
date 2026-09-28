@@ -19,7 +19,7 @@ const config: Config = {
         switzer: ["var(--font-switzer)", "sans-serif"],
         // The About page's headings run on the display face like the rest of
         // the site; the alias stays so its call sites do not change.
-        schibsted: ["var(--font-neutral-sans)", "sans-serif"],
+        schibsted: ["var(--font-display)", "Times", "serif"],
         chivo: ["var(--font-chivo-mono)", "monospace"],
         neutral: ["var(--font-neutral-sans)", "sans-serif"],
         inter: ["var(--font-inter)", "sans-serif"],

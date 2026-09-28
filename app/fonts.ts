@@ -1,5 +1,15 @@
 import localFont from "next/font/local";
-import { Chivo_Mono, Inter, Schibsted_Grotesk } from "next/font/google";
+import { Chivo_Mono, Instrument_Serif, Inter, Schibsted_Grotesk } from "next/font/google";
+
+// The display face. A single regular weight on purpose: the site should read
+// as elegant rather than bold, so there is no heavy cut to fall back on.
+export const displaySerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-display",
+});
 
 // The light pages (/links, /pilot, /sponsor, /waitlist/*) keep the variable
 // Google Inter they always used (weights 100–900, incl. 800 headings).

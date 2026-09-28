@@ -1,20 +1,21 @@
 // Text presets of the About page, aligned with the site's type scale in
-// components/julian/ui/text.module.css: Neutral Sans for headings (the
-// `font-schibsted` alias now resolves to it), Switzer for body and UI,
-// Chivo Mono for labels. Sizes are fluid rather than stepped per breakpoint.
+// components/julian/ui/text.module.css: the display serif for headings and
+// the bio (the `font-schibsted` alias resolves to it), Switzer for body and
+// UI, Chivo Mono for labels. The headings dropped uppercase and bold: the
+// serif carries them, and shouting was the template's idea, not ours.
 import styles from "./about.module.css";
 
 /** Section headings (h1) */
-export const h1Cls = `${styles.grotesk} font-schibsted text-[clamp(30px,4vw,54px)] font-extrabold uppercase leading-[1.02em] tracking-[-0.04em] text-[color:var(--fg)]`;
+export const h1Cls = `${styles.grotesk} font-schibsted text-[clamp(34px,4.6vw,62px)] font-normal leading-[1.04em] tracking-[-0.015em] text-[color:var(--fg)]`;
 
 /** Process step titles (h2) */
-export const h2Cls = `${styles.grotesk} font-schibsted text-[clamp(24px,2.4vw,34px)] font-extrabold uppercase leading-[1.1em] tracking-[-0.035em] text-[color:var(--fg)]`;
+export const h2Cls = `${styles.grotesk} font-schibsted text-[clamp(26px,2.8vw,40px)] font-normal leading-[1.12em] tracking-[-0.01em] text-[color:var(--fg)]`;
 
 /** Experience / milestone titles (h4), colour set per use */
-export const h4Cls = "font-switzer text-[clamp(18px,1.4vw,21px)] font-semibold leading-[1.3em] tracking-[-0.02em]";
+export const h4Cls = "font-switzer text-[clamp(17px,1.3vw,20px)] font-medium leading-[1.35em] tracking-[-0.015em]";
 
 /** Body copy, colour set per use (defaults to --muted at the call site) */
-export const bodyCls = "font-switzer text-[clamp(16px,1.15vw,18px)] font-[450] leading-[1.5em] tracking-[-0.01em]";
+export const bodyCls = "font-switzer text-[clamp(16px,1.15vw,18px)] font-normal leading-[1.6em] tracking-[-0.01em]";
 
 /** Stat labels and experience periods, colour set per use */
 export const captionCls = "font-switzer text-[clamp(16px,1.3vw,19px)] font-medium leading-[1.35em] tracking-[-0.01em]";
@@ -24,4 +25,4 @@ export const monoCls = "font-chivo text-[12px] font-normal uppercase leading-[1.
 
 /** The bio paragraphs */
 export const bioCls =
-  "font-switzer text-[clamp(21px,2.2vw,30px)] font-semibold leading-[1.28em] tracking-[-0.025em] text-left text-[color:var(--fg)]";
+  "font-schibsted text-[clamp(22px,2.4vw,34px)] font-normal leading-[1.32em] tracking-[-0.01em] text-left text-[color:var(--fg)]";

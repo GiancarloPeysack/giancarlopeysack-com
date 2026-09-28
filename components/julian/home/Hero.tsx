@@ -21,10 +21,10 @@ const ZOOM: { initial: FxState; animate: FxState } = {
 };
 
 // Fit-text boxes for the name on tablet and phone. Both lines share the width
-// of the longer word ("Peysack" renders 686.72px wide at 165px in Neutral
-// Sans; "Gianni" is 484.75px), so the two lines scale together and keep the
-// same size. Re-measure in the browser if the name changes.
-const FIT = { viewBox: "0 0 687 132", fontSize: 165 };
+// of the longer word, so the two lines scale together and keep the same size.
+// Measured in the browser in Instrument Serif at 165px: "Peysack" is 431.6px
+// wide and "Gianni" 370.13px. Re-measure if the name or the face changes.
+const FIT = { viewBox: "0 0 432 132", fontSize: 165 };
 const NAME_FIT = {
   first: { tablet: FIT, phone: FIT },
   last: { tablet: FIT, phone: FIT },
@@ -36,39 +36,42 @@ export function Hero() {
     <section className={s.hero} data-name="Hero">
       <div className={s.heroWrapper}>
         <div className={s.heroTop}>
-          <div className={s.heroName}>
-            <NameLine word={firstName} fit={NAME_FIT.first} />
-            <NameLine word={lastName} fit={NAME_FIT.last} last />
+          {/* The footage is the stage: three clips side by side on desktop
+              and tablet, one vertical clip on phone, with the name and the
+              call to action set on top of it. Only the frame for the live
+              breakpoint loads its video. */}
+          <div className={s.heroStage}>
+            <Appear className={`${s.heroBand} ${s.notPhone}`} {...ZOOM}>
+              <Image src={band.poster} alt={band.alt} fill unoptimized priority sizes="(min-width: 1200px) 1336px, 92vw" />
+              <HeroVideo />
+            </Appear>
+            <Appear className={`${s.heroPortrait} ${s.phoneOnly}`} {...ZOOM}>
+              <Image src={portrait.src} alt={portrait.alt} fill unoptimized priority sizes="86vw" />
+              <HeroVideo phone />
+            </Appear>
+
+            <div className={s.heroOverlay}>
+              <div className={s.heroName}>
+                <NameLine word={firstName} fit={NAME_FIT.first} />
+                <NameLine word={lastName} fit={NAME_FIT.last} last />
+              </div>
+
+              <div className={s.overview}>
+                {tagline.map((line) => (
+                  <Appear key={line} className={`${s.rt} ${s.overviewInner}`} {...rise(1.1)}>
+                    <p className={`${text.t} ${s.heroTaglineText} ${s.overviewText}`}>{line}</p>
+                  </Appear>
+                ))}
+              </div>
+
+              <Appear className={s.heroActions} {...rise(1.2)}>
+                <Button text={actions.primary.text} link={actions.primary.link} variant="Solid" />
+                <SmartLink className={s.heroSecondary} href={actions.secondary.link}>
+                  {actions.secondary.text}
+                </SmartLink>
+              </Appear>
+            </div>
           </div>
-
-          <div className={s.overview}>
-            {tagline.map((line) => (
-              <Parallax key={line} speed={110} className={s.overviewLine}>
-                <Appear className={`${s.rt} ${s.overviewInner}`} {...rise(1.1)}>
-                  <p className={`${text.t} ${s.heroTaglineText} ${s.overviewText}`}>{line}</p>
-                </Appear>
-              </Parallax>
-            ))}
-          </div>
-
-          <Appear className={s.heroActions} {...rise(1.2)}>
-            <Button text={actions.primary.text} link={actions.primary.link} variant="Solid" />
-            <SmartLink className={s.heroSecondary} href={actions.secondary.link}>
-              {actions.secondary.text}
-            </SmartLink>
-          </Appear>
-
-          {/* The footage carries the hero, so nothing is laid over it: three
-              clips side by side on desktop and tablet, one vertical clip on
-              phone. Only the frame for the live breakpoint loads its video. */}
-          <Appear className={`${s.heroBand} ${s.notPhone}`} {...ZOOM}>
-            <Image src={band.poster} alt={band.alt} fill unoptimized priority sizes="(min-width: 1200px) 1336px, 92vw" />
-            <HeroVideo />
-          </Appear>
-          <Appear className={`${s.heroPortrait} ${s.phoneOnly}`} {...ZOOM}>
-            <Image src={portrait.src} alt={portrait.alt} fill unoptimized priority sizes="82vw" />
-            <HeroVideo phone />
-          </Appear>
         </div>
 
         <Appear className={s.bottom} {...rise(0.5)}>

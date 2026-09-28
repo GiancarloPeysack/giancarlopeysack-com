@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { chivoMono, inter, interDisplay, interSite, neutralSansVariable, schibsted, switzer } from "./fonts";
+import { chivoMono, displaySerif, inter, interDisplay, interSite, neutralSansVariable, schibsted, switzer } from "./fonts";
 
-const fontVariables = [inter, switzer, neutralSansVariable, interDisplay, schibsted, chivoMono]
+const fontVariables = [inter, switzer, neutralSansVariable, interDisplay, schibsted, chivoMono, displaySerif]
   .map((f) => f.variable)
   .join(" ");
 

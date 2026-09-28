@@ -85,15 +85,40 @@
   overflow: visible;
 }
 
-/* Hero footage. The template hung a portrait behind the name; here the
-   footage is the hero, so nothing sits on top of it: a wide filmstrip of
-   three clips on desktop and tablet, one vertical clip on phone.
-   The filmstrip is width-driven, capped by the height left over after the
-   nav, the name, the tagline and the labels row. */
+/* Hero footage. The template hung a portrait behind a giant name; here the
+   footage is the stage and the words are set on it: a wide filmstrip of
+   three clips on desktop and tablet, one vertical clip on phone. The band is
+   width-driven, capped by the height left after the nav and the labels row. */
+.heroStage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex: none;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 32px 24px;
+  /* the frame below stays hoverable; only the controls take the pointer */
+  pointer-events: none;
+}
+
+.heroOverlay a {
+  pointer-events: auto;
+}
+
 .heroBand {
   width: 100%;
-  max-width: min(1336px, calc((100vh - 460px) * 2.4444));
-  aspect-ratio: 1320 / 540;
+  max-width: min(1336px, calc((100vh - 190px) * 1.7838));
+  aspect-ratio: 1320 / 740;
   margin: 0 auto;
   overflow: clip;
   will-change: transform;
@@ -104,9 +129,9 @@
 }
 
 .heroPortrait {
-  height: min(calc(100vh - 400px), 620px);
+  width: min(100%, calc((100vh - 175px) * 0.617089));
+  height: auto;
   aspect-ratio: 0.617089 / 1;
-  width: auto;
   margin: 0 auto;
   overflow: clip;
   will-change: transform;
@@ -130,7 +155,7 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background-color: rgba(0, 0, 0, 0.18);
+  background: linear-gradient(180deg, rgba(8, 8, 10, 0.42) 0%, rgba(8, 8, 10, 0.5) 45%, rgba(8, 8, 10, 0.72) 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -196,12 +221,11 @@ svg.nameInner {
 .nameText {
   margin: 0;
   padding: 0;
-  font-family: var(--font-neutral-sans), sans-serif;
-  font-size: clamp(40px, 4.6vw, 84px);
-  font-weight: 1000;
-  font-variation-settings: "wght" 1000, "opsz" 28;
-  letter-spacing: -0.06em;
-  line-height: 0.7em;
+  font-family: var(--font-display), Times, serif;
+  font-size: clamp(48px, 7vw, 124px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.92em;
   text-align: center;
   color: #fff;
 }
@@ -577,10 +601,10 @@ svg.nameInner {
     padding: 0 0 98px;
   }
   .heroBand {
-    max-width: min(100%, calc((100vh - 440px) * 2.4444));
+    max-width: min(100%, calc((100vh - 200px) * 1.7838));
   }
   .heroName {
-    width: 420px;
+    width: 300px;
     padding-bottom: 10px;
   }
   .nameLine {
@@ -630,7 +654,7 @@ svg.nameInner {
     padding: 0 0 89px;
   }
   .heroPortrait {
-    height: min(calc(100vh - 430px), 560px);
+    width: min(100%, calc((100vh - 190px) * 0.617089));
   }
   .heroName {
     width: 76%;
@@ -708,8 +732,8 @@ svg.nameInner {
    the template's small print, and the next step sits right under it. */
 .heroTaglineText {
   font-family: var(--font-switzer), sans-serif;
-  font-size: clamp(18px, 1.9vw, 26px);
-  font-weight: 500;
+  font-size: clamp(17px, 1.6vw, 22px);
+  font-weight: 400;
   line-height: 1.35em;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -730,8 +754,8 @@ svg.nameInner {
 .heroSecondary {
   font-family: var(--font-inter), sans-serif;
   font-size: 16px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-weight: 500;
+  letter-spacing: -0.015em;
   color: var(--text);
   text-decoration: underline;
   text-underline-offset: 4px;
