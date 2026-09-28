@@ -96,7 +96,7 @@ export const caseStudies: CaseStudy[] = [
       "Lexfall is a minimalist vocabulary app for advanced and native English speakers. It serves C1 to C2 words chosen for your field, from medicine and law to business, and delivers them to your Home and Lock Screen so you learn without opening the app. Designed, built and launched solo in 2026, with paying subscribers in its first month.",
     ],
     details: [
-      { label: "Role", value: "Design & build, solo" },
+      { label: "Role", value: "Product design & development" },
       { label: "Year", value: "2026" },
       { label: "Industry", value: "Consumer, EdTech" },
       { label: "Platform", value: "iOS, Android soon" },
@@ -143,7 +143,7 @@ export const caseStudies: CaseStudy[] = [
       "Zharo is a Chrome extension that lives inside LinkedIn. It learns how you write, scores which posts are worth your time, and drafts comments and posts in your voice, right where you're already scrolling.",
     ],
     details: [
-      { label: "Role", value: "Design & build" },
+      { label: "Role", value: "Product design & development" },
       { label: "Year", value: "2026" },
       { label: "Industry", value: "AI, creator tools" },
       { label: "Platform", value: "Chrome extension" },
@@ -185,7 +185,7 @@ export const caseStudies: CaseStudy[] = [
       "MarketOpsIQ replaces spreadsheets, group chats and manual store reports for CPG field teams. Merchandisers snap a shelf photo, AI reads every price, and managers see verified visits, competitor prices and alerts in one place. Taken from zero to two paid pilots with CPG brands.",
     ],
     details: [
-      { label: "Role", value: "Product, design & build" },
+      { label: "Role", value: "Product, design & development" },
       { label: "Year", value: "2025 - now" },
       { label: "Industry", value: "B2B SaaS, CPG" },
       { label: "Platform", value: "iOS, Android & web" },
