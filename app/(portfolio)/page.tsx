@@ -4,6 +4,7 @@ import { Hero } from "@/components/julian/home/Hero";
 import { Intro } from "@/components/julian/home/Intro";
 import { SelectedCases } from "@/components/julian/home/SelectedCases";
 import { ServicesSection } from "@/components/julian/home/ServicesSection";
+import { Stats } from "@/components/julian/home/Stats";
 import { Writing } from "@/components/julian/home/Writing";
 import { WorkTogether } from "@/components/julian/shell/WorkTogether";
 import { homeContent } from "@/content/home";
@@ -18,6 +19,7 @@ export default function HomePage() {
     <main className="flex w-full flex-col items-center">
       <Hero />
       <Intro />
+      <Stats />
       <SelectedCases />
       <ServicesSection />
       <ColumnsSection id="process" {...homeContent.process} />

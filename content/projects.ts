@@ -38,22 +38,22 @@ const img = (slug: string, name: string, alt: string): ProjectImage => ({
 
 export const projectsIndex = {
   meta: {
-    title: "Projects · Gianni Peysack",
+    title: "Case studies · Gianni Peysack",
     description:
       "Products Gianni Peysack has built: MarketOpsIQ, Genzi, Lexfall, Zharo and CampusMart. B2B SaaS, consumer apps and browser tools.",
   },
-  title: "Projects.",
+  title: "Case studies.",
   intro: {
     desktop: [
       "(2022-26©)",
-      "        I've built products across B2B SaaS, consumer apps and browser tools. Here are the ones I've shipped.",
+      "        I design and build products across B2B SaaS, consumer apps and browser tools. Here is the work, and what came of it.",
     ],
     phone: [
       "(2022-26©)",
-      "        I've built products across B2B SaaS, consumer apps and browser tools. Here are the ones I've shipped.",
+      "        I design and build products across B2B SaaS, consumer apps and browser tools. Here is the work, and what came of it.",
     ],
   },
-  label: "Projects - 01",
+  label: "Case studies - 01",
   order: ["lexfall", "zharo", "marketopsiq", "campusmart", "genzi"],
 };
 

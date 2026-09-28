@@ -1,7 +1,10 @@
 import Image from "next/image";
 import { homeContent } from "@/content/home";
 import { Appear, Parallax, type FxState } from "@/components/julian/fx/effects";
+import { Button } from "@/components/julian/ui/Button";
+import { SmartLink } from "@/components/julian/ui/SmartLink";
 import { HeroVideo } from "./HeroVideo";
+import { LocalTime } from "./LocalTime";
 import { Label } from "@/components/julian/ui/Label";
 import text from "@/components/julian/ui/text.module.css";
 import s from "./home.module.css";
@@ -28,7 +31,7 @@ const NAME_FIT = {
 };
 
 export function Hero() {
-  const { portrait, band, firstName, lastName, tagline, labels } = homeContent.hero;
+  const { portrait, band, firstName, lastName, tagline, actions, labels } = homeContent.hero;
   return (
     <section className={s.hero} data-name="Hero">
       <div className={s.heroWrapper}>
@@ -42,11 +45,18 @@ export function Hero() {
             {tagline.map((line) => (
               <Parallax key={line} speed={110} className={s.overviewLine}>
                 <Appear className={`${s.rt} ${s.overviewInner}`} {...rise(1.1)}>
-                  <p className={`${text.t} ${text.copyright} ${s.overviewText}`}>{line}</p>
+                  <p className={`${text.t} ${s.heroTaglineText} ${s.overviewText}`}>{line}</p>
                 </Appear>
               </Parallax>
             ))}
           </div>
+
+          <Appear className={s.heroActions} {...rise(1.2)}>
+            <Button text={actions.primary.text} link={actions.primary.link} />
+            <SmartLink className={s.heroSecondary} href={actions.secondary.link}>
+              {actions.secondary.text}
+            </SmartLink>
+          </Appear>
 
           {/* The footage carries the hero, so nothing is laid over it: three
               clips side by side on desktop and tablet, one vertical clip on
@@ -62,9 +72,9 @@ export function Hero() {
         </div>
 
         <Appear className={s.bottom} {...rise(0.5)}>
-          {labels.map((label) => (
+          {labels.map((label, i) => (
             <div key={label} className={s.labelBox}>
-              <Label title={label} />
+              {i === 0 ? <LocalTime place={label} /> : <Label title={label} />}
             </div>
           ))}
         </Appear>

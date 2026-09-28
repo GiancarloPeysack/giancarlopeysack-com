@@ -29,7 +29,7 @@ export function ServiceList() {
   return (
     <>
       <List items={items} className={s.desktopOnly} cursor />
-      <List items={items} className={s.tabletOnly} />
+      <List items={items} className={s.tabletOnly} cursor />
       <List items={items} className={s.phoneOnly} mobile />
     </>
   );

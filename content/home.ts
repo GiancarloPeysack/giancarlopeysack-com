@@ -35,6 +35,12 @@ export const homeContent = {
     firstName: "Gianni",
     lastName: "Peysack",
     tagline: ["Product builder in Madrid.", "From design to development."],
+    /** The next step, right under the tagline. */
+    actions: {
+      primary: { text: "Start a project", link: "/contact" },
+      secondary: { text: "See case studies", link: "/projects" },
+    },
+    /** The left label also shows Madrid's local time (see LocalTime). */
     labels: ["MADRID, ES", "TAKING PROJECTS"],
   },
 
@@ -57,6 +63,16 @@ export const homeContent = {
       { src: "/portfolio/logos/campusmart.png", fit: "contain", width: 102 },
     ] as { src: string; fit: "cover" | "contain"; width: number }[],
     button: { text: "More about me", link: "/about" },
+  },
+
+  /** Proof numbers, straight after the intro. Every one is checkable. */
+  proof: {
+    items: [
+      { value: "5", label: "Products shipped" },
+      { value: "2", label: "Paid B2B pilots" },
+      { value: "200+", label: "Stores on MarketOpsIQ" },
+      { value: "#5", label: "Product of the Day, Product Hunt" },
+    ],
   },
 
   selectedCases: {

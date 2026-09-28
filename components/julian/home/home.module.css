@@ -197,7 +197,7 @@ svg.nameInner {
   margin: 0;
   padding: 0;
   font-family: var(--font-neutral-sans), sans-serif;
-  font-size: clamp(56px, 6.4vw, 112px);
+  font-size: clamp(40px, 4.6vw, 84px);
   font-weight: 1000;
   font-variation-settings: "wght" 1000, "opsz" 28;
   letter-spacing: -0.06em;
@@ -698,4 +698,42 @@ svg.nameInner {
     flex: none;
     width: 100%;
   }
+}
+
+/* The tagline carries the positioning now, so it is a statement rather than
+   the template's small print, and the next step sits right under it. */
+.heroTaglineText {
+  font-family: var(--font-switzer), sans-serif;
+  font-size: clamp(18px, 1.9vw, 26px);
+  font-weight: 500;
+  line-height: 1.35em;
+  letter-spacing: -0.02em;
+  color: #e5e5e5;
+  text-align: center;
+  margin: 0;
+}
+
+.heroActions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px 24px;
+  width: 100%;
+}
+
+.heroSecondary {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #e5e5e5;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+
+.heroSecondary:hover {
+  color: #fff;
 }
