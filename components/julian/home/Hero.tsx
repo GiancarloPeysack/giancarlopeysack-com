@@ -52,7 +52,7 @@ export function Hero() {
           </div>
 
           <Appear className={s.heroActions} {...rise(1.2)}>
-            <Button text={actions.primary.text} link={actions.primary.link} />
+            <Button text={actions.primary.text} link={actions.primary.link} variant="Solid" />
             <SmartLink className={s.heroSecondary} href={actions.secondary.link}>
               {actions.secondary.text}
             </SmartLink>

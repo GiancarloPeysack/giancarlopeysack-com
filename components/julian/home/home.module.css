@@ -37,7 +37,7 @@
 
 .hero {
   z-index: 4;
-  background-color: #000;
+  background-color: var(--bg);
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -268,7 +268,7 @@ svg.nameInner {
 
 .section {
   z-index: 8;
-  background-color: #000;
+  background-color: var(--bg);
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -375,6 +375,8 @@ svg.nameInner {
 }
 
 .casesWrapper {
+  border-top: 1px solid var(--line);
+  padding-top: 48px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -510,7 +512,7 @@ svg.nameInner {
 
 .services {
   z-index: 5;
-  background-color: #000;
+  background-color: var(--bg);
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -527,6 +529,8 @@ svg.nameInner {
 }
 
 .servicesWrapper {
+  border-top: 1px solid var(--line);
+  padding-top: 48px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -708,7 +712,7 @@ svg.nameInner {
   font-weight: 500;
   line-height: 1.35em;
   letter-spacing: -0.02em;
-  color: #e5e5e5;
+  color: var(--text);
   text-align: center;
   margin: 0;
 }
@@ -728,7 +732,7 @@ svg.nameInner {
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: #e5e5e5;
+  color: var(--text);
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 1px;

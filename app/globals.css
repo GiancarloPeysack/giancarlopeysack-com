@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ---------------------------------------------------------------------------
+   Design tokens. The template shipped six font families and five hard-coded
+   greys, which is most of why it read as a template. Everything now resolves
+   to two families plus a mono, and to these colours.
+
+   Type: Neutral Sans (display, headings, numerals), Switzer (body and UI),
+   Chivo Mono (labels and meta).
+   --------------------------------------------------------------------------- */
+:root {
+  --bg: #08080a;
+  --surface: #101014;
+  --surface-2: #17171c;
+  --line: rgba(255, 255, 255, 0.1);
+  --line-solid: #1e1e24;
+
+  --fg: #f7f7f5;
+  --text: #e4e4e2;
+  --muted: #9b9ba4;
+  --faint: #70707b;
+
+  --accent: #e9e2d4;
+  --accent-ink: #0b0b0d;
+}
+
 html,
 body {
   background: #ffffff;
@@ -54,8 +78,14 @@ html:has(.portfolio-root) :focus-visible {
    --------------------------------------------------------------------------- */
 html:has(.portfolio-root),
 body:has(.portfolio-root) {
-  background: #000000;
-  color: #ffffff;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+/* Selection picks up the accent rather than the browser's blue. */
+.portfolio-root ::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
 }
 .portfolio-root a,
 .portfolio-root a:hover {

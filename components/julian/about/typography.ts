@@ -1,27 +1,27 @@
-// Text presets of the About page (framer-styles-preset-* in about.html), as
-// Tailwind class strings. Sizes follow the template's media queries:
-// phone < 810, tablet 810–1199, desktop >= 1200 (the h1 preset switches to
-// 44px only from 1418px up, like the template).
+// Text presets of the About page, aligned with the site's type scale in
+// components/julian/ui/text.module.css: Neutral Sans for headings (the
+// `font-schibsted` alias now resolves to it), Switzer for body and UI,
+// Chivo Mono for labels. Sizes are fluid rather than stepped per breakpoint.
 import styles from "./about.module.css";
 
-/** preset 1t6oofe: section headings (h1) */
-export const h1Cls = `${styles.grotesk} font-schibsted text-[26px] font-bold uppercase leading-[1.2em] tracking-[-0.04em] text-white tablet:text-[36px] min-[1418px]:text-[44px]`;
+/** Section headings (h1) */
+export const h1Cls = `${styles.grotesk} font-schibsted text-[clamp(30px,4vw,54px)] font-extrabold uppercase leading-[1.02em] tracking-[-0.04em] text-[color:var(--fg)]`;
 
-/** preset 1w89x6l: process step titles (h2) */
-export const h2Cls = `${styles.grotesk} font-schibsted text-[22px] font-bold uppercase leading-[1.2em] tracking-[-0.04em] text-white tablet:text-[27px] desktop:text-[28px]`;
+/** Process step titles (h2) */
+export const h2Cls = `${styles.grotesk} font-schibsted text-[clamp(24px,2.4vw,34px)] font-extrabold uppercase leading-[1.1em] tracking-[-0.035em] text-[color:var(--fg)]`;
 
-/** preset 8ncpym: experience / award titles (h4), color set per use */
-export const h4Cls = `${styles.grotesk} font-schibsted text-[20px] font-medium leading-[1.2em] tracking-[-0.04em] tablet:text-[21px] desktop:text-[22px]`;
+/** Experience / milestone titles (h4), colour set per use */
+export const h4Cls = "font-switzer text-[clamp(18px,1.4vw,21px)] font-semibold leading-[1.3em] tracking-[-0.02em]";
 
-/** preset 11amz3l: body copy, color set per use (default #8f8f8f) */
-export const bodyCls = "font-switzer text-[18px] font-medium leading-[1.3em] tracking-[-0.03em]";
+/** Body copy, colour set per use (defaults to --muted at the call site) */
+export const bodyCls = "font-switzer text-[clamp(16px,1.15vw,18px)] font-[450] leading-[1.5em] tracking-[-0.01em]";
 
-/** preset pd9o0r: stat labels and experience periods, color set per use */
-export const captionCls = "font-switzer text-[22px] font-medium leading-[1.2em] tracking-[-0.01em]";
+/** Stat labels and experience periods, colour set per use */
+export const captionCls = "font-switzer text-[clamp(16px,1.3vw,19px)] font-medium leading-[1.35em] tracking-[-0.01em]";
 
-/** preset g4c1c: small mono labels (step numbers, award years), color set per use */
-export const monoCls = "font-chivo text-[16px] font-light uppercase leading-[1.2em] tracking-[-0.04em]";
+/** Small mono labels (step numbers, milestone years), colour set per use */
+export const monoCls = "font-chivo text-[12px] font-normal uppercase leading-[1.3em] tracking-[0.12em] tabular-nums";
 
-/** preset q2jpgg: the bio paragraphs */
+/** The bio paragraphs */
 export const bioCls =
-  "font-switzer text-[24px] font-bold leading-[1.2em] tracking-[-0.03em] text-left text-[#f0f0f0] tablet:text-[28px] tablet:leading-[1.1em] desktop:text-[32px]";
+  "font-switzer text-[clamp(21px,2.2vw,30px)] font-semibold leading-[1.28em] tracking-[-0.025em] text-left text-[color:var(--fg)]";

@@ -12,7 +12,7 @@
 .hero {
   align-content: center;
   align-items: center;
-  background-color: #000000;
+  background-color: var(--bg);
   display: flex;
   flex: none;
   flex-direction: column;
@@ -150,7 +150,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  border-color: #8f8f8f;
+  border-color: var(--muted);
   border-style: solid;
   border-width: 0 0 1px 0;
 }
@@ -182,7 +182,7 @@
 .input::placeholder {
   /* Was #0a0a0a: near-black text on this section's black background, so
      placeholders were effectively invisible. */
-  color: #8f8f8f;
+  color: var(--muted);
 }
 
 /* ---- Framer form runtime: textarea -------------------------------------- */
@@ -229,7 +229,7 @@
 
 .textarea::placeholder {
   /* Was #0a0a0a: same near-invisible-on-black issue as .input::placeholder. */
-  color: #8f8f8f;
+  color: var(--muted);
 }
 
 .textarea::-webkit-resizer {
@@ -273,7 +273,7 @@
   pointer-events: none;
   background-repeat: no-repeat;
   background-size: 16px;
-  background-color: #999999;
+  background-color: var(--muted);
   background-position: 10px center;
   -webkit-mask-position: 10px center;
   mask-position: 10px center;
@@ -401,7 +401,7 @@
   line-height: 1.2em;
   text-transform: uppercase;
   text-align: start;
-  color: #a3a3a3;
+  color: var(--faint);
 }
 
 /* .framer-1lxveqr-container etc. (Menu Link appear wrappers) */

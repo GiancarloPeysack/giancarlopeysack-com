@@ -18,15 +18,16 @@ export function Button({
 }: {
   text: string;
   link: string;
-  variant?: "Primary black" | "No-hover";
+  variant?: "Primary black" | "No-hover" | "Solid";
   className?: string;
 }) {
   const hoverEnabled = variant === "Primary black";
+  const solid = variant === "Solid";
   const [hovered, hoverProps] = useHover(hoverEnabled);
   return (
     <Link
       href={link}
-      className={[styles.button, hoverEnabled ? "" : styles.noHover, className ?? ""].join(" ")}
+      className={[styles.button, hoverEnabled ? "" : styles.noHover, solid ? styles.solid : "", className ?? ""].join(" ")}
       {...hoverProps}
     >
       <div className={styles.textBox}>

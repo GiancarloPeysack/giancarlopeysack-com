@@ -43,7 +43,7 @@
   position: relative;
   overflow: clip;
   z-index: 0;
-  background-color: #000;
+  background-color: var(--bg);
 }
 
 .picture {

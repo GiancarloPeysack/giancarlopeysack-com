@@ -1,6 +1,6 @@
 /* 404 page (framer-R3cnz). */
 .main {
-  background-color: #000;
+  background-color: var(--bg);
   z-index: 3;
   display: flex;
   flex-direction: row;
@@ -122,7 +122,7 @@
   line-height: 120%;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: #8f8f8f;
+  color: var(--muted);
 }
 .messageTextPhone {
   margin: 0;
@@ -135,7 +135,7 @@
   letter-spacing: -0.04em;
   text-align: center;
   text-transform: uppercase;
-  color: #8f8f8f;
+  color: var(--muted);
 }
 
 .phoneOnly {

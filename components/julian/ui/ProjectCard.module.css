@@ -85,23 +85,40 @@
   margin: 0;
   padding: 0;
   font-family: var(--font-switzer), sans-serif;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: clamp(18px, 1.5vw, 21px);
+  font-weight: 600;
   line-height: 1.3em;
-  letter-spacing: -0.03em;
-  color: #fff;
+  letter-spacing: -0.025em;
+  color: var(--fg);
+  transition: color 0.2s ease;
+}
+
+.card:hover .name {
+  color: var(--accent);
+}
+
+/* Hover cue, so a card reads as something you can open. */
+.name::after {
+  content: " ↗";
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.card:hover .name::after {
+  opacity: 1;
 }
 
 .year {
   margin: 0;
   padding: 0;
   font-family: var(--font-chivo-mono), monospace;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.2em;
-  letter-spacing: -0.04em;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.3em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #fff;
+  font-variant-numeric: tabular-nums;
+  color: var(--faint);
 }
 
 .subtitle {
@@ -110,12 +127,12 @@
      truncation instead of relying on wrapping. */
   margin: 2px 0 0;
   padding: 0;
-  max-width: 160px;
+  max-width: 34ch;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   font-family: var(--font-switzer), sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.3em;
   letter-spacing: -0.01em;

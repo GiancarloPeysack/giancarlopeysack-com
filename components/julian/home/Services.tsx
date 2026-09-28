@@ -100,9 +100,9 @@ function ServiceCard({ item, mobile }: { item: Service; mobile: boolean }) {
               layoutDependency={variant}
               className={`${styles.rt} ${styles.number}`}
               initial={false}
-              animate={{ opacity: mobile || lit ? 1 : 0.5 }}
+              animate={{ opacity: mobile || lit ? 1 : 0.65 }}
             >
-              <p className={`${text.t} ${text.mono}`} style={mobile ? { color: "#e5e5e5" } : lit ? { color: "#fff" } : undefined}>
+              <p className={`${text.t} ${text.mono}`} style={mobile ? { color: "var(--text)" } : lit ? { color: "var(--fg)" } : undefined}>
                 {item.number}
               </p>
             </motion.div>
@@ -111,10 +111,10 @@ function ServiceCard({ item, mobile }: { item: Service; mobile: boolean }) {
               layoutDependency={variant}
               className={`${styles.rt} ${styles.title}`}
               initial={false}
-              animate={{ opacity: mobile || lit ? 1 : 0.2 }}
+              animate={{ opacity: mobile || lit ? 1 : 0.45 }}
             >
               {mobile ? (
-                <h2 className={`${text.t} ${text.h2}`} style={{ color: "#e5e5e5" }}>
+                <h2 className={`${text.t} ${text.h2}`} style={{ color: "var(--text)" }}>
                   {item.title}
                 </h2>
               ) : (

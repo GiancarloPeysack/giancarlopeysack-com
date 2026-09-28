@@ -12,7 +12,7 @@
 /* ============================ Projects index ============================ */
 
 .indexMain {
-  background-color: #000;
+  background-color: var(--bg);
   height: min-content;
   overflow: clip;
   z-index: 3;
@@ -92,7 +92,7 @@
   font-weight: 500;
   line-height: 1.3em;
   letter-spacing: -0.03em;
-  color: #a3a3a3;
+  color: var(--faint);
 }
 .introText:not(:first-child) {
   margin-top: 20px;
@@ -124,7 +124,7 @@
 /* ============================ Case study ============================ */
 
 .main {
-  background-color: #000;
+  background-color: var(--bg);
   max-width: 1400px;
   height: min-content;
   overflow: clip;
@@ -246,13 +246,13 @@
   font-weight: 400;
   line-height: 21.51px;
   letter-spacing: 0;
-  color: #e5e5e5;
+  color: var(--text);
 }
 .descriptionText:not(:first-child) {
   margin-top: 18px;
 }
 .detailLabel {
-  color: #8f8f8f;
+  color: var(--muted);
 }
 
 .details {
@@ -407,7 +407,7 @@
 /* ---- Other projects ---- */
 .others {
   z-index: 1;
-  background-color: #000;
+  background-color: var(--bg);
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
