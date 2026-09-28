@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ColumnsSection } from "@/components/julian/home/ColumnsSection";
+import { Game } from "@/components/julian/home/Game";
 import { Hero } from "@/components/julian/home/Hero";
 import { Intro } from "@/components/julian/home/Intro";
 import { SelectedCases } from "@/components/julian/home/SelectedCases";
@@ -27,6 +28,7 @@ export default function HomePage() {
       <ColumnsSection id="personal" {...homeContent.personal} />
       <Writing />
       <WorkTogether />
+      <Game />
     </main>
   );
 }

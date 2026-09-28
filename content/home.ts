@@ -176,6 +176,14 @@ export const homeContent = {
     ],
   },
 
+  /** The last thing on the page. Keep the orb up. */
+  game: {
+    label: "One more thing",
+    heading: "Keep the orb up.",
+    body: "Everything above is the work. This is here because a site should be worth staying on.",
+    hint: "Move to aim, click to start",
+  },
+
   /**
    * Off the clock. Drafted from what is actually on record (his own footage,
    * his CV and the products), so it stays true; he can swap any line.

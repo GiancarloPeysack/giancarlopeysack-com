@@ -340,14 +340,14 @@ svg.nameInner {
 }
 
 .revealText {
-  font-family: var(--font-switzer), sans-serif;
-  font-size: 53px;
-  font-weight: 700;
+  font-family: var(--font-display), Times, serif;
+  font-size: clamp(28px, 3.6vw, 56px);
+  font-weight: 400;
   color: #666666;
   display: flex;
   flex-wrap: wrap;
-  line-height: 57px;
-  letter-spacing: -2.1px;
+  line-height: 1.16em;
+  letter-spacing: -0.015em;
   justify-content: flex-start;
   margin: 0;
 }
@@ -624,9 +624,7 @@ svg.nameInner {
   }
 
   .revealText {
-    font-size: 45px;
-    line-height: 52px;
-    letter-spacing: -1.1px;
+    line-height: 1.18em;
   }
 
   .caseBox.caseBox {
@@ -682,9 +680,7 @@ svg.nameInner {
     gap: 32px;
   }
   .revealText {
-    font-size: 30px;
-    line-height: 36px;
-    letter-spacing: -0.1px;
+    line-height: 1.22em;
   }
   .ticker {
     width: 100%;

@@ -76,9 +76,9 @@ export function ProjectCard({
         <Appear className={styles.textBox} {...NAME_APPEAR}>
           <p className={styles.name}>{project}</p>
           {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
+          {result && <p className={styles.result}>{result}</p>}
         </Appear>
         <div className={styles.textBox}>
-          {result && <p className={styles.result}>{result}</p>}
           <p className={styles.year}>{year}</p>
         </div>
       </div>

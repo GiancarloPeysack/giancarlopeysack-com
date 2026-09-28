@@ -1,4 +1,5 @@
 import { homeContent } from "@/content/home";
+import { CaseBackdrop } from "./CaseBackdrop";
 import { caseStudies, homeProjectOrder, projectHref } from "@/content/projects";
 import { InViewAppear } from "@/components/julian/fx/effects";
 import { Button } from "@/components/julian/ui/Button";
@@ -15,6 +16,8 @@ export function SelectedCases() {
   const cards = homeProjectOrder.map((slug) => caseStudies.find((c) => c.slug === slug)!);
   return (
     <section className={s.section} id="about-1" data-name="Projects">
+      {/* The section takes on whichever project you are pointing at. */}
+      <CaseBackdrop items={cards.map((study) => ({ slug: study.slug, src: study.card.image }))} />
       <div className={s.casesWrapper}>
         <div className={s.casesHeader}>
           <InViewAppear
@@ -38,7 +41,7 @@ export function SelectedCases() {
 
         <div className={s.casesList}>
           {cards.map((study, i) => (
-            <div key={study.slug} className={`${s.caseRow} ${ROWS[i]}`}>
+            <div key={study.slug} className={`${s.caseRow} ${ROWS[i]}`} data-case={study.slug}>
               <div className={s.caseBox}>
                 <ProjectCard
                   project={study.card.name}
