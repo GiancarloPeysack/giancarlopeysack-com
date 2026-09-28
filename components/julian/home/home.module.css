@@ -64,7 +64,7 @@
   width: 100%;
   max-width: 1400px;
   height: 1px;
-  padding: 15px 32px 32px;
+  padding: 76px 32px 32px;
   position: relative;
   overflow: visible;
 }
@@ -75,9 +75,9 @@
   flex-wrap: nowrap;
   flex: 1 0 0px;
   align-content: center;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 28px;
   width: 100%;
   height: 1px;
   padding: 0;
@@ -85,39 +85,57 @@
   overflow: visible;
 }
 
-.heroImage {
-  height: 575px;
+/* Hero footage. The template hung a portrait behind the name; here the
+   footage is the hero, so nothing sits on top of it: a wide filmstrip of
+   three clips on desktop and tablet, one vertical clip on phone.
+   The filmstrip is width-driven, capped by the height left over after the
+   nav, the name, the tagline and the labels row. */
+.heroBand {
+  width: 100%;
+  max-width: min(1336px, calc((100vh - 460px) * 2.4444));
+  aspect-ratio: 1320 / 540;
+  margin: 0 auto;
   overflow: clip;
   will-change: transform;
   z-index: 0;
-  border-radius: 195px;
+  border-radius: 18px;
   flex: none;
-  width: 390px;
-  position: absolute;
-  top: calc(47.0588% - 287.5px);
-  left: calc(50% - 195px);
-  -webkit-mask: linear-gradient(#000 42%, #0000 100%);
-  mask: linear-gradient(#000 42%, #0000 100%);
+  position: relative;
 }
-.heroImage img {
+
+.heroPortrait {
+  height: min(calc(100vh - 400px), 620px);
+  aspect-ratio: 0.617089 / 1;
+  width: auto;
+  margin: 0 auto;
+  overflow: clip;
+  will-change: transform;
+  z-index: 0;
+  border-radius: 20px;
+  flex: none;
+  position: relative;
+}
+
+.heroBand img,
+.heroPortrait img {
   border-radius: inherit;
   object-fit: cover;
   object-position: center;
 }
 
-/* A flat scrim over the footage so the white name reads against it and the
-   clip sits back in the page instead of competing with the type. */
-.heroImage::after {
+/* A light scrim so the footage sits back into the black page. */
+.heroBand::after,
+.heroPortrait::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.18);
   pointer-events: none;
   z-index: 1;
 }
 
-/* The looping clip sits on top of the poster image, same box, same mask. */
+/* The looping clip sits on top of the poster image, in the same box. */
 .heroVideo {
   position: absolute;
   inset: 0;
@@ -140,7 +158,7 @@
   width: 100%;
   height: min-content;
   /* room for descenders (the "y" in Peysack) under the tight 0.7em lines */
-  padding: 0 0 24px;
+  padding: 0 0 16px;
   position: relative;
   overflow: visible;
 }
@@ -179,7 +197,7 @@ svg.nameInner {
   margin: 0;
   padding: 0;
   font-family: var(--font-neutral-sans), sans-serif;
-  font-size: 165px;
+  font-size: clamp(56px, 6.4vw, 112px);
   font-weight: 1000;
   font-variation-settings: "wght" 1000, "opsz" 28;
   letter-spacing: -0.06em;
@@ -554,11 +572,11 @@ svg.nameInner {
   .heroTop {
     padding: 0 0 98px;
   }
-  .heroImage {
-    top: calc(51.9288% - 287.5px);
+  .heroBand {
+    max-width: min(100%, calc((100vh - 440px) * 2.4444));
   }
   .heroName {
-    width: 456px;
+    width: 420px;
     padding-bottom: 10px;
   }
   .nameLine {
@@ -602,20 +620,16 @@ svg.nameInner {
     flex: none;
     max-width: 400px;
     height: 100vh;
-    padding: 15px 20px 32px;
+    padding: 72px 20px 32px;
   }
   .heroTop {
     padding: 0 0 89px;
   }
-  .heroImage {
-    aspect-ratio: 0.617089 / 1;
-    height: auto;
-    width: 280px;
-    top: 45%;
-    left: 50%;
+  .heroPortrait {
+    height: min(calc(100vh - 430px), 560px);
   }
   .heroName {
-    width: 80%;
+    width: 76%;
     padding-bottom: 0;
   }
   .nameLine {

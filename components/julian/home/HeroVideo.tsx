@@ -5,21 +5,22 @@ import { homeContent } from "@/content/home";
 import s from "./home.module.css";
 
 /**
- * The looping clip inside the hero arch. The poster image is server-rendered
- * underneath (see Hero.tsx), so the arch is never empty; this only mounts the
- * <video> on top once we know which breakpoint is showing.
+ * The looping footage in the hero. The poster image is server-rendered
+ * underneath (see Hero.tsx), so the frame is never empty; this only mounts
+ * the <video> on top once we know which breakpoint is showing.
  *
- * Both hero arches (phone and not-phone) exist in the DOM at once and are
- * swapped with `display: none`, so mounting the video in both would download
- * the file twice. Each instance says which breakpoint it belongs to and
- * renders nothing on the other one. Reduced motion keeps the poster.
+ * Both hero frames exist in the DOM at once and are swapped with
+ * `display: none`, so mounting the video in both would download two files.
+ * Each instance says which breakpoint it belongs to and renders nothing on
+ * the other one. Reduced motion keeps the poster.
  */
 export function HeroVideo({ phone = false }: { phone?: boolean }) {
   const [show, setShow] = useState(false);
-  const { video } = homeContent.hero;
+  const { video, band } = homeContent.hero;
+  const clip = phone ? video : band;
 
   useEffect(() => {
-    if (!video) return;
+    if (!clip) return;
     const isPhone = window.matchMedia("(max-width: 809.98px)");
     const stillness = window.matchMedia("(prefers-reduced-motion: reduce)");
     const sync = () => setShow(!stillness.matches && isPhone.matches === phone);
@@ -30,13 +31,13 @@ export function HeroVideo({ phone = false }: { phone?: boolean }) {
       isPhone.removeEventListener("change", sync);
       stillness.removeEventListener("change", sync);
     };
-  }, [phone, video]);
+  }, [phone, clip]);
 
-  if (!video || !show) return null;
+  if (!clip || !show) return null;
   return (
     <video
       className={s.heroVideo}
-      poster={video.poster}
+      poster={clip.poster}
       autoPlay
       muted
       loop
@@ -46,8 +47,8 @@ export function HeroVideo({ phone = false }: { phone?: boolean }) {
       aria-hidden="true"
       tabIndex={-1}
     >
-      <source src={video.webm} type="video/webm" />
-      <source src={video.mp4} type="video/mp4" />
+      <source src={clip.webm} type="video/webm" />
+      <source src={clip.mp4} type="video/mp4" />
     </video>
   );
 }

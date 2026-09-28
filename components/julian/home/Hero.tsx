@@ -28,20 +28,11 @@ const NAME_FIT = {
 };
 
 export function Hero() {
-  const { portrait, firstName, lastName, tagline, labels } = homeContent.hero;
+  const { portrait, band, firstName, lastName, tagline, labels } = homeContent.hero;
   return (
     <section className={s.hero} data-name="Hero">
       <div className={s.heroWrapper}>
         <div className={s.heroTop}>
-          <Appear className={`${s.heroImage} ${s.notPhone}`} {...ZOOM}>
-            <Image src={portrait.src} alt={portrait.alt} fill unoptimized priority sizes="416px" />
-            <HeroVideo />
-          </Appear>
-          <Appear className={`${s.heroImage} ${s.phoneOnly}`} transformTemplate="translate(-50%, -50%) {}" {...ZOOM}>
-            <Image src={portrait.src} alt={portrait.alt} fill unoptimized priority sizes="282px" />
-            <HeroVideo phone />
-          </Appear>
-
           <div className={s.heroName}>
             <NameLine word={firstName} fit={NAME_FIT.first} />
             <NameLine word={lastName} fit={NAME_FIT.last} last />
@@ -56,6 +47,18 @@ export function Hero() {
               </Parallax>
             ))}
           </div>
+
+          {/* The footage carries the hero, so nothing is laid over it: three
+              clips side by side on desktop and tablet, one vertical clip on
+              phone. Only the frame for the live breakpoint loads its video. */}
+          <Appear className={`${s.heroBand} ${s.notPhone}`} {...ZOOM}>
+            <Image src={band.poster} alt={band.alt} fill unoptimized priority sizes="(min-width: 1200px) 1336px, 92vw" />
+            <HeroVideo />
+          </Appear>
+          <Appear className={`${s.heroPortrait} ${s.phoneOnly}`} {...ZOOM}>
+            <Image src={portrait.src} alt={portrait.alt} fill unoptimized priority sizes="82vw" />
+            <HeroVideo phone />
+          </Appear>
         </div>
 
         <Appear className={s.bottom} {...rise(0.5)}>

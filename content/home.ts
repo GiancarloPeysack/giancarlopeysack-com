@@ -16,11 +16,21 @@ export const homeContent = {
     // Poster frame of the loop, so the arch is never empty and reduced-motion
     // visitors still see something.
     portrait: { src: "/portfolio/me/hero-loop.jpg", alt: "Gianni Peysack working on a laptop" },
-    /** Muted loop inside the hero arch. Built by tools/build_hero_video.sh. */
+    /** Phone: one vertical clip. Built by tools/build_hero_video.sh. */
     video: {
       mp4: "/portfolio/me/hero-loop.mp4",
       webm: "/portfolio/me/hero-loop.webm",
       poster: "/portfolio/me/hero-loop.jpg",
+    },
+    /**
+     * Desktop and tablet: three vertical clips side by side in one file,
+     * each running uncut. Built by tools/build_hero_band.sh.
+     */
+    band: {
+      mp4: "/portfolio/me/hero-band.mp4",
+      webm: "/portfolio/me/hero-band.webm",
+      poster: "/portfolio/me/hero-band.jpg",
+      alt: "Gianni working: a cafe, hands on a keyboard, and an office with code on screen",
     },
     firstName: "Gianni",
     lastName: "Peysack",
