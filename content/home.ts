@@ -192,6 +192,9 @@ export const homeContent = {
     label: "Off the clock",
     heading: "When I am not building.",
     columns: [
+      // Chess and bouldering are from his own footage, the street interviews
+      // are the Genzi TikTok work, the languages and places from his CV; he
+      // confirmed the lot on 2026-09-28.
       { title: "Doing", items: ["Chess", "Bouldering", "Street interviews with strangers", "Live music, the smaller the room the better"] },
       { title: "Speaking", items: ["English", "Spanish", "German"] },
       { title: "Places", items: ["Madrid, where I live", "Managua, where I am from", "San José, where I studied first"] },

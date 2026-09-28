@@ -3,6 +3,7 @@ import { site } from "@/content/site";
 import { InViewAppear } from "@/components/julian/fx/effects";
 import { Button } from "@/components/julian/ui/Button";
 import { Label } from "@/components/julian/ui/Label";
+import { SectionVideo } from "@/components/julian/home/SectionVideo";
 import { SmartLink } from "@/components/julian/ui/SmartLink";
 import text from "@/components/julian/ui/text.module.css";
 import styles from "./WorkTogether.module.css";
@@ -20,6 +21,10 @@ export function WorkTogether() {
   const { closing } = site;
   return (
     <section className={styles.section} data-name="Work with me">
+      {/* Europa Clipper leaving the pad, from NASA's own media library. The
+          section that asks you to start something is the one place a launch
+          is not a cliché. */}
+      <SectionVideo mp4="/portfolio/me/launch.mp4" webm="/portfolio/me/launch.webm" poster="/portfolio/me/launch.jpg" />
       <div className={styles.wrapper}>
         <InViewAppear enter={ENTER} animate={SETTLE} animateOnce threshold={0}>
           <Label title={closing.label} />

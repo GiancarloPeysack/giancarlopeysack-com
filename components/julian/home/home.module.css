@@ -62,7 +62,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1400px;
+  max-width: none;
   height: 1px;
   padding: 76px 32px 32px;
   position: relative;
@@ -94,7 +94,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  max-width: min(1336px, calc((100vh - 190px) * 1.7838));
   margin: 0 auto;
   flex: none;
 }
@@ -119,7 +118,7 @@
 
 .heroBand {
   width: 100%;
-  aspect-ratio: 1320 / 740;
+  height: min(calc(100vh - 175px), calc((100vw - 64px) / 1.7838));
   margin: 0 auto;
   overflow: clip;
   will-change: transform;
@@ -266,6 +265,8 @@ svg.nameInner {
 }
 
 .bottom {
+  max-width: 1400px;
+  margin: 0 auto;
   will-change: transform;
   z-index: 3;
   display: flex;
@@ -607,8 +608,8 @@ svg.nameInner {
   .heroTop {
     padding: 0 0 98px;
   }
-  .heroStage {
-    max-width: min(100%, calc((100vh - 200px) * 1.7838));
+  .heroBand {
+    height: min(calc(100vh - 185px), calc((100vw - 64px) / 1.7838));
   }
   .heroName {
     width: 300px;

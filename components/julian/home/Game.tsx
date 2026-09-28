@@ -201,12 +201,14 @@ export function Game() {
     const resize = () => {
       const rect = wrap.getBoundingClientRect();
       const dpr = Math.min(2, window.devicePixelRatio || 1);
+      const w = Math.round(rect.width * dpr);
+      const h = Math.round(rect.height * dpr);
       game.current.w = rect.width;
       game.current.h = rect.height;
-      canvas.width = Math.round(rect.width * dpr);
-      canvas.height = Math.round(rect.height * dpr);
-      canvas.style.width = `${rect.width}px`;
-      canvas.style.height = `${rect.height}px`;
+      // Setting an unchanged size would restart the observer for nothing.
+      if (canvas.width === w && canvas.height === h) return;
+      canvas.width = w;
+      canvas.height = h;
       const ctx = canvas.getContext("2d");
       ctx?.setTransform(dpr, 0, 0, dpr, 0, 0);
       draw();
