@@ -20,6 +20,12 @@ export type CaseStudy = {
   card: ProjectCardData;
   title: string;
   subtitle: string;
+  /**
+   * Images for the full-bleed row on the home page: `shot` is the product
+   * itself (the multi-screen line-ups where they exist), `bg` is whatever
+   * reads best behind it once it is dimmed.
+   */
+  row: { shot: string; bg: string };
   /** One line of proof, shown on the card. */
   result: string;
   /** one string per paragraph; "" renders an empty paragraph */
@@ -83,6 +89,7 @@ export const caseStudies: CaseStudy[] = [
       image2: "/portfolio/projects/lexfall/card-hover.jpg",
     },
     title: "Lexfall",
+    row: { shot: "/portfolio/projects/lexfall/wide.jpg", bg: "/portfolio/projects/lexfall/banner.jpg" },
     result: "Paying subscribers in month one",
     subtitle: "Expand your vocabulary beyond average",
     description: [
@@ -129,6 +136,7 @@ export const caseStudies: CaseStudy[] = [
       image2: "/portfolio/projects/zharo/card-hover.jpg",
     },
     title: "Zharo",
+    row: { shot: "/portfolio/projects/zharo/card.jpg", bg: "/portfolio/projects/zharo/right.jpg" },
     result: "In private beta",
     subtitle: "Comment and post on LinkedIn, in your voice",
     description: [
@@ -170,6 +178,7 @@ export const caseStudies: CaseStudy[] = [
       image2: "/portfolio/projects/marketopsiq/card-hover.jpg",
     },
     title: "MarketOpsIQ",
+    row: { shot: "/portfolio/projects/marketopsiq/wide.jpg", bg: "/portfolio/projects/marketopsiq/banner.jpg" },
     result: "Two paid pilots, 200+ stores",
     subtitle: "Field operations and shelf price intelligence for CPG brands",
     description: [
@@ -221,6 +230,7 @@ export const caseStudies: CaseStudy[] = [
       image2: "/portfolio/projects/campusmart/card-hover.jpg",
     },
     title: "CampusMart",
+    row: { shot: "/portfolio/projects/campusmart/wide.jpg", bg: "/portfolio/projects/campusmart/right.jpg" },
     result: "Launch-ready on iOS and Android",
     subtitle: "The student super-app for campus life",
     description: [
@@ -266,6 +276,7 @@ export const caseStudies: CaseStudy[] = [
       image2: "/portfolio/projects/genzi/card-hover.jpg",
     },
     title: "Genzi",
+    row: { shot: "/portfolio/projects/genzi/wide.jpg", bg: "/portfolio/projects/genzi/right.jpg" },
     result: "#5 Product of the Day, 100K+ views",
     subtitle: "Music, made social",
     description: [

@@ -8,7 +8,7 @@ import { now, phoneLate, soon, up20, up60 } from "./fx";
 import s from "./home.module.css";
 import c from "./sections.module.css";
 
-type Post = { title: string; description: string; date: string; href: string };
+type Post = { title: string; description: string; date: string; href: string; image?: string };
 
 const FEED_REVALIDATE = 60 * 60 * 12; // twice a day is plenty for a newsletter
 const MAX_POSTS = 4;
@@ -55,7 +55,11 @@ async function getPosts(): Promise<Post[]> {
       .slice(0, MAX_POSTS)
       .map(([, block]) => {
         const published = new Date(tag(block, "pubDate"));
+        // Substack does not put an enclosure on the item, so the cover is
+        // the first image in the post body.
+        const image = block.match(/https:\/\/substackcdn\.com\/image\/fetch\/[^"'\s<>\\]+/)?.[0];
         return {
+          image,
           title: decode(tag(block, "title")),
           description: clamp(decode(tag(block, "description")), 170),
           date: Number.isNaN(published.getTime())
@@ -116,13 +120,21 @@ export async function Writing() {
                 threshold={0}
               >
                 <SmartLink href={post.href} className={c.post}>
-                  {post.date && (
-                    <div className={c.postMeta}>
-                      <span className={`${text.t} ${text.meta14}`}>{post.date}</span>
+                  {post.image && (
+                    <div className={c.postImage}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={post.image} alt="" loading="lazy" />
                     </div>
                   )}
-                  <h3 className={`${text.t} ${c.postTitle}`}>{post.title}</h3>
-                  {post.description && <p className={`${text.t} ${text.body18}`}>{post.description}</p>}
+                  <div className={c.postText}>
+                    {post.date && (
+                      <div className={c.postMeta}>
+                        <span className={`${text.t} ${text.meta14}`}>{post.date}</span>
+                      </div>
+                    )}
+                    <h3 className={`${text.t} ${c.postTitle}`}>{post.title}</h3>
+                    {post.description && <p className={`${text.t} ${text.body18}`}>{post.description}</p>}
+                  </div>
                 </SmartLink>
               </InViewAppear>
             ))}

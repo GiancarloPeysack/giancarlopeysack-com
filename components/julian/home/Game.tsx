@@ -32,7 +32,7 @@ export function Game() {
     h: 0,
     paddleX: 0.5,
     target: 0.5,
-    ball: { x: 0.5, y: 0.4, vx: 0.004, vy: 0.006, r: 10 },
+    ball: { x: 0.5, y: 0.4, vx: 0.00035, vy: 0.00065, r: 10 },
     rallies: 0,
     raf: 0,
     running: false,
@@ -50,7 +50,7 @@ export function Game() {
 
   const reset = useCallback(() => {
     const g = game.current;
-    g.ball = { x: 0.5, y: 0.35, vx: (Math.random() > 0.5 ? 1 : -1) * 0.0035, vy: 0.0055, r: 10 };
+    g.ball = { x: 0.5, y: 0.32, vx: (Math.random() > 0.5 ? 1 : -1) * 0.00018, vy: 0.0006, r: 10 };
     g.rallies = 0;
     g.paddleX = 0.5;
     g.target = 0.5;
@@ -163,9 +163,9 @@ export function Game() {
           const offset = (b.x - g.paddleX) / (paddleW / 2);
           if (Math.abs(offset) <= 1.15) {
             b.y = paddleY - ry;
-            b.vy = -Math.abs(b.vy) * 1.025;
-            b.vx += offset * 0.0022;
-            b.vx = Math.max(-0.011, Math.min(0.011, b.vx));
+            b.vy = -Math.min(0.0016, Math.abs(b.vy) * 1.03);
+            b.vx += offset * 0.00022;
+            b.vx = Math.max(-0.0009, Math.min(0.0009, b.vx));
             g.rallies += 1;
             setScore(g.rallies);
           }

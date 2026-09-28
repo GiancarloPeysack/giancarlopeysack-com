@@ -53,9 +53,9 @@
 }
 
 .post {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
   padding: 24px 0;
   border-top: 1px solid var(--line-solid);
   text-decoration: none;
@@ -115,7 +115,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 0 32px 120px;
+  padding: 0 32px 96px;
 }
 
 .statsWrapper {
@@ -229,14 +229,14 @@
 
 .caseRowBg img {
   object-fit: cover;
-  filter: blur(26px) brightness(0.42) saturate(1.15);
-  transform: scale(1.18);
+  filter: blur(9px) brightness(0.46) saturate(1.1);
+  transform: scale(1.08);
   transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), filter 0.6s ease;
 }
 
 .caseRow:hover .caseRowBg img {
-  filter: blur(20px) brightness(0.52) saturate(1.2);
-  transform: scale(1.23);
+  filter: blur(7px) brightness(0.56) saturate(1.15);
+  transform: scale(1.12);
 }
 
 /* Dark enough for the name to read, light enough to see the project. */
@@ -275,8 +275,8 @@
 
 .caseRowShot {
   position: relative;
-  width: min(78%, 420px);
-  aspect-ratio: 1.12 / 1;
+  width: min(86%, 520px);
+  aspect-ratio: 1.88 / 1;
   border-radius: 12px;
   overflow: clip;
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
@@ -322,7 +322,7 @@
 
   .caseRowShot {
     grid-area: shot;
-    width: clamp(260px, 32vw, 460px);
+    width: clamp(320px, 44vw, 660px);
     align-self: center;
     justify-self: end;
   }
@@ -363,7 +363,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 0 32px 120px;
+  padding: 0 32px 96px;
 }
 
 .gameWrapper {
@@ -459,5 +459,40 @@
   .gameBoard {
     aspect-ratio: 1.4 / 1;
     max-height: none;
+  }
+}
+
+/* The post's own cover, so the writing list is not a wall of type. */
+.postImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: clip;
+  background-color: var(--surface);
+}
+
+.postImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.post:hover .postImage img {
+  transform: scale(1.04);
+}
+
+.postText {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (min-width: 810px) {
+  .post {
+    grid-template-columns: 260px 1fr;
+    align-items: center;
+    gap: 28px;
   }
 }

@@ -30,7 +30,7 @@ export function CaseRows() {
           aria-label={`${study.card.name}: ${study.subtitle}`}
         >
           <div className={c.caseRowBg}>
-            <Image src={`/portfolio/projects/${study.slug}/banner.jpg`} alt="" fill unoptimized sizes="100vw" />
+            <Image src={study.row.bg} alt="" fill unoptimized sizes="100vw" />
           </div>
 
           <InViewAppear className={c.caseRowInner} enter={ENTER} animate={SETTLE} animateOnce threshold={0}>
@@ -38,11 +38,11 @@ export function CaseRows() {
 
             <div className={c.caseRowShot}>
               <Image
-                src={study.card.image}
+                src={study.row.shot}
                 alt={`${study.card.name} interface`}
                 fill
                 unoptimized
-                sizes="(min-width: 810px) 42vw, 78vw"
+                sizes="(min-width: 810px) 46vw, 82vw"
               />
             </div>
 

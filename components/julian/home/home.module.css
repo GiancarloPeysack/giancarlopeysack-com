@@ -239,9 +239,9 @@ svg.nameInner {
   flex-direction: column;
   flex-wrap: nowrap;
   flex: none;
-  align-content: center;
+  align-content: flex-start;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   width: 100%;
   height: min-content;
@@ -307,7 +307,7 @@ svg.nameInner {
   gap: 100px;
   width: 100%;
   height: min-content;
-  padding: 150px 32px;
+  padding: 0 32px 96px;
   position: relative;
   overflow: visible;
 }
@@ -408,7 +408,7 @@ svg.nameInner {
   position: relative;
   z-index: 1;
   border-top: 1px solid var(--line);
-  padding-top: 48px;
+  padding-top: 44px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -555,14 +555,14 @@ svg.nameInner {
   gap: 38px;
   width: 100%;
   height: min-content;
-  padding: 150px 32px;
+  padding: 0 32px 96px;
   position: relative;
   overflow: visible;
 }
 
 .servicesWrapper {
   border-top: 1px solid var(--line);
-  padding-top: 48px;
+  padding-top: 44px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -621,7 +621,7 @@ svg.nameInner {
 
   .section,
   .services {
-    padding: 100px 32px;
+    padding: 0 32px 80px;
   }
 
   .revealText {
