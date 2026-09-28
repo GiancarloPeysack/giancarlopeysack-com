@@ -1,60 +1,67 @@
 import Image from "next/image";
-import Link from "next/link";
 import { site } from "@/content/site";
+import { InViewAppear } from "@/components/julian/fx/effects";
+import { Button } from "@/components/julian/ui/Button";
+import { Label } from "@/components/julian/ui/Label";
+import { SmartLink } from "@/components/julian/ui/SmartLink";
+import text from "@/components/julian/ui/text.module.css";
 import styles from "./WorkTogether.module.css";
 
+const ENTER = { opacity: 0, y: 40 };
+const SETTLE = { transition: { type: "spring" as const, damping: 80, stiffness: 400, mass: 1, delay: 0 } };
+
 /**
- * Template component "CTA". The text link carries the custom cursor on
- * desktop only (the template passes no cursor on tablet and phone), which
- * CustomCursor picks up through data-cursor.
+ * The closing section, on every page. It replaces the template's CTA, which
+ * was the words "LET'S WORK TOGETHER" set as large as they would go over a
+ * photo: striking, but it asked for nothing and said nothing about what
+ * happens after the click.
  */
 export function WorkTogether() {
-  const { cta } = site;
+  const { closing } = site;
   return (
-    <div className={styles.wrapper}>
-    <section className={styles.section}>
-      <div className={styles.container}>
-        <div className={styles.picture}>
-          <Image src={cta.image} alt="" fill unoptimized sizes="416px" />
+    <section className={styles.section} data-name="Work with me">
+      <div className={styles.wrapper}>
+        <InViewAppear enter={ENTER} animate={SETTLE} animateOnce threshold={0}>
+          <Label title={closing.label} />
+        </InViewAppear>
+
+        <div className={styles.grid} style={{ marginTop: 28 }}>
+          <div className={styles.copy}>
+            <InViewAppear enter={ENTER} animate={SETTLE} animateOnce threshold={0}>
+              <h2 className={`${text.t} ${text.h1}`}>{closing.heading}</h2>
+            </InViewAppear>
+
+            <InViewAppear enter={ENTER} animate={SETTLE} animateOnce threshold={0} className={styles.body}>
+              <p className={`${text.t} ${text.body18}`}>{closing.body}</p>
+            </InViewAppear>
+
+            <InViewAppear enter={ENTER} animate={SETTLE} animateOnce threshold={0} className={styles.actions}>
+              <Button text={closing.primary.text} link={closing.primary.link} variant="Solid" />
+              <SmartLink href={closing.secondary.link} className={styles.mailLink}>
+                {closing.secondary.text}
+              </SmartLink>
+            </InViewAppear>
+
+            <InViewAppear enter={ENTER} animate={SETTLE} animateOnce threshold={0} className={styles.status}>
+              <span className={styles.dot} aria-hidden="true" />
+              <span className={`${text.t} ${text.mono}`}>{closing.availability}</span>
+            </InViewAppear>
+          </div>
+
+          <InViewAppear enter={ENTER} animate={SETTLE} animateOnce threshold={0} className={styles.portrait}>
+            <Image src={closing.image.src} alt={closing.image.alt} fill unoptimized sizes="(min-width: 810px) 46vw, 92vw" />
+          </InViewAppear>
         </div>
 
-        <Link href={cta.href} className={`${styles.textLink} ${styles.desktopOnly}`} data-cursor="cta">
-          <div className={styles.text}>
-            <p className={`${styles.line} ${styles.desktopLine}`}>{cta.desktopText}</p>
-          </div>
-        </Link>
-
-        <Link href={cta.href} className={`${styles.textLink} ${styles.tabletOnly}`}>
-          <FitText viewBox="0 0 633.9552967502626 185" lines={cta.tabletLines} lineClass={styles.tabletLine} />
-        </Link>
-
-        <Link href={cta.href} className={`${styles.textLink} ${styles.phoneOnly}`}>
-          <FitText viewBox="0 0 350 150" lines={cta.phoneLines} lineClass={styles.phoneLine} />
-        </Link>
+        <div className={styles.contacts}>
+          {closing.contacts.map((contact) => (
+            <SmartLink key={contact.label} href={contact.href} className={styles.contact}>
+              <span className={`${text.t} ${text.mono}`}>{contact.label}</span>
+              <span className={styles.contactValue}>{contact.value}</span>
+            </SmartLink>
+          ))}
+        </div>
       </div>
     </section>
-    </div>
-  );
-}
-
-// Framer "fit text": the lines are laid out in the viewBox's coordinate
-// space and the svg scales them to the element's width.
-function FitText({ viewBox, lines, lineClass }: { viewBox: string; lines: string[]; lineClass: string }) {
-  return (
-    <svg className={styles.text} viewBox={viewBox}>
-      <foreignObject
-        className={styles.fitText}
-        width="100%"
-        height="100%"
-        style={{ overflow: "visible", transformOrigin: "center center" }}
-        transform="scale(1)"
-      >
-        {lines.map((line) => (
-          <p key={line} className={`${styles.line} ${lineClass}`}>
-            {line}
-          </p>
-        ))}
-      </foreignObject>
-    </svg>
   );
 }

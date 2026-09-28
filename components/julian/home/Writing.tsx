@@ -121,7 +121,7 @@ export async function Writing() {
                       <span className={`${text.t} ${text.meta14}`}>{post.date}</span>
                     </div>
                   )}
-                  <h3 className={`${text.t} ${text.h4} ${c.postTitle}`}>{post.title}</h3>
+                  <h3 className={`${text.t} ${c.postTitle}`}>{post.title}</h3>
                   {post.description && <p className={`${text.t} ${text.body18}`}>{post.description}</p>}
                 </SmartLink>
               </InViewAppear>
@@ -134,7 +134,7 @@ export async function Writing() {
             animateOnce
             threshold={0}
           >
-            <Button text={button.text} link={button.link} />
+            <Button text={button.text} link={button.link} variant="Solid" />
           </InViewAppear>
         </div>
       </div>

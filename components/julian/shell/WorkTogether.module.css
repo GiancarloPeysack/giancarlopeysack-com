@@ -1,210 +1,165 @@
-/* Template component "CTA" (framer-juBah): the "LET'S WORK TOGETHER"
-   section shared by Home, About, Projects and the case studies.
-   Variants: Desktop (>= 1200), Tablet (810–1199), Phone (< 810). */
-
-/* The page-level container every page wraps the CTA in (z-index 7; 889px
-   tall on tablet, where the CTA fills it). */
-.wrapper {
-  z-index: 7;
-  flex: none;
-  width: 100%;
-  height: auto;
-  position: relative;
-}
+/* The closing section. The template's version was a wall of fit-text over a
+   photo; this one asks for the project and shows how to reach a person. */
 
 .section {
+  z-index: 5;
+  background-color: var(--bg);
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-content: center;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
+  justify-content: center;
   width: 100%;
-  height: min-content;
-  padding: 0;
-  position: relative;
-  overflow: visible;
+  padding: 0 32px 120px;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-content: center;
-  align-items: center;
-  justify-content: flex-end;
-  flex: none;
-  gap: 13px;
+.wrapper {
   width: 100%;
   max-width: 1400px;
-  height: 779px;
-  padding: 228px 32px 169px;
-  position: relative;
-  overflow: clip;
-  z-index: 0;
-  background-color: var(--bg);
+  border-top: 1px solid var(--line);
+  padding-top: 48px;
 }
 
-.picture {
-  position: absolute;
-  flex: none;
-  width: 416px;
-  height: 699px;
-  left: calc(50.00000000000002% - 416px / 2);
-  top: calc(49.935815147625185% - 699px / 2);
-  overflow: clip;
-  z-index: 0;
-  will-change: transform;
-  border-radius: 195px;
-  -webkit-mask: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 57.99999999999999%) add;
-  mask: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 57.99999999999999%) add;
-}
-.picture::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  box-sizing: border-box;
-  border: 1px solid rgb(34, 34, 34);
-  border-radius: inherit;
-  pointer-events: none;
-}
-.picture img {
-  object-fit: cover;
-  object-position: center;
-  border-radius: inherit;
-}
-
-.textLink {
+.grid {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  align-content: center;
+  gap: 48px;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 620px;
+}
+
+.body {
+  max-width: 48ch;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  flex: none;
-  gap: 0;
-  width: 100%;
-  height: min-content;
-  padding: 0;
-  position: relative;
-  text-decoration: none;
-  overflow: visible;
+  gap: 16px 24px;
+  margin-top: 4px;
 }
 
-/* Rich text container (desktop) / fit-text svg (tablet, phone) */
-.text {
+.mailLink {
+  font-family: var(--font-switzer), sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: color 0.2s ease;
+}
+
+.mailLink:hover {
+  color: var(--fg);
+}
+
+/* Availability, with a live-looking dot. */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background-color: #7ddba3;
+  box-shadow: 0 0 0 4px rgba(125, 219, 163, 0.14);
+  flex: none;
+}
+
+.portrait {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.35 / 1;
+  border-radius: 16px;
+  overflow: clip;
+  flex: none;
+}
+
+.portrait img {
+  object-fit: cover;
+  object-position: center 28%;
+  border-radius: inherit;
+}
+
+/* Contact rows under the two columns. */
+.contacts {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.contact {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  flex: none;
-  flex-shrink: 0;
-  outline: none;
-  width: 100%;
-  height: auto;
-  position: relative;
-  z-index: 2;
-  mix-blend-mode: difference;
-  white-space: pre-wrap;
-  word-break: break-word;
-  overflow-wrap: break-word;
+  gap: 8px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
 }
 
-.line {
-  margin: 0;
-  padding: 0;
+.contact:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.contactValue {
   font-family: var(--font-switzer), sans-serif;
-  font-weight: 600;
-  letter-spacing: -0.06em;
-  text-align: center;
-  text-transform: uppercase;
-  color: #fff;
-}
-.desktopLine {
-  font-size: 165px;
-  line-height: 0.7em;
-}
-.tabletLine {
-  font-size: 115.92161250437712px;
-  line-height: 80%;
-}
-.phoneLine {
-  font-size: 71.27336814400448px;
-  line-height: 0.7em;
-}
-/* Framer: .framer-fit-text .framer-text */
-.fitText .line {
-  white-space: nowrap;
-  white-space-collapse: preserve;
+  font-size: clamp(16px, 1.3vw, 19px);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  color: var(--fg);
+  transition: color 0.2s ease;
 }
 
-.tabletOnly,
-.phoneOnly {
-  display: none;
+.contact:hover .contactValue {
+  color: var(--accent);
 }
 
-@media (min-width: 810px) and (max-width: 1199.98px) {
-  .wrapper {
-    height: 889px;
+@media (min-width: 810px) {
+  .grid {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 40px;
   }
-  .section {
-    height: 100%;
-    justify-content: center;
+
+  .copy {
+    flex: 1.15 0 0;
+    justify-content: space-between;
   }
-  .container {
-    flex: 1 0 0px;
-    height: 1px;
-    overflow: visible;
-    padding: 228px 32px 50px;
+
+  .portrait {
+    flex: 1 0 0;
+    aspect-ratio: auto;
+    min-height: 420px;
   }
-  .picture {
-    bottom: 0;
-    height: 693px;
-    left: calc(50.37037037037039% - 396px / 2);
-    top: unset;
-    width: 396px;
+
+  .contacts {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
   }
-  .textLink {
-    height: 197px;
-    width: 635px;
-  }
-  .text {
-    white-space: pre;
-  }
-  .desktopOnly {
-    display: none;
-  }
-  .tabletOnly {
-    display: flex;
+
+  .contact:last-child {
+    border-bottom: none;
   }
 }
 
 @media (max-width: 809.98px) {
   .section {
-    justify-content: center;
-    padding: 100px 20px;
+    padding: 0 20px 89px;
   }
-  .container {
-    gap: 0;
-    height: 489px;
-    justify-content: center;
-    overflow: visible;
-    padding: 228px 20px 32px;
-  }
-  .picture {
-    height: 428px;
-    left: calc(52.28571428571431% - 282px / 2);
-    top: calc(47.03476482617589% - 428px / 2);
-    width: 282px;
-  }
-  .text {
-    white-space: pre;
-    width: 293px;
-  }
-  .desktopOnly {
-    display: none;
-  }
-  .phoneOnly {
-    display: flex;
+
+  .portrait {
+    aspect-ratio: 1.1 / 1;
   }
 }

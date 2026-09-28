@@ -83,7 +83,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Lexfall",
     subtitle: "Expand your vocabulary beyond average",
     description: [
-      "Lexfall is a minimalist vocabulary app for advanced and native English speakers. It serves C1 to C2 words chosen for your field, from medicine and law to business, and delivers them to your Home and Lock Screen so you learn without opening the app. I designed, built and launched it solo in 2026, and it had paying subscribers in its first month.",
+      "Lexfall is a minimalist vocabulary app for advanced and native English speakers. It serves C1 to C2 words chosen for your field, from medicine and law to business, and delivers them to your Home and Lock Screen so you learn without opening the app. Designed, built and launched solo in 2026, with paying subscribers in its first month.",
     ],
     details: [
       { label: "Role", value: "Design & build, solo" },
@@ -168,7 +168,7 @@ export const caseStudies: CaseStudy[] = [
     title: "MarketOpsIQ",
     subtitle: "Field operations and shelf price intelligence for CPG brands",
     description: [
-      "MarketOpsIQ replaces spreadsheets, group chats and manual store reports for CPG field teams. Merchandisers snap a shelf photo, AI reads every price, and managers see verified visits, competitor prices and alerts in one place. I built it from zero to two paid pilots.",
+      "MarketOpsIQ replaces spreadsheets, group chats and manual store reports for CPG field teams. Merchandisers snap a shelf photo, AI reads every price, and managers see verified visits, competitor prices and alerts in one place. Taken from zero to two paid pilots with CPG brands.",
     ],
     details: [
       { label: "Role", value: "Product, design & build" },
@@ -218,7 +218,7 @@ export const caseStudies: CaseStudy[] = [
     title: "CampusMart",
     subtitle: "The student super-app for campus life",
     description: [
-      "CampusMart brings campus life into one app for Constructor University students: a second-hand marketplace for furniture and housing, food ordering with student discounts, and a community feed. I started it, designed it in Figma and led a contract developer to a launch-ready iOS and Android app.",
+      "CampusMart brings campus life into one app for Constructor University students: a second-hand marketplace for furniture and housing, food ordering with student discounts, and a community feed. Designed in Figma and built with a contract developer, to a launch-ready iOS and Android app.",
     ],
     details: [
       { label: "Role", value: "Product & design" },
@@ -262,7 +262,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Genzi",
     subtitle: "Music, made social",
     description: [
-      "Genzi is a social app for music fans, musicians and organizers. You share what you're listening to, join communities built around genres and local scenes, and meet people at real events. I started it in 2022 with a partner, ran product at the start, managing an external developer from concept to a live iOS app, and led the marketing: TikTok content I shot and fronted since 2022 with 100K+ views, and a #5 Product of the Day launch on Product Hunt.",
+      "Genzi is a social app for music fans, musicians and organizers. You share what you're listening to, join communities built around genres and local scenes, and meet people at real events. Started in 2022 with a partner: product direction and an external developer from concept to a live iOS app, then the marketing, with in-house TikTok content past 100K views and a #5 Product of the Day launch on Product Hunt.",
     ],
     details: [
       { label: "Role", value: "Product & marketing" },
