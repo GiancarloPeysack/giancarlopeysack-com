@@ -222,7 +222,7 @@ svg.nameInner {
   margin: 0;
   padding: 0;
   font-family: var(--font-display), Times, serif;
-  font-size: clamp(48px, 7vw, 124px);
+  font-size: clamp(36px, 4.6vw, 84px);
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 0.92em;
@@ -663,7 +663,7 @@ svg.nameInner {
     max-width: min(100%, calc((100vh - 190px) * 0.617089));
   }
   .heroName {
-    width: 76%;
+    width: 60%;
     padding-bottom: 0;
   }
   .nameLine {
