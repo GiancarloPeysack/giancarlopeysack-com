@@ -14,7 +14,7 @@ export const site = {
 
   nav: {
     links: [
-      { title: "Projects", href: "/projects" },
+      { title: "Case studies", href: "/projects" },
       { title: "About", href: "/about" },
       { title: "Contact", href: "/contact" },
     ] satisfies NavLink[],
@@ -23,7 +23,7 @@ export const site = {
   mobileMenu: {
     links: [
       { title: "Home", href: "/" },
-      { title: "Projects", href: "/projects" },
+      { title: "Case studies", href: "/projects" },
       { title: "About", href: "/about" },
       { title: "contact", href: "/contact" },
     ] satisfies NavLink[],
@@ -37,7 +37,7 @@ export const site = {
   footer: {
     links: [
       { title: "About", href: "/about" },
-      { title: "Projects", href: "/projects" },
+      { title: "Case studies", href: "/projects" },
       { title: "Contact", href: "/contact" },
     ] satisfies NavLink[],
     socials: [
@@ -56,7 +56,7 @@ export const site = {
     desktopText: "LET'S WORK TOGETHER ",
     tabletLines: ["LET'S WORK ", "TOGETHER "],
     phoneLines: ["LET'S ", "WORK", "TOGETHER "],
-    cursorText: "GET IN TOUCH",
+    cursorText: "START A PROJECT",
   },
 };
 

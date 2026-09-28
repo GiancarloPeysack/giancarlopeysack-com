@@ -28,7 +28,7 @@ export type ContactField = ContactTextField | ContactSelectField;
 export const contactMeta = {
   title: "Contact · Giancarlo Peysack",
   description:
-    "Get in touch with Giancarlo Peysack about product manager roles, a MarketOpsIQ pilot, a video sponsorship or anything else.",
+    "Tell me about the project: an app, a website, B2B software or an AI workflow. Also MarketOpsIQ pilots and video sponsorships.",
 };
 
 export const contactContent = {
@@ -44,10 +44,12 @@ export const contactContent = {
         required: true,
         options: [
           { title: "Select…", value: "", disabled: true },
-          { title: "Product manager role", value: "Product manager role" },
+          { title: "App or MVP", value: "App or MVP" },
+          { title: "Website or landing page", value: "Website or landing page" },
+          { title: "AI workflow or automation", value: "AI workflow or automation" },
+          { title: "Product design", value: "Product design" },
           { title: "MarketOpsIQ pilot", value: "MarketOpsIQ pilot" },
           { title: "Sponsor a video", value: "Sponsor a video" },
-          { title: "Just saying hi", value: "Just saying hi" },
           { title: "Other", value: "Other" },
         ],
       },
@@ -56,7 +58,7 @@ export const contactContent = {
         key: "message",
         name: "Message",
         label: "Tell me more",
-        placeholder: "A few lines about the role, the project or the idea.",
+        placeholder: "A few lines about what you want built, and by when.",
       },
     ] as ContactField[],
     button: { default: "Submit", success: "Thank you", error: "Something went wrong" },

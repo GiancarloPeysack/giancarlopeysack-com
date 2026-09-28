@@ -32,14 +32,14 @@ export const aboutContent = {
   meta: {
     title: "About · Giancarlo Peysack",
     description:
-      "Product builder in Madrid with a BA in International Business. Founder of MarketOpsIQ, co-founder of Genzi, maker of Lexfall, Zharo and CampusMart.",
+      "Product builder in Madrid. I design and build apps, websites, B2B software and AI workflows. The person behind MarketOpsIQ, Lexfall, Zharo, CampusMart and Genzi.",
   },
 
   hero: {
     label: "About me",
     paragraphs: [
       "I'm a product builder based in Madrid, with a BA in International Business from Constructor University. Before that I studied international relations in Nicaragua and Costa Rica, and I work in English, Spanish and German.",
-      "Since 2022 I've built products from zero: a music social app, a field-ops platform for CPG brands with paying pilots, a vocabulary app, a LinkedIn extension and a campus marketplace. Now I'm looking for a product manager role where I can keep shipping what customers need.",
+      "Since 2022 I've built products from zero: a music social app, a field-ops platform for CPG brands with paying pilots, a vocabulary app, a LinkedIn extension and a campus marketplace. Now I take on a small number of client projects: apps, websites, B2B software and AI work, designed and built by one person.",
     ],
     portrait: { src: "/portfolio/me/about.jpg", alt: "Portrait of Giancarlo Peysack" },
     /** Optional handwritten signature under the bio (the template shows one) */
@@ -87,7 +87,7 @@ export const aboutContent = {
     items: [
       {
         period: "2025-now",
-        title: "Founder & Builder, MarketOpsIQ",
+        title: "Product, design & build, MarketOpsIQ",
         description:
           "Own the product end to end, from the mobile app and web dashboard to analytics. Landed two paid pilots with a CPG distributor.",
         logo: "/portfolio/companies/marketopsiq.png",
@@ -125,7 +125,7 @@ export const aboutContent = {
       { year: "2026", title: "#5 Product of the Day on Product Hunt", source: "Genzi" },
       { year: "2026", title: "Paying subscribers in the first month", source: "Lexfall" },
       { year: "2026", title: "Two paid B2B pilots", source: "MarketOpsIQ" },
-      { year: "2022", title: "100K+ views on a founder-led TikTok", source: "Genzi" },
+      { year: "2022", title: "100K+ views on a TikTok I shot and fronted", source: "Genzi" },
       { year: "2023-2026", title: "BA International Business", source: "Constructor University" },
       { year: "2019-2022", title: "International Relations studies", source: "Nicaragua & Costa Rica" },
     ] as AboutAward[],

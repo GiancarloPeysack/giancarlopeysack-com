@@ -1,0 +1,97 @@
+/* Sections added on top of the template: the process columns, the AI block
+   and the writing list. They reuse the template's section shell (.services,
+   .servicesWrapper, .servicesHeader) so spacing and rhythm stay identical. */
+
+/* The template's section headings are short ("What I do.") and set in
+   white-space: pre, which makes the left column as wide as the line and
+   pushes the content column off screen. These headings are longer, so they
+   wrap instead. */
+/* Doubled class so it beats .heading regardless of stylesheet order. */
+.headingWrap.headingWrap {
+  white-space: normal;
+  max-width: 11ch;
+}
+
+.columns {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  width: 100%;
+  min-width: 0;
+}
+
+.columnRule {
+  width: 100%;
+  height: 1px;
+  background-color: #262626;
+  margin-bottom: 4px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Writing */
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px 0;
+  border-top: 1px solid #262626;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.post:last-child {
+  border-bottom: 1px solid #262626;
+}
+
+.post:hover .postTitle {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.postMeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.postTitle {
+  max-width: 34ch;
+}
+
+.postButton {
+  margin-top: 32px;
+}
+
+@media (min-width: 810px) {
+  .columns {
+    flex-direction: row;
+    gap: 28px;
+  }
+
+  .column {
+    flex: 1 0 0;
+  }
+}

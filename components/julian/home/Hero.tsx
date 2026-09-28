@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { homeContent } from "@/content/home";
 import { Appear, Parallax, type FxState } from "@/components/julian/fx/effects";
+import { HeroVideo } from "./HeroVideo";
 import { Label } from "@/components/julian/ui/Label";
 import text from "@/components/julian/ui/text.module.css";
 import s from "./home.module.css";
@@ -34,9 +35,11 @@ export function Hero() {
         <div className={s.heroTop}>
           <Appear className={`${s.heroImage} ${s.notPhone}`} {...ZOOM}>
             <Image src={portrait.src} alt={portrait.alt} fill unoptimized priority sizes="416px" />
+            <HeroVideo />
           </Appear>
           <Appear className={`${s.heroImage} ${s.phoneOnly}`} transformTemplate="translate(-50%, -50%) {}" {...ZOOM}>
             <Image src={portrait.src} alt={portrait.alt} fill unoptimized priority sizes="282px" />
+            <HeroVideo phone />
           </Appear>
 
           <div className={s.heroName}>

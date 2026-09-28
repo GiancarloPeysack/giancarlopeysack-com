@@ -86,7 +86,7 @@ export const caseStudies: CaseStudy[] = [
       "Lexfall is a minimalist vocabulary app for advanced and native English speakers. It serves C1 to C2 words chosen for your field, from medicine and law to business, and delivers them to your Home and Lock Screen so you learn without opening the app. I designed, built and launched it solo in 2026, and it had paying subscribers in its first month.",
     ],
     details: [
-      { label: "Role", value: "Founder, solo" },
+      { label: "Role", value: "Design & build, solo" },
       { label: "Year", value: "2026" },
       { label: "Industry", value: "Consumer, EdTech" },
       { label: "Platform", value: "iOS, Android soon" },
@@ -131,7 +131,7 @@ export const caseStudies: CaseStudy[] = [
       "Zharo is a Chrome extension that lives inside LinkedIn. It learns how you write, scores which posts are worth your time, and drafts comments and posts in your voice, right where you're already scrolling.",
     ],
     details: [
-      { label: "Role", value: "Founder" },
+      { label: "Role", value: "Design & build" },
       { label: "Year", value: "2026" },
       { label: "Industry", value: "AI, creator tools" },
       { label: "Platform", value: "Chrome extension" },
@@ -171,7 +171,7 @@ export const caseStudies: CaseStudy[] = [
       "MarketOpsIQ replaces spreadsheets, group chats and manual store reports for CPG field teams. Merchandisers snap a shelf photo, AI reads every price, and managers see verified visits, competitor prices and alerts in one place. I built it from zero to two paid pilots.",
     ],
     details: [
-      { label: "Role", value: "Founder & Builder" },
+      { label: "Role", value: "Product, design & build" },
       { label: "Year", value: "2025 - now" },
       { label: "Industry", value: "B2B SaaS, CPG" },
       { label: "Platform", value: "iOS, Android & web" },
@@ -218,10 +218,10 @@ export const caseStudies: CaseStudy[] = [
     title: "CampusMart",
     subtitle: "The student super-app for campus life",
     description: [
-      "CampusMart brings campus life into one app for Constructor University students: a second-hand marketplace for furniture and housing, food ordering with student discounts, and a community feed. I founded it, designed it in Figma and led a contract developer to a launch-ready iOS and Android app.",
+      "CampusMart brings campus life into one app for Constructor University students: a second-hand marketplace for furniture and housing, food ordering with student discounts, and a community feed. I started it, designed it in Figma and led a contract developer to a launch-ready iOS and Android app.",
     ],
     details: [
-      { label: "Role", value: "Founder & PM" },
+      { label: "Role", value: "Product & design" },
       { label: "Year", value: "2025" },
       { label: "Industry", value: "Marketplace, students" },
       { label: "Platform", value: "iOS & Android" },
@@ -251,7 +251,7 @@ export const caseStudies: CaseStudy[] = [
     meta: {
       title: "Genzi · Giancarlo Peysack",
       description:
-        "Case study: co-founding Genzi, a social app for music fans: from concept to a live iOS app, #5 on Product Hunt and founder-led TikTok marketing.",
+        "Case study: Genzi, a social app for music fans: from concept to a live iOS app, #5 on Product Hunt and the TikTok marketing I ran myself.",
     },
     card: {
       name: "Genzi",
@@ -262,10 +262,10 @@ export const caseStudies: CaseStudy[] = [
     title: "Genzi",
     subtitle: "Music, made social",
     description: [
-      "Genzi is a social app for music fans, musicians and organizers. You share what you're listening to, join communities built around genres and local scenes, and meet people at real events. I co-founded it in 2022, was its PM at the start, managing an external developer from concept to a live iOS app, and led the marketing: founder-led TikTok content since 2022 with 100K+ views, and a #5 Product of the Day launch on Product Hunt.",
+      "Genzi is a social app for music fans, musicians and organizers. You share what you're listening to, join communities built around genres and local scenes, and meet people at real events. I started it in 2022 with a partner, ran product at the start, managing an external developer from concept to a live iOS app, and led the marketing: TikTok content I shot and fronted since 2022 with 100K+ views, and a #5 Product of the Day launch on Product Hunt.",
     ],
     details: [
-      { label: "Role", value: "Co-founder, PM & marketing" },
+      { label: "Role", value: "Product & marketing" },
       { label: "Year", value: "2022 - now" },
       { label: "Industry", value: "Consumer social, music" },
       { label: "Platform", value: "iOS" },
@@ -277,7 +277,7 @@ export const caseStudies: CaseStudy[] = [
       "<li><p><strong>Product direction</strong><br>Defined the features and prioritized them against user feedback with a two-person founding team.</p></li>" +
       "<li><p><strong>PM for the first build</strong><br>At the start I worked as the product manager: I managed an external developer for six months, defining the features, setting priorities and directing the build, and took Genzi from concept to a shippable app with Spotify and Apple Music integrations.</p></li>" +
       "<li><p><strong>Design</strong><br>Led product vision and UX/UI direction in Figma.</p></li>" +
-      "<li><p><strong>Founder-led marketing</strong><br>Started <a href=\"https://www.tiktok.com/@genzi.app\" target=\"_blank\" rel=\"noopener noreferrer\">Genzi's TikTok</a> in 2022 and fronted it myself: street interviews in Madrid asking people which song reminds them of someone special, and POV videos riding music trends, all pointing back to the app. Also ran positioning and IRL events.</p></li>" +
+      "<li><p><strong>Marketing I ran myself</strong><br>Started <a href=\"https://www.tiktok.com/@genzi.app\" target=\"_blank\" rel=\"noopener noreferrer\">Genzi's TikTok</a> in 2022 and fronted it myself: street interviews in Madrid asking people which song reminds them of someone special, and POV videos riding music trends, all pointing back to the app. Also ran positioning and IRL events.</p></li>" +
       "<li><p><strong>Product Hunt launch</strong><br><a href=\"https://www.producthunt.com/products/genzi\" target=\"_blank\" rel=\"noopener noreferrer\">Launched on Product Hunt</a> in 2026 as the social app built around music.</p></li>" +
       "</ul>" +
       "<h3>Results</h3><ul>" +
