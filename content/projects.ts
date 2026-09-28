@@ -20,6 +20,8 @@ export type CaseStudy = {
   card: ProjectCardData;
   title: string;
   subtitle: string;
+  /** One line of proof, shown on the card. */
+  result: string;
   /** one string per paragraph; "" renders an empty paragraph */
   description: string[];
   details: { label: string; value: string }[];
@@ -81,6 +83,7 @@ export const caseStudies: CaseStudy[] = [
       image2: "/portfolio/projects/lexfall/card-hover.jpg",
     },
     title: "Lexfall",
+    result: "Paying subscribers in month one",
     subtitle: "Expand your vocabulary beyond average",
     description: [
       "Lexfall is a minimalist vocabulary app for advanced and native English speakers. It serves C1 to C2 words chosen for your field, from medicine and law to business, and delivers them to your Home and Lock Screen so you learn without opening the app. Designed, built and launched solo in 2026, with paying subscribers in its first month.",
@@ -126,6 +129,7 @@ export const caseStudies: CaseStudy[] = [
       image2: "/portfolio/projects/zharo/card-hover.jpg",
     },
     title: "Zharo",
+    result: "In private beta",
     subtitle: "Comment and post on LinkedIn, in your voice",
     description: [
       "Zharo is a Chrome extension that lives inside LinkedIn. It learns how you write, scores which posts are worth your time, and drafts comments and posts in your voice, right where you're already scrolling.",
@@ -166,6 +170,7 @@ export const caseStudies: CaseStudy[] = [
       image2: "/portfolio/projects/marketopsiq/card-hover.jpg",
     },
     title: "MarketOpsIQ",
+    result: "Two paid pilots, 200+ stores",
     subtitle: "Field operations and shelf price intelligence for CPG brands",
     description: [
       "MarketOpsIQ replaces spreadsheets, group chats and manual store reports for CPG field teams. Merchandisers snap a shelf photo, AI reads every price, and managers see verified visits, competitor prices and alerts in one place. Taken from zero to two paid pilots with CPG brands.",
@@ -216,6 +221,7 @@ export const caseStudies: CaseStudy[] = [
       image2: "/portfolio/projects/campusmart/card-hover.jpg",
     },
     title: "CampusMart",
+    result: "Launch-ready on iOS and Android",
     subtitle: "The student super-app for campus life",
     description: [
       "CampusMart brings campus life into one app for Constructor University students: a second-hand marketplace for furniture and housing, food ordering with student discounts, and a community feed. Designed in Figma and built with a contract developer, to a launch-ready iOS and Android app.",
@@ -260,6 +266,7 @@ export const caseStudies: CaseStudy[] = [
       image2: "/portfolio/projects/genzi/card-hover.jpg",
     },
     title: "Genzi",
+    result: "#5 Product of the Day, 100K+ views",
     subtitle: "Music, made social",
     description: [
       "Genzi is a social app for music fans, musicians and organizers. You share what you're listening to, join communities built around genres and local scenes, and meet people at real events. Started in 2022 with a partner: product direction and an external developer from concept to a live iOS app, then the marketing, with in-house TikTok content past 100K views and a #5 Product of the Day launch on Product Hunt.",

@@ -49,6 +49,7 @@ export function ProjectsIndex() {
               <ProjectCard
                 project={study.card.name}
                 subtitle={study.subtitle}
+                  result={study.result}
                 year={study.card.year}
                 image={study.card.image}
                 image2={study.card.image2}

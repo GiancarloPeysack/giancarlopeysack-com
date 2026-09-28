@@ -177,6 +177,20 @@ export const homeContent = {
   },
 
   /**
+   * Off the clock. Drafted from what is actually on record (his own footage,
+   * his CV and the products), so it stays true; he can swap any line.
+   */
+  personal: {
+    label: "Off the clock",
+    heading: "When I am not building.",
+    columns: [
+      { title: "Doing", items: ["Chess", "Bouldering", "Street interviews with strangers", "Live music, the smaller the room the better"] },
+      { title: "Speaking", items: ["English", "Spanish", "German"] },
+      { title: "Places", items: ["Madrid, where I live", "Managua, where I am from", "San José, where I studied first"] },
+    ],
+  },
+
+  /**
    * Writing. The list is pulled from the Substack RSS feed at build time (see
    * components/julian/home/Writing.tsx); these entries are the fallback when
    * the feed cannot be reached.

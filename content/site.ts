@@ -16,6 +16,7 @@ export const site = {
     links: [
       { title: "Case studies", href: "/projects" },
       { title: "About", href: "/about" },
+      { title: "Links", href: "/links" },
       { title: "Contact", href: "/contact" },
     ] satisfies NavLink[],
   },
@@ -25,6 +26,7 @@ export const site = {
       { title: "Home", href: "/" },
       { title: "Case studies", href: "/projects" },
       { title: "About", href: "/about" },
+      { title: "Links", href: "/links" },
       { title: "contact", href: "/contact" },
     ] satisfies NavLink[],
     socials: [

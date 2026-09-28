@@ -1,4 +1,5 @@
 import { homeContent } from "@/content/home";
+import { SectionVideo } from "./SectionVideo";
 import { InViewAppear } from "@/components/julian/fx/effects";
 import { Button } from "@/components/julian/ui/Button";
 import { Label } from "@/components/julian/ui/Label";
@@ -11,6 +12,10 @@ export function Intro() {
   const { label, reveal, logos, button } = homeContent.intro;
   return (
     <section className={s.section} id="About" data-name="Intro">
+      {/* The drifting orb from blackcometlabs.com, Gianni's own studio site.
+          This section is close to the clip's own proportions, so it reads as
+          a slow shape rather than a crop of one. */}
+      <SectionVideo mp4="/portfolio/me/orb.mp4" webm="/portfolio/me/orb.webm" poster="/portfolio/me/orb.jpg" />
       <div className={s.introWrapper}>
         <InViewAppear className={s.labelBox} enter={up60} animate={{ transition: soon }} animateOnce threshold={0.5}>
           <Label title={label} />

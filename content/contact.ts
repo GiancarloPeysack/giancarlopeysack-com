@@ -35,6 +35,7 @@ export const contactContent = {
   form: {
     fields: [
       { kind: "text", key: "name", name: "Name", label: "Name", placeholder: "Jane Smith", required: true },
+      { kind: "text", key: "company", name: "Company", label: "Company", placeholder: "Acme Ltd." },
       { kind: "email", key: "email", name: "Email", label: "Email", placeholder: "jane@company.com", required: true },
       {
         kind: "select",
@@ -51,6 +52,35 @@ export const contactContent = {
           { title: "MarketOpsIQ pilot", value: "MarketOpsIQ pilot" },
           { title: "Sponsor a video", value: "Sponsor a video" },
           { title: "Other", value: "Other" },
+        ],
+      },
+      {
+        kind: "select",
+        key: "stage",
+        name: "Stage",
+        label: "Where are you?",
+        options: [
+          { title: "Select…", value: "", disabled: true },
+          { title: "Idea, nothing built yet", value: "Idea, nothing built yet" },
+          { title: "Early product, no revenue", value: "Early product, no revenue" },
+          { title: "Product with revenue", value: "Product with revenue" },
+          { title: "Established company", value: "Established company" },
+          { title: "Something else", value: "Something else" },
+        ],
+      },
+      {
+        kind: "select",
+        key: "budget",
+        name: "Budget",
+        label: "Budget",
+        options: [
+          { title: "Select…", value: "", disabled: true },
+          { title: "Under 5K", value: "Under 5K" },
+          { title: "5K to 15K", value: "5K to 15K" },
+          { title: "15K to 40K", value: "15K to 40K" },
+          { title: "Over 40K", value: "Over 40K" },
+          { title: "Monthly retainer", value: "Monthly retainer" },
+          { title: "Not sure yet", value: "Not sure yet" },
         ],
       },
       {

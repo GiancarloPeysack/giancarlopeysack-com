@@ -28,6 +28,7 @@ const NAME_APPEAR = {
 export function ProjectCard({
   project,
   subtitle,
+  result,
   year,
   image,
   image2,
@@ -37,6 +38,7 @@ export function ProjectCard({
 }: {
   project: string;
   subtitle?: string;
+  result?: string;
   year: string;
   image: string;
   image2?: string;
@@ -76,6 +78,7 @@ export function ProjectCard({
           {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
         </Appear>
         <div className={styles.textBox}>
+          {result && <p className={styles.result}>{result}</p>}
           <p className={styles.year}>{year}</p>
         </div>
       </div>

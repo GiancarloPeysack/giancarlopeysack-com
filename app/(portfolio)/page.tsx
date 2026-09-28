@@ -24,6 +24,7 @@ export default function HomePage() {
       <ServicesSection />
       <ColumnsSection id="process" {...homeContent.process} />
       <ColumnsSection id="ai" {...homeContent.ai} />
+      <ColumnsSection id="personal" {...homeContent.personal} />
       <Writing />
       <WorkTogether />
     </main>

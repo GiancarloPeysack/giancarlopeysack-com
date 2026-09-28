@@ -1,5 +1,4 @@
 import { homeContent } from "@/content/home";
-import { SectionVideo } from "./SectionVideo";
 import { caseStudies, homeProjectOrder, projectHref } from "@/content/projects";
 import { InViewAppear } from "@/components/julian/fx/effects";
 import { Button } from "@/components/julian/ui/Button";
@@ -16,9 +15,6 @@ export function SelectedCases() {
   const cards = homeProjectOrder.map((slug) => caseStudies.find((c) => c.slug === slug)!);
   return (
     <section className={s.section} id="about-1" data-name="Projects">
-      {/* The drifting orb from blackcometlabs.com, Gianni's own studio site,
-          sitting under a scrim behind the work. */}
-      <SectionVideo mp4="/portfolio/me/orb.mp4" webm="/portfolio/me/orb.webm" poster="/portfolio/me/orb.jpg" />
       <div className={s.casesWrapper}>
         <div className={s.casesHeader}>
           <InViewAppear
@@ -47,6 +43,7 @@ export function SelectedCases() {
                 <ProjectCard
                   project={study.card.name}
                   subtitle={study.subtitle}
+                  result={study.result}
                   year={study.card.year}
                   image={study.card.image}
                   image2={study.card.image2}
