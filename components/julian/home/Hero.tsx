@@ -25,10 +25,7 @@ const ZOOM: { initial: FxState; animate: FxState } = {
 // Measured in the browser in Instrument Serif at 165px: "Peysack" is 431.6px
 // wide and "Gianni" 370.13px. Re-measure if the name or the face changes.
 const FIT = { viewBox: "0 0 432 132", fontSize: 165 };
-const NAME_FIT = {
-  first: { tablet: FIT, phone: FIT },
-  last: { tablet: FIT, phone: FIT },
-};
+const NAME_FIT = { first: { phone: FIT }, last: { phone: FIT } };
 
 export function Hero() {
   const { portrait, band, firstName, lastName, tagline, actions, labels } = homeContent.hero;
@@ -51,25 +48,30 @@ export function Hero() {
             </Appear>
 
             <div className={s.heroOverlay}>
-              <div className={s.heroName}>
-                <NameLine word={firstName} fit={NAME_FIT.first} />
-                <NameLine word={lastName} fit={NAME_FIT.last} last />
-              </div>
+              {/* The words are held to the width of the first panel, which is
+                  the one shot with nobody in it. Anything wider would run
+                  across him in the panel next door. */}
+              <div className={s.heroCopy}>
+                <div className={s.heroName}>
+                  <NameLine word={firstName} fit={NAME_FIT.first} />
+                  <NameLine word={lastName} fit={NAME_FIT.last} last />
+                </div>
 
-              <div className={s.overview}>
-                {tagline.map((line) => (
-                  <Appear key={line} className={`${s.rt} ${s.overviewInner}`} {...rise(1.1)}>
-                    <p className={`${text.t} ${s.heroTaglineText} ${s.overviewText}`}>{line}</p>
-                  </Appear>
-                ))}
-              </div>
+                <div className={s.overview}>
+                  {tagline.map((line) => (
+                    <Appear key={line} className={`${s.rt} ${s.overviewInner}`} {...rise(1.1)}>
+                      <p className={`${text.t} ${s.heroTaglineText} ${s.overviewText}`}>{line}</p>
+                    </Appear>
+                  ))}
+                </div>
 
-              <Appear className={s.heroActions} {...rise(1.2)}>
-                <Button text={actions.primary.text} link={actions.primary.link} variant="Solid" />
-                <SmartLink className={s.heroSecondary} href={actions.secondary.link}>
-                  {actions.secondary.text}
-                </SmartLink>
-              </Appear>
+                <Appear className={s.heroActions} {...rise(1.2)}>
+                  <Button text={actions.primary.text} link={actions.primary.link} variant="Solid" />
+                  <SmartLink className={s.heroSecondary} href={actions.secondary.link}>
+                    {actions.secondary.text}
+                  </SmartLink>
+                </Appear>
+              </div>
             </div>
           </div>
         </div>
@@ -90,17 +92,17 @@ type Fit = { viewBox: string; fontSize: number };
 
 // One name line: parallax (speed 120) outside, load appear inside. The blend
 // mode sits on the outer element so the text still blends with the portrait.
-function NameLine({ word, fit, last = false }: { word: string; fit: { tablet: Fit; phone: Fit }; last?: boolean }) {
+function NameLine({ word, fit, last = false }: { word: string; fit: { phone: Fit }; last?: boolean }) {
   const line = `${s.nameLine} ${last ? s.nameLast : ""}`;
   return (
     <>
-      <Parallax speed={120} className={`${line} ${s.desktopOnly}`}>
+      {/* Tablet used to fit the name to a fixed 300px box, which on a short
+          window made it taller than the film behind it. Desktop and tablet
+          now share the fluid size; only the phone still fits to its width. */}
+      <Parallax speed={120} className={`${line} ${s.notPhone}`}>
         <Appear className={s.nameInner} {...rise(1)}>
           <p className={s.nameText}>{word}</p>
         </Appear>
-      </Parallax>
-      <Parallax speed={120} className={`${line} ${s.tabletOnly}`}>
-        <FitName word={word} fit={fit.tablet} />
       </Parallax>
       <Parallax speed={120} className={`${line} ${s.phoneOnly}`}>
         <FitName word={word} fit={fit.phone} />

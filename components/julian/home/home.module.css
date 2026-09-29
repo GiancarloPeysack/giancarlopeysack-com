@@ -103,13 +103,24 @@
   inset: 0;
   z-index: 2;
   display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0;
+  /* the frame below stays hoverable; only the controls take the pointer */
+  pointer-events: none;
+}
+
+/* The words sit in the first of the three panels and stop there. The panel
+   under them is deliberately the shot with nobody standing in it, so the
+   name never crosses a face, a body or a pair of legs. */
+.heroCopy {
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
   gap: 20px;
+  width: 33.3333%;
   padding: clamp(24px, 3.4vw, 56px);
-  /* the frame below stays hoverable; only the controls take the pointer */
-  pointer-events: none;
 }
 
 .heroOverlay a {
@@ -612,7 +623,7 @@ svg.nameInner {
     height: min(calc(100vh - 185px), calc((100vw - 64px) / 1.7838));
   }
   .heroName {
-    width: 300px;
+    width: 100%;
     padding-bottom: 10px;
   }
   .nameLine {
@@ -652,7 +663,10 @@ svg.nameInner {
 @media (max-width: 809.98px) {
   .heroWrapper {
     flex: none;
-    max-width: 400px;
+    /* 400px left a tablet in portrait showing a small clip between two wide
+       black margins; the clip now grows with the screen, and the cap below
+       is what actually stops it. */
+    max-width: 560px;
     height: 100vh;
     padding: 72px 20px 32px;
   }
@@ -660,7 +674,12 @@ svg.nameInner {
     padding: 0 0 89px;
   }
   .heroStage {
-    max-width: min(100%, calc((100vh - 190px) * 0.617089));
+    /* 225px is the nav, the labels row and the padding above and below, so
+       the clip is as tall as the screen allows and never slides under them. */
+    max-width: min(100%, calc((100vh - 225px) * 0.617089));
+  }
+  .heroCopy {
+    width: 100%;
   }
   .heroName {
     width: 60%;
@@ -768,4 +787,16 @@ svg.nameInner {
 
 .heroSecondary:hover {
   color: #fff;
+}
+
+/* Phone, after the base rules above so it wins: side by side, the two
+   actions run 300px across a 353px frame and reach into the shot. Stacked,
+   the words keep to the empty left of it. */
+@media (max-width: 809.98px) {
+  .heroActions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: auto;
+  }
 }
