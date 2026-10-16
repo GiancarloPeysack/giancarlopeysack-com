@@ -1,12 +1,25 @@
 // Content of /links, the page that goes in his Instagram and TikTok bios.
-// Someone lands here from a phone, so it is a short stack of things to tap:
-// what he writes, what he has built, where he posts, and the three reasons
-// a stranger would actually contact him.
+// The page's shape is the original one he liked: a narrow white column of
+// plain sentences, each ending in a row of brand tiles. What 2026-10 added
+// are the pictures - a rail of his posts under the writing line and a rail
+// of app shots under the apps line - and the reasons to get in touch at the
+// bottom. Nothing invented: tiles, URLs and app shots all come from the
+// products themselves.
 import type { Post } from "@/lib/substack";
 
-const EMAIL = "gc.peysack@gmail.com";
-const SUBSTACK = "https://giancarlopeysack.substack.com";
-const LINKEDIN = "https://linkedin.com/in/gcpeysack";
+export const EMAIL = "gc.peysack@gmail.com";
+
+export const linksUrls = {
+  marketops: "https://marketopsiq.com",
+  genzi: "https://genzi.app",
+  lexfall: "https://lexfall.app",
+  zharo: "https://zharo.club",
+  linkedin: "https://linkedin.com/in/gcpeysack",
+  tiktok: "",
+  instagram: "",
+  substack: "https://giancarlopeysack.substack.com",
+  sayHi: `mailto:${EMAIL}?subject=Hi`,
+};
 
 export const linksMeta = {
   title: "Gianni Peysack · Links",
@@ -14,58 +27,22 @@ export const linksMeta = {
 };
 
 export const linksContent = {
-  greeting: "Hi, I'm Gianni Peysack",
-  line: "Product builder in Madrid. I design and build apps, websites and AI that does real work.",
-  avatar: { src: "/gianni.jpg", alt: "Gianni Peysack" },
+  /** Shown if the Substack feed cannot be reached at build time. */
+  writingFallback: [
+    {
+      title: "The Study Everyone Quotes Wrong: Is AI Actually Making Us Dumber?",
+      description: "The data says we are not losing our minds to AI. The detail is in how we use it.",
+      date: "September 2026",
+      href: "https://giancarlopeysack.substack.com/p/the-study-everyone-quotes-wrong-is",
+    },
+  ] as Post[],
 
-  writing: {
-    label: "I write here",
-    cta: { text: "All posts on Substack", href: SUBSTACK },
-    /** Shown if the Substack feed cannot be reached at build time. */
-    fallback: [
-      {
-        title: "The Study Everyone Quotes Wrong: Is AI Actually Making Us Dumber?",
-        description: "The data says we are not losing our minds to AI. The detail is in how we use it.",
-        date: "September 2026",
-        href: "https://giancarlopeysack.substack.com/p/the-study-everyone-quotes-wrong-is",
-      },
-    ] as Post[],
-  },
-
-  apps: {
-    label: "I build apps",
-    /** Slugs come from content/projects.ts; `site` is where the product lives. */
-    items: [
-      { slug: "lexfall", site: "https://lexfall.app" },
-      { slug: "zharo", site: "https://zharo.club" },
-      { slug: "marketopsiq", site: "https://marketopsiq.com" },
-      { slug: "genzi", site: "https://genzi.app" },
-      { slug: "campusmart", site: "" },
-    ],
-    cta: { text: "Read the case studies", href: "/projects" },
-  },
-
-  social: {
-    label: "I post here",
-    items: [
-      { title: "LinkedIn", value: "in/gcpeysack", href: LINKEDIN },
-      { title: "Substack", value: "Thinking out loud", href: SUBSTACK },
-      // Waiting on his handles; disabled rather than linking nowhere.
-      { title: "TikTok", value: "Soon", href: "" },
-      { title: "Instagram", value: "Soon", href: "" },
-    ],
-  },
-
-  actions: {
-    label: "Work with me",
-    items: [
-      { title: "Need design, dev or AI help?", value: "Start a project", href: "/contact" },
-      { title: "Want to sponsor a video?", value: "Sponsorship details", href: "/sponsor" },
-      { title: "Running field teams or stores?", value: "Pilot MarketOpsIQ", href: "/pilot" },
-    ],
-    quiet: [
-      { title: "Say hi", href: `mailto:${EMAIL}?subject=Hi` },
-      { title: "Download CV", href: "/Gianni-Peysack-CV.pdf" },
-    ],
-  },
+  /** Slugs come from content/projects.ts; `site` is where the product lives. */
+  apps: [
+    { slug: "lexfall", site: linksUrls.lexfall },
+    { slug: "zharo", site: linksUrls.zharo },
+    { slug: "marketopsiq", site: linksUrls.marketops },
+    { slug: "genzi", site: linksUrls.genzi },
+    { slug: "campusmart", site: "" },
+  ],
 };

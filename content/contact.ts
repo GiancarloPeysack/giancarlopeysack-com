@@ -95,7 +95,6 @@ export const contactContent = {
   },
   details: {
     email: { caption: "email", title: "gc.peysack@gmail.com", link: "mailto:gc.peysack@gmail.com" },
-    resume: { caption: "resume", title: "Download CV (PDF)", link: "/Gianni-Peysack-CV.pdf" },
     // The template's phone slot, used for LinkedIn
     phone: { caption: "LinkedIn", title: "in/gcpeysack", link: "https://linkedin.com/in/gcpeysack" },
     socials: {

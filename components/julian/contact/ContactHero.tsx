@@ -114,15 +114,6 @@ export function ContactHero() {
 
           <div className={styles.detailGroup}>
             <Appear className={styles.caption} {...spring(0.9)}>
-              <p className={styles.captionText}>{details.resume.caption}</p>
-            </Appear>
-            <Appear className={styles.linkContainer} {...spring(1)}>
-              <MenuLink title={details.resume.title} href={details.resume.link} variant="M" newTab />
-            </Appear>
-          </div>
-
-          <div className={styles.detailGroup}>
-            <Appear className={styles.caption} {...spring(0.9)}>
               <p className={styles.captionText}>{details.phone.caption}</p>
             </Appear>
             <Appear className={styles.linkContainer} {...spring(1)}>

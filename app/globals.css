@@ -74,12 +74,11 @@ html:has(.portfolio-root) :focus-visible {
 /* ---------------------------------------------------------------------------
    Portfolio (Julian template) pages. :has() keeps the page background black
    from first paint, including overscroll areas, without touching the light
-   pages (/links, /pilot, /sponsor).
+   pages (/links, /pilot, /sponsor). /links is white on purpose: it is the
+   link-in-bio page, and he asked to keep its original look.
    --------------------------------------------------------------------------- */
 html:has(.portfolio-root),
-body:has(.portfolio-root),
-html:has(.links-root),
-body:has(.links-root) {
+body:has(.portfolio-root) {
   background: var(--bg);
   color: var(--fg);
 }

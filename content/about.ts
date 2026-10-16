@@ -32,13 +32,13 @@ export const aboutContent = {
   meta: {
     title: "About · Gianni Peysack",
     description:
-      "Product builder in Madrid. I design and build apps, websites, B2B software and AI workflows. The person behind MarketOpsIQ, Lexfall, Zharo, CampusMart and Genzi.",
+      "I design and build apps, websites, B2B software and AI workflows, from Madrid. The person behind MarketOpsIQ, Lexfall, Zharo, CampusMart and Genzi.",
   },
 
   hero: {
     label: "About me",
     paragraphs: [
-      "I'm a product builder based in Madrid, with a BA in International Business from Constructor University. Before that I studied international relations in Nicaragua and Costa Rica, and I work in English, Spanish and German.",
+      "I design and build products from Madrid, in English, Spanish and German. I have a BA in International Business from Constructor University, and before that I studied international relations in Nicaragua and Costa Rica.",
       "Since 2022 I've built products from zero: a music social app, a field-ops platform for CPG brands with paying pilots, a vocabulary app, a LinkedIn extension and a campus marketplace. Now I take on a small number of client projects: apps, websites, B2B software and AI work, designed and built by one person.",
     ],
     portrait: { src: "/portfolio/me/about.jpg", alt: "Portrait of Gianni Peysack" },

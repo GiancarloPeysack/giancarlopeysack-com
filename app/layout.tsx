@@ -8,10 +8,11 @@ const fontVariables = [inter, switzer, neutralSansVariable, interDisplay, schibs
 
 export const metadata: Metadata = {
   title: "Gianni Peysack",
-  description: "Product Manager. Case studies on Genzi, Lexfall, MarketOpsIQ, and Zharo.",
+  description:
+    "A portfolio of shipped products: iOS apps, websites, B2B software and AI tools. Case studies on MarketOpsIQ, Lexfall, Zharo, CampusMart and Genzi.",
   openGraph: {
     title: "Gianni Peysack",
-    description: "Product Manager. I build and ship products end to end.",
+    description: "Apps, websites, B2B software and AI tools, designed and built end to end.",
     url: "https://giancarlopeysack.com",
     siteName: "Gianni Peysack",
     type: "website",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "Gianni Peysack",
-    description: "Product Manager. I build and ship products end to end.",
+    description: "Apps, websites, B2B software and AI tools, designed and built end to end.",
   },
 };
 

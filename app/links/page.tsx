@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { linksContent, linksMeta } from "@/content/links";
+import { Avatar } from "@/components/Avatar";
+import { BrandTile } from "@/components/BrandTile";
+import { LinkedInIcon, TikTokIcon, InstagramIcon, SubstackIcon } from "@/components/SocialIcons";
+import { linksContent, linksMeta, linksUrls as L } from "@/content/links";
 import { caseStudies, projectHref } from "@/content/projects";
 import { getSubstackPosts } from "@/lib/substack";
 import s from "./links.module.css";
@@ -20,16 +23,16 @@ export const metadata: Metadata = {
 };
 
 /**
- * The page in his Instagram and TikTok bios. Someone arrives from a phone
- * knowing nothing, so it is a short stack of taps: what he writes, what he
- * has built, where he posts, and the three reasons a stranger would get in
- * touch. The writing and the apps are rails of pictures rather than lists
- * of names, because that is what a link-in-bio visitor actually scans.
+ * The page in his Instagram and TikTok bios. Shape unchanged from the first
+ * version he liked: a narrow white column of plain sentences, each ending in
+ * a row of app-icon tiles. What is new sits inside that shape rather than
+ * replacing it - a rail of his posts under the writing line, a rail of app
+ * shots under the apps line, so a stranger scrolling on a phone sees the
+ * work instead of a list of names.
  */
 export default async function LinksPage() {
-  const { greeting, line, avatar, writing, apps, social, actions } = linksContent;
-  const posts = await getSubstackPosts(6, writing.fallback);
-  const built = apps.items
+  const posts = await getSubstackPosts(6, linksContent.writingFallback);
+  const built = linksContent.apps
     .map((item) => {
       const study = caseStudies.find((c) => c.slug === item.slug);
       return study ? { study, site: item.site } : null;
@@ -37,24 +40,33 @@ export default async function LinksPage() {
     .filter((x): x is { study: (typeof caseStudies)[number]; site: string } => x !== null);
 
   return (
-    <main className={`links-root ${s.page}`}>
-      <div className={s.inner}>
-        <header className={s.head}>
-          <div className={s.avatar}>
-            <Image src={avatar.src} alt={avatar.alt} fill unoptimized sizes="64px" />
-          </div>
-          <h1 className={s.greeting}>{greeting}</h1>
-        </header>
-        <p className={s.line}>{line}</p>
+    <main className="min-h-screen w-full bg-white text-black">
+      <div className="mx-auto w-full max-w-[640px] px-6 pt-16 pb-24 sm:pt-24">
+        <article
+          // Mobile-first sizing: bigger text on phones (matches Chris's
+          // narrow-column-needs-bigger-type design), tighter on desktop.
+          className="text-black text-[26px] sm:text-[22px] leading-[1.45] sm:leading-[1.55]"
+          style={{ fontWeight: 400, letterSpacing: "-0.005em" }}
+        >
+          {/* Greeting + click-to-zoom avatar */}
+          <p>
+            Hi, I&apos;m Gianni Peysack{" "}
+            <span className="inline-block align-middle ml-1">
+              <Avatar src="/gianni.jpg" />
+            </span>
+          </p>
 
-        {posts.length > 0 && (
-          <section className={s.section}>
-            <div className={s.sectionHead}>
-              <span className={s.rowTitle}>{writing.label}</span>
-              <a className={s.sectionLink} href={writing.cta.href} target="_blank" rel="noopener">
-                {writing.cta.text}
-              </a>
-            </div>
+          {/* Writing: the Substack tile, then the posts themselves. */}
+          <p className="mt-10 sm:mt-8">
+            I like writing here{" "}
+            <span className="tile-row align-middle ml-2">
+              <BrandTile href={L.substack} label="Substack" tooltip="@giancarlopeysack" bg="#FF6719">
+                <SubstackIcon />
+              </BrandTile>
+            </span>
+          </p>
+
+          {posts.length > 0 && (
             <div className={s.rail}>
               {posts.map((post) => (
                 <a key={post.href} className={s.card} href={post.href} target="_blank" rel="noopener">
@@ -65,20 +77,40 @@ export default async function LinksPage() {
                     ) : null}
                   </div>
                   <p className={s.cardTitle}>{post.title}</p>
-                  <p className={s.cardNote}>{post.date}</p>
+                  {post.date && <p className={s.cardNote}>{post.date}</p>}
                 </a>
               ))}
             </div>
-          </section>
-        )}
+          )}
 
-        <section className={s.section}>
-          <div className={s.sectionHead}>
-            <span className={s.rowTitle}>{apps.label}</span>
-            <Link className={s.sectionLink} href={apps.cta.href}>
-              {apps.cta.text}
-            </Link>
-          </div>
+          {/* Apps shipped: the tiles, then what they actually look like. */}
+          <p className="mt-10 sm:mt-8">
+            I&apos;ve shipped some apps{" "}
+            <span className="tile-row align-middle ml-2">
+              <BrandTile href={L.genzi} label="Genzi" tooltip="Genzi · social app for live music & nightlife" bg="#191E31">
+                <Image src="/genzi-icon.png" alt="" width={44} height={44} className="h-full w-full rounded-[11px] sm:rounded-[10px]" />
+              </BrandTile>
+              <BrandTile href={L.lexfall} label="Lexfall" tooltip="Lexfall · advanced English vocabulary" bg="#100E0B">
+                <Image src="/lexfall-icon.png" alt="" width={44} height={44} className="h-full w-full rounded-[11px] sm:rounded-[10px]" />
+              </BrandTile>
+              <BrandTile href={L.marketops} label="MarketOpsIQ" tooltip="MarketOpsIQ · AI shelf intel for CPG" bg="#0F1116" fg="#FFFFFF" letter="M" />
+              <BrandTile href={L.zharo} label="Zharo" tooltip="Zharo · Chrome extension for LinkedIn, in your voice" bg="#0a0a0a">
+                <svg viewBox="0 0 120 120" fill="none" style={{ width: "62%", height: "62%", color: "#fff" }}>
+                  <defs>
+                    <linearGradient id="zharoSparkTile" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stopColor="#6366F1" />
+                      <stop offset="1" stopColor="#8B5CF6" />
+                    </linearGradient>
+                  </defs>
+                  <g transform="translate(52,60)">
+                    <path d="M 36.85 17.97 A 41 41 0 1 1 36.85 -17.97" fill="none" stroke="currentColor" strokeWidth="12" strokeLinecap="round" />
+                    <circle cx="49" cy="0" r="8.5" fill="url(#zharoSparkTile)" />
+                  </g>
+                </svg>
+              </BrandTile>
+            </span>
+          </p>
+
           <div className={s.rail}>
             {built.map(({ study, site }) => (
               <a
@@ -95,49 +127,64 @@ export default async function LinksPage() {
               </a>
             ))}
           </div>
-        </section>
 
-        <section className={s.section}>
-          <div className={s.sectionHead}>
-            <span className={s.rowTitle}>{social.label}</span>
-          </div>
-          <div className={s.rows}>
-            {social.items.map((item) =>
-              item.href ? (
-                <a key={item.title} className={s.row} href={item.href} target="_blank" rel="noopener">
-                  <span className={s.rowTitle}>{item.title}</span>
-                  <span className={s.rowValue}>{item.value}</span>
-                </a>
-              ) : (
-                <div key={item.title} className={`${s.row} ${s.rowDisabled}`} aria-disabled="true">
-                  <span className={s.rowTitle}>{item.title}</span>
-                  <span className={s.rowValue}>{item.value}</span>
-                </div>
-              ),
-            )}
-          </div>
-        </section>
+          {/* Social */}
+          <p className="mt-10 sm:mt-8">
+            I post here{" "}
+            <span className="tile-row align-middle ml-2">
+              <BrandTile href={L.linkedin} label="LinkedIn" tooltip="@gcpeysack" bg="#0A66C2">
+                <LinkedInIcon />
+              </BrandTile>
+              {/* Handles still owed, so these do not navigate anywhere. */}
+              <BrandTile href={L.tiktok} label="TikTok" tooltip="TikTok (soon)" bg="#000000" disabled>
+                <TikTokIcon />
+              </BrandTile>
+              <BrandTile
+                href={L.instagram}
+                label="Instagram"
+                tooltip="Instagram (soon)"
+                bg="linear-gradient(135deg, #FFD600 0%, #FF7A00 30%, #FF0069 60%, #D300C5 80%, #7638FA 100%)"
+                disabled
+              >
+                <InstagramIcon />
+              </BrandTile>
+            </span>
+          </p>
 
-        <section className={s.section}>
-          <div className={s.sectionHead}>
-            <span className={s.rowTitle}>{actions.label}</span>
+          {/* Divider */}
+          <hr className="my-10 sm:my-12 border-0 border-t border-gray-200" />
+
+          {/* Contact CTAs — explicitly smaller (~70% of main paragraphs), like Chris's */}
+          <div
+            className="space-y-3 sm:space-y-2"
+            style={{ fontSize: "clamp(14px, 3.4vw, 16px)", lineHeight: 1.55, fontWeight: 400 }}
+          >
+            <p>
+              Need design, development or AI help? <Link href="/contact">Start a project.</Link>
+            </p>
+            <p>
+              Want to see the work first? <Link href="/projects">Read the case studies.</Link>
+            </p>
+            <p>
+              Looking to pilot MarketOpsIQ for your company? <Link href="/pilot">See the pilot program.</Link>
+            </p>
+            <p>
+              Interested in sponsoring a video? <Link href="/sponsor">Get sponsorship details.</Link>
+            </p>
+            <p>
+              Want early access to my AI tool for LinkedIn? <Link href="/waitlist/linkedin">Join the waitlist.</Link>
+            </p>
+            <p>
+              Want early access to my AI video tool? <Link href="/waitlist/video">Join the waitlist.</Link>
+            </p>
+            <p>
+              Want the writing in your inbox? <a href={L.substack} target="_blank" rel="noopener">Subscribe on Substack.</a>
+            </p>
+            <p>
+              Want to say hi? <Link href={L.sayHi}>Send me an email.</Link>
+            </p>
           </div>
-          <div className={s.rows}>
-            {actions.items.map((item) => (
-              <Link key={item.title} className={s.row} href={item.href}>
-                <span className={s.rowTitle}>{item.title}</span>
-                <span className={s.rowValue}>{item.value}</span>
-              </Link>
-            ))}
-          </div>
-          <div className={s.quiet}>
-            {actions.quiet.map((item) => (
-              <a key={item.title} className={s.quietLink} href={item.href}>
-                {item.title}
-              </a>
-            ))}
-          </div>
-        </section>
+        </article>
       </div>
     </main>
   );

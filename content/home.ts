@@ -2,12 +2,13 @@
 // shows lives here. Facts come from Gianni's own products, the project
 // folders and their code; nothing is invented.
 //
-// Positioning (2026-09-28): the site sells work, it does not ask for a job.
+// Positioning (2026-10-16): a portfolio of the work, not a candidate for a
+// product role. The lines name what gets built, never a job title.
 // One person who designs and builds: apps, websites, B2B software and AI.
 
 export const homeContent = {
   meta: {
-    title: "Gianni Peysack · Product builder, design to development",
+    title: "Gianni Peysack · Apps, websites, B2B software and AI",
     description:
       "I design and build products: apps, websites, B2B software and AI workflows. Case studies on MarketOpsIQ, Lexfall, Zharo, CampusMart and Genzi. Based in Madrid, working with companies anywhere.",
   },
@@ -30,11 +31,13 @@ export const homeContent = {
       mp4: "/portfolio/me/hero-band.mp4",
       webm: "/portfolio/me/hero-band.webm",
       poster: "/portfolio/me/hero-band.jpg",
-      alt: "Gianni working: a cafe, hands on a keyboard, and an office with code on screen",
+      alt: "Gianni working: hands on a keyboard, a laptop in a quiet room, and a cafe",
     },
     firstName: "Gianni",
     lastName: "Peysack",
-    tagline: ["Product builder in Madrid.", "From design to development."],
+    // Short enough to stay one line each inside the hero's one-panel copy
+    // column; the intro below carries the full list of what gets built.
+    tagline: ["Apps, B2B software and AI.", "Designed and built end to end."],
     /** The next step, right under the tagline. */
     actions: {
       primary: { text: "Start a project", link: "/contact" },

@@ -1,108 +1,22 @@
-/* /links: the page that goes in his social bios. Same tokens and type as
-   the rest of the site, but built for a thumb: one column, big tap targets,
-   and two horizontal rails so the writing and the apps show as pictures
-   rather than a list of names. */
-
-.page {
-  min-height: 100vh;
-  width: 100%;
-  background-color: var(--bg);
-  color: var(--fg);
-  padding: 72px 0 96px;
-}
-
-.inner {
-  width: 100%;
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Header */
-
-.head {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.avatar {
-  position: relative;
-  width: 64px;
-  height: 64px;
-  border-radius: 999px;
-  overflow: clip;
-  flex: none;
-}
-
-.avatar img {
-  object-fit: cover;
-}
-
-.greeting {
-  margin: 0;
-  font-family: var(--font-display), Times, serif;
-  font-size: clamp(28px, 6vw, 40px);
-  font-weight: 400;
-  line-height: 1.1em;
-  letter-spacing: -0.015em;
-  color: var(--fg);
-}
-
-.line {
-  margin: 18px 0 0;
-  font-family: var(--font-switzer), sans-serif;
-  font-size: clamp(16px, 3.6vw, 18px);
-  font-weight: 400;
-  line-height: 1.55em;
-  color: var(--muted);
-  max-width: 46ch;
-}
-
-/* Sections */
-
-.section {
-  margin-top: 56px;
-}
-
-.sectionHead {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  border-top: 1px solid var(--line);
-  padding-top: 16px;
-  margin-bottom: 20px;
-}
-
-.sectionLink {
-  font-family: var(--font-switzer), sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1px;
-  white-space: nowrap;
-}
-
-.sectionLink:hover {
-  color: var(--accent);
-}
-
-/* Horizontal rails: a card and a half visible, so it reads as scrollable. */
+/* /links keeps its original shape: a narrow white column of sentences with
+   app-icon tiles. The only thing this file adds is the pictures under two of
+   those sentences - a rail of writing, a rail of apps - sized so a card and
+   a half show on a phone, which is what makes it read as scrollable. */
 
 .rail {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(230px, 260px);
+  grid-auto-columns: minmax(208px, 232px);
   gap: 14px;
   overflow-x: auto;
+  overscroll-behavior-x: contain;
   scroll-snap-type: x proximity;
-  padding-bottom: 6px;
-  margin: 0 -20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  /* the snapport is the padding box, so without this the browser scrolls the
+     rail 24px on load to sit the first card flush against the screen edge */
+  scroll-padding: 0 24px;
+  /* bleeds to the screen edges so the last card is clearly cut off */
+  margin: 22px -24px 0;
+  padding: 0 24px 8px;
   scrollbar-width: none;
 }
 
@@ -114,9 +28,9 @@
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
-  border-radius: 14px;
+  color: inherit;
 }
 
 .cardMedia {
@@ -125,8 +39,8 @@
   aspect-ratio: 16 / 10;
   border-radius: 12px;
   overflow: clip;
-  background-color: var(--surface);
-  border: 1px solid var(--line);
+  background-color: #f4f4f5;
+  border: 1px solid rgba(0, 0, 0, 0.09);
 }
 
 .cardMedia img {
@@ -142,102 +56,38 @@
 
 .cardTitle {
   margin: 0;
-  font-family: var(--font-display), Times, serif;
-  font-size: 19px;
-  font-weight: 400;
-  line-height: 1.25em;
-  letter-spacing: -0.01em;
-  color: var(--fg);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+  color: #111;
+  /* two lines, then ellipsis, so one long headline cannot set the row height */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .cardNote {
   margin: 0;
-  font-family: var(--font-switzer), sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
-  line-height: 1.45em;
-  color: var(--muted);
+  line-height: 1.4;
+  color: #6b7280;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-/* Rows: socials and the three reasons to get in touch */
-
-.rows {
-  display: flex;
-  flex-direction: column;
-}
-
-.row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 18px 0;
-  border-top: 1px solid var(--line);
-  text-decoration: none;
-  transition: padding-left 0.2s ease;
-}
-
-.row:first-child {
-  border-top: none;
-}
-
-.row:hover {
-  padding-left: 6px;
-}
-
-.rowTitle {
-  font-family: var(--font-switzer), sans-serif;
-  font-size: clamp(16px, 3.8vw, 18px);
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  color: var(--fg);
-}
-
-.rowValue {
-  font-family: var(--font-switzer), sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--accent);
-  white-space: nowrap;
-}
-
-.row:hover .rowValue {
-  color: #fff;
-}
-
-.rowDisabled {
-  cursor: default;
-}
-
-.rowDisabled .rowTitle,
-.rowDisabled .rowValue {
-  color: var(--faint);
-}
-
-.rowDisabled:hover {
-  padding-left: 0;
-}
-
-/* Quiet links at the very bottom */
-
-.quiet {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 24px;
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
-}
-
-.quietLink {
-  font-family: var(--font-chivo-mono), monospace;
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--faint);
-  text-decoration: none;
-}
-
-.quietLink:hover {
-  color: var(--text);
+@media (min-width: 640px) {
+  .rail {
+    margin: 20px -24px 0;
+  }
+  .cardTitle {
+    font-size: 14px;
+  }
+  .cardNote {
+    font-size: 12.5px;
+  }
 }
