@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/contact",
     "/links",
+    "/portfolio",
   ];
   return paths.map((path) => ({ url: `${SITE}${path === "/" ? "" : path}` }));
 }

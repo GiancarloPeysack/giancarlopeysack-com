@@ -37,12 +37,18 @@ export const linksContent = {
     },
   ] as Post[],
 
-  /** Slugs come from content/projects.ts; `site` is where the product lives. */
+  /** Slugs come from content/projects.ts; `site` is where the product lives.
+   *  `image` / `note` override the case study card on this page only. */
   apps: [
-    { slug: "lexfall", site: linksUrls.lexfall },
+    {
+      slug: "lexfall",
+      site: linksUrls.lexfall,
+      image: "/portfolio/projects/lexfall/links-card-2026-11.jpg",
+      note: "Advanced English for work, exams and everyday life",
+    },
     { slug: "zharo", site: linksUrls.zharo },
     { slug: "marketopsiq", site: linksUrls.marketops },
     { slug: "genzi", site: linksUrls.genzi },
     { slug: "campusmart", site: "" },
-  ],
+  ] as { slug: string; site: string; image?: string; note?: string }[],
 };

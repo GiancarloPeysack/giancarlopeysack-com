@@ -23,7 +23,7 @@ export const site = {
 
   mobileMenu: {
     links: [
-      { title: "Home", href: "/" },
+      { title: "Home", href: "/portfolio" },
       { title: "Case studies", href: "/projects" },
       { title: "About", href: "/about" },
       { title: "Links", href: "/links" },

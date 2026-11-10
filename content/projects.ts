@@ -85,7 +85,7 @@ export const caseStudies: CaseStudy[] = [
     card: {
       name: "Lexfall",
       year: "2026",
-      image: "/portfolio/projects/lexfall/card.jpg",
+      image: "/portfolio/projects/lexfall/card-2026-11.jpg",
       image2: "/portfolio/projects/lexfall/card-hover.jpg",
     },
     title: "Lexfall",

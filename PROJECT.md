@@ -102,13 +102,14 @@ cd ~/Documents/giancarlopeysack.com/site && rm -f .git/index.lock .git/HEAD.lock
 
 | Route | What it is |
 |---|---|
-| `/` | Portfolio home (Julian template). `app/(portfolio)/page.tsx`, copy in `content/home.ts`. |
+| `/` | Link-in-bio page (owner ask 2026-11-10). `app/page.tsx` renders `components/LinksView.tsx`. |
+| `/portfolio` | Portfolio home (Julian template). `app/(portfolio)/portfolio/page.tsx`, copy in `content/home.ts`. |
 | `/about` | Portfolio about page. `app/(portfolio)/about/`, `content/about.ts`. |
 | `/projects` | Portfolio project index. `app/(portfolio)/projects/`, `content/projects.ts`. |
 | `/projects/[slug]` | Case studies (template slugs until personalized). Same content file. |
 | `/contact` | Portfolio contact page. The form posts to `/api/notify` with `type: "contact"`. `content/contact.ts`. |
 | any unknown URL | Portfolio-styled 404 via the `app/(portfolio)/[...notFound]` catch-all → `app/(portfolio)/not-found.tsx`. |
-| `/links` | Personal link-in-bio page (writing, apps, social, contact CTAs). The *old* homepage, moved here unchanged. Edit `app/links/page.tsx`. |
+| `/links` | Same page as `/` (kept for old bio links). Edit `components/LinksView.tsx` + `content/links.ts`. |
 | `/pilot` | MarketOpsIQ pilot form → Firestore `pilot_requests`. Shows a Calendly embed on success. |
 | `/sponsor` | Video sponsorship form → Firestore `sponsorship_requests`. |
 | `/waitlist/linkedin` | Waitlist for the AI LinkedIn tool → Firestore `linkedin_tool_waitlist`. |
