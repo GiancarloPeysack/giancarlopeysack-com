@@ -44,7 +44,7 @@ export const linksContent = {
       slug: "lexfall",
       site: linksUrls.lexfall,
       image: "/portfolio/projects/lexfall/links-card-2026-11.jpg",
-      note: "Advanced English for work, exams and everyday life",
+      note: "Short daily lessons for advanced English. A path built for your field or exam, from your level up to Expert.",
     },
     { slug: "zharo", site: linksUrls.zharo },
     { slug: "marketopsiq", site: linksUrls.marketops },

@@ -80,7 +80,7 @@ export const caseStudies: CaseStudy[] = [
     meta: {
       title: "Lexfall · Gianni Peysack",
       description:
-        "Case study: designing, building and launching Lexfall solo, an advanced vocabulary app with a Home Screen widget and paying subscribers in its first month.",
+        "Case study: designing, building and launching Lexfall solo, a daily lesson path for advanced English (C1-C2) with paying subscribers in its first month.",
     },
     card: {
       name: "Lexfall",
@@ -91,15 +91,15 @@ export const caseStudies: CaseStudy[] = [
     title: "Lexfall",
     row: { shot: "/portfolio/projects/lexfall/wide.jpg", bg: "/portfolio/projects/lexfall/banner.jpg" },
     result: "Paying subscribers in month one",
-    subtitle: "Expand your vocabulary beyond average",
+    subtitle: "Short daily lessons for advanced English",
     description: [
-      "Lexfall is a minimalist vocabulary app for advanced and native English speakers. It serves C1 to C2 words chosen for your field, from medicine and law to business, and delivers them to your Home and Lock Screen so you learn without opening the app. Designed, built and launched solo in 2026, with paying subscribers in its first month.",
+      "Lexfall is a daily lesson path for advanced English (C1-C2). Short lessons teach the words that matter for your work, your exam or everyday life, on a path built for your level and your field (healthcare, law, business) or exam (IELTS, OET, TOEFL and more), then smart reviews make them stick. Designed, built and launched solo in 2026, with paying subscribers in its first month.",
     ],
     details: [
       { label: "Role", value: "Product design & development" },
       { label: "Year", value: "2026" },
       { label: "Industry", value: "Consumer, EdTech" },
-      { label: "Platform", value: "iOS, Android soon" },
+      { label: "Platform", value: "iOS, Android" },
     ],
     banner: img("lexfall", "banner", "The Lexfall website: expand your vocabulary beyond average"),
     bodyHtml:

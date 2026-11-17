@@ -76,7 +76,7 @@ export async function LinksView() {
               <BrandTile href={L.genzi} label="Genzi" tooltip="Genzi · social app for live music & nightlife" bg="#191E31">
                 <Image src="/genzi-icon.png" alt="" width={44} height={44} className="h-full w-full rounded-[11px] sm:rounded-[10px]" />
               </BrandTile>
-              <BrandTile href={L.lexfall} label="Lexfall" tooltip="Lexfall · advanced English vocabulary" bg="#100E0B">
+              <BrandTile href={L.lexfall} label="Lexfall" tooltip="Lexfall · daily lessons for advanced English" bg="#100E0B">
                 <Image src="/lexfall-icon.png" alt="" width={44} height={44} className="h-full w-full rounded-[11px] sm:rounded-[10px]" />
               </BrandTile>
               <BrandTile href={L.marketops} label="MarketOpsIQ" tooltip="MarketOpsIQ · AI shelf intel for CPG" bg="#0F1116" fg="#FFFFFF" letter="M" />
